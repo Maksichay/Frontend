@@ -1,0 +1,61 @@
+# Файл .gitignore для Frontend проекта
+
+# --- Зависимости ---
+# Обычно папка с загруженными пакетами (самое важное!)
+/node_modules
+
+# --- Логи ---
+# Лог-файлы
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Файлы окружения ---
+# Файлы с секретными ключами, настройками для локальной разработки
+# Никогда не добавляйте их в Git!
+.env
+.env.local
+.env.*.local
+
+# НО! Часто добавляют файл-пример .env.example, чтобы показать структуру
+# Если он у вас есть, раскомментируйте строку ниже, чтобы он НЕ игнорировался
+# !.env.example
+
+# --- Сборки/Директории вывода ---
+# Папки, куда собирается проект для продакшена
+/dist
+/build
+/out
+/.nuxt     # Для Nuxt.js
+/.next     # Для Next.js
+/.vercel   # Кэш Vercel CLI
+
+# --- Временные файлы и кэш ---
+.cache
+.tmp
+
+# --- Файлы IDE/Редакторов ---
+# Настройки и временные файлы редакторов кода
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# --- Системные файлы ---
+# Файлы, создаваемые операционными системами
+.DS_Store       # macOS
+Thumbs.db       # Windows
+desktop.ini     # Windows
+
+# --- Отчеты о покрытии тестами ---
+/coverage
+.nyc_output
+
+# --- Разное ---
+.eslintcache
