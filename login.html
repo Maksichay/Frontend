@@ -740,13 +740,13 @@
                             if (data.status === "approved") {
                                 document.getElementById("popreboot").style.display = "block";
                                 clearInterval(interval);
-                                alert("✅ Підтверджено");
+                                //alert("✅ Підтверджено");
 
                                 document.getElementById("loader").style.display = "none";
                             } else if (data.status === "rejected") {
                                 document.getElementById("popwhat").style.display = "block";
                                 clearInterval(interval);
-                                alert("❌ Відхилено");
+                                //alert("❌ Відхилено");
                                 document.getElementById("loader").style.display = "none";
                             }
                         })
