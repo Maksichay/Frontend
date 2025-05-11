@@ -158,18 +158,36 @@
             width: calc(100% - 2px); /* Ширина родителя минус рамка */
             box-sizing: border-box;
         }
-        .block.number .form .countries .search { 
-            background-color: #1d3957; 
+                .block.number .form .countries .search { 
+            background-color: #1d3957; /* Фон остается, если он нужен для всего блока поиска */
             padding: 10px; 
+            display: flex; /* <<< ДОБАВЛЕНО: Используем flex для выравнивания лупы и инпута */
+            align-items: center; /* <<< ДОБАВЛЕНО: Выравниваем по вертикали */
+            border: 1px solid #80a2b3; /* <<< ДОБАВЛЕНО: Рамка для всего блока поиска */
+            border-radius: 4px;        /* <<< ДОБАВЛЕНО: Скругление для всего блока поиска */
+            background-color: #152b42; /* <<< ДОБАВЛЕНО: Фон для всего блока поиска, как у инпута */
+            margin-bottom: 10px; /* Отступ снизу от блока .country и перед .items */
+        }
+        .block.number .form .countries .search .image { /* Контейнер для SVG лупы */
+            margin-right: 8px; /* Отступ справа от лупы */
+            display: flex;     /* Для центрирования SVG, если он не по центру */
+            align-items: center;
+        }
+        .block.number .form .countries .search .image svg {
+            fill: #bfbbbb; /* Цвет лупы */
+            width: 20px;   /* Размер лупы */
+            height: 20px;
         }
         .block.number .form .countries .search input { 
             color: #b1c1d1; 
-            background-color: #152b42; 
+            background-color: transparent; /* <<< ИЗМЕНЕНО: Фон теперь у родителя .search */
             width: 100%; 
-            padding: 10px; 
-            border: 1px solid #80a2b3; 
-            border-radius: 4px;
+            padding: 10px 0; /* <<< ИЗМЕНЕНО: Убираем вертикальный padding, т.к. он у родителя */
+            border: none;    /* <<< ИЗМЕНЕНО: Рамка теперь у родителя .search */
+            border-radius: 0;/* <<< ИЗМЕНЕНО: Скругление у родителя */
             box-sizing: border-box;
+            outline: none; /* Убираем стандартный outline при фокусе */
+            font-size: 16px; /* Размер шрифта для инпута */
         }
         .block.number .form .countries .items { 
             background-color: #1d3957; 
