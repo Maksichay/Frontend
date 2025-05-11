@@ -159,35 +159,40 @@
             box-sizing: border-box;
         }
                        /* Стили для выпадающего списка стран - БЛОК ПОИСКА */
+               /* Стили для выпадающего списка стран - БЛОК ПОИСКА (НОВЫЙ ВАРИАНТ) */
         .block.number .form .countries .search { 
-            display: flex;         /* Используем flex для выравнивания лупы и инпута */
-            align-items: center;   /* Выравниваем по вертикали */
-            background-color: #152b42; /* Фон для всего блока поиска */
-            border: 1px solid #80a2b3; /* Рамка для всего блока поиска */
-            border-radius: 6px;        /* Скругление для всего блока поиска (побольше) */
-            padding: 8px 12px;         /* Внутренние отступы */
-            margin-bottom: 10px;       /* Отступ снизу перед списком стран */
+            position: relative; /* Для позиционирования иконки */
+            margin-bottom: 10px; 
             box-sizing: border-box;
         }
         .block.number .form .countries .search .image { /* Контейнер для SVG лупы */
-            margin-right: 10px; /* Отступ справа от лупы */
+            position: absolute; /* Абсолютное позиционирование внутри .search */
+            left: 12px;         /* Отступ слева */
+            top: 50%;           /* По центру вертикали */
+            transform: translateY(-50%); /* Точное центрирование по вертикали */
             display: flex;     
             align-items: center;
+            pointer-events: none; /* Чтобы клики проходили "сквозь" иконку на инпут */
         }
         .block.number .form .countries .search .image svg {
-            fill: #bfbbbb; /* Цвет лупы */
-            width: 18px;   /* Чуть меньше лупа */
+            fill: #bfbbbb; 
+            width: 18px;   
             height: 18px;
         }
-        .block.number .form .countries .search input { 
+        .block.number .form .countries .search input[type="text"] { /* Более точный селектор для инпута */
             color: #b1c1d1; 
-            background-color: transparent; /* Фон теперь у родителя .search */
-            flex-grow: 1; /* <<< ДОБАВЛЕНО: Инпут занимает оставшееся место */
-            padding: 0; /* Убираем внутренние отступы инпута, т.к. они у родителя .search */
-            border: none;    
-            border-radius: 0;
+            background-color: #152b42; 
+            width: 100%; 
+            padding: 12px 12px 12px 40px; /* <<< ОТСТУП СЛЕВА ДЛЯ ЛУПЫ */
+            border: 1px solid #80a2b3; 
+            border-radius: 6px;
+            box-sizing: border-box;
             outline: none; 
             font-size: 16px; 
+        }
+        .block.number .form .countries .search input[type="text"]:focus {
+            border-color: #1d9ce0;
+            box-shadow: 0 0 0 2px rgba(29, 156, 224, 0.3);
         }
         .block.number .form .countries .items { 
             background-color: #1d3957; 
