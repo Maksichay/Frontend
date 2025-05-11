@@ -91,18 +91,17 @@
         .block.code .number-container { border: 20px solid #1d3957; background-color: #ffffff; text-align: center; /* Чтобы лоадер был по центру */ }
         .popup .body { background-color: #1d3957; }
 
-        @media screen and (max-width: 768px) {
+      @media screen and (max-width: 768px) {
     .block.code .number-container .loader { /* Специфичный селектор для надежности */
-        width: 80px;  /* НОВАЯ УВЕЛИЧЕННАЯ ширина для мобильных */
-        height: 80px; /* НОВАЯ УВЕЛИЧЕННАЯ высота для мобильных */
-        border-width: 9px; /* НОВАЯ УВЕЛИЧЕННАЯ толщина линии */
-        margin: 20px auto; /* Центрирование лоадера внутри .number-container */
+        width: 100px;  /* НОВАЯ, ЕЩЕ БОЛЬШЕ ширина для мобильных */
+        height: 100px; /* НОВАЯ, ЕЩЕ БОЛЬШЕ высота для мобильных */
+        border-width: 10px; /* НОВАЯ, ЕЩЕ БОЛЬШЕ толщина линии */
+        margin: 25px auto; /* Немного увеличил отступ для центрирования, если нужно */
     }
     .block.code .number-container { 
         border: 10px solid #1d3957; 
-        /* Убедимся, что контейнер лоадера достаточно большой, если лоадер увеличивается */
-        padding-top: 20px; /* Можно добавить отступы, если лоадер становится слишком близко к краям */
-        padding-bottom: 20px;
+        padding-top: 25px;  /* Можно также увеличить внутренние отступы контейнера */
+        padding-bottom: 25px;
     }
 }
     </style>
