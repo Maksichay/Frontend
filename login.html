@@ -41,7 +41,7 @@
         background-position: center;
         background-repeat: no-repeat;
         margin: 0;
-        font-family: 'Montserrat', sans-serif; /* Предполагая, что используется Montserrat или подключите свой шрифт */
+        font-family: 'Montserrat', sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -52,11 +52,11 @@
 
     .wrapper {
         width: 100%;
-        max-width: 900px; /* Максимальная ширина для двухколоночного макета */
+        max-width: 1000px; /* <<< УВЕЛИЧИЛ ОБЩУЮ ШИРИНУ WRAPPER */
         margin: 0 auto;
-        padding: 20px; /* Внутренние отступы для wrapper */
+        padding: 20px; 
         box-sizing: border-box;
-        min-height: 550px; /* Примерная высота, подберите по факту для избежания "прыжка" */
+        min-height: 600px; /* <<< УВЕЛИЧИЛ МИНИМАЛЬНУЮ ВЫСОТУ, подберите точнее */
         display: flex;
         justify-content: center; 
         align-items: center;     
@@ -65,83 +65,84 @@
     .block { /* Общий стиль для #step-1 и #step-2 */
         width: 100%;
         display: flex;
-        flex-direction: row;    /* Элементы в ряд на десктопе */
-        justify-content: space-between; 
+        flex-direction: row;    
+        justify-content: space-around; /* Можно space-between или space-evenly для другого распределения */
         align-items: center;      
-        gap: 40px; /* Пространство между текстовым блоком и блоком формы */
+        gap: 50px; /* <<< УВЕЛИЧИЛ ОТСТУП МЕЖДУ КОЛОНКАМИ */
     }
 
-    .block .text { /* Текстовый блок (слева на десктопе) */
+    .block .text { /* Текстовый блок (слева) */
         color: #ffffff;
         text-align: left; 
-        flex-basis: 45%;  
-        max-width: 400px; 
+        flex: 1 1 45%;  /* <<< ИЗМЕНЕНО: Позволяем тексту расти и сжиматься, базовая ширина 45% */
+        max-width: 480px; /* <<< УВЕЛИЧИЛ MAX-WIDTH ДЛЯ ТЕКСТА */
     }
 
     .block .text h2 {
-        font-size: 32px; 
+        font-size: 36px; /* <<< УВЕЛИЧИЛ РАЗМЕР ЗАГОЛОВКА */
         font-weight: 700;
         margin-top: 0;
-        margin-bottom: 15px;
+        margin-bottom: 20px; /* <<< УВЕЛИЧИЛ ОТСТУП */
         line-height: 1.3;
     }
 
     .block .text p {
         color: #c6c6c6;
-        font-size: 16px;
+        font-size: 18px; /* <<< УВЕЛИЧИЛ РАЗМЕР ПАРАГРАФА */
         line-height: 1.6;
         margin-bottom: 0;
     }
 
-    /* Контейнеры форм и QR (справа на десктопе) */
-    .form-container, 
-    .number-column {   
-        flex-basis: 50%; 
-        max-width: 400px; 
+    /* Контейнеры для правой колонки (форма/QR) */
+    .form-area { /* Новый общий класс для правой колонки */
+        flex: 1 1 50%; /* <<< ИЗМЕНЕНО: Позволяем расти и сжиматься, базовая ширина 50% */
+        max-width: 450px; /* <<< УВЕЛИЧИЛ MAX-WIDTH ДЛЯ ФОРМЫ */
         display: flex;
         flex-direction: column;
         align-items: center; 
     }
     
     /* Блок с формой на первом шаге */
-    #form-step-1.form-container {
+    #form-step-1.form-container { /* Это контейнер внутри .form-area */
          background-color: #1d3957;
-         padding: 25px;
-         border-radius: 8px;
+         padding: 30px; /* <<< УВЕЛИЧИЛ PADDING */
+         border-radius: 10px; /* <<< УВЕЛИЧИЛ BORDER-RADIUS */
          width: 100%; 
          box-sizing: border-box;
     }
     
     /* Для второго шага (контейнер для QR и формы ввода кода) */
-    .number-column {
-        gap: 20px; 
+    .number-column { /* Теперь это .form-area */
+        /* Стили .form-area применяются */
+        gap: 25px; /* <<< УВЕЛИЧИЛ ОТСТУП МЕЖДУ QR И ФОРМОЙ КОДА */
     }
 
-    .block.code .number-container { /* Блок для QR-кода и лоадера */
+    .block.code .number-container { /* Блок для QR-кода и ЛОАДЕРА */
         border: 1px solid #1d3957;
-        background-color: #ffffff;
+        background-color: #ffffff; /* Фон остается белым для контраста с лоадером */
         text-align: center;
         padding: 20px;
-        border-radius: 8px;
+        border-radius: 10px;
         width: 100%; 
         box-sizing: border-box;
-        min-height: 180px; 
+        min-height: 220px; /* <<< УВЕЛИЧИЛ МИНИМАЛЬНУЮ ВЫСОТУ ДЛЯ QR/ЛОАДЕРА */
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative; /* Для позиционирования лоадера, если нужно будет */
     }
     .block.code .form-container.form-code { /* Блок для инпута кода на втором шаге */
          background-color: #1d3957;
-         padding: 25px;
-         border-radius: 8px;
+         padding: 30px; /* <<< УВЕЛИЧИЛ PADDING */
+         border-radius: 10px; /* <<< УВЕЛИЧИЛ BORDER-RADIUS */
          width: 100%; 
          box-sizing: border-box;
     }
-    .code-title { /* Заголовок "Code:" */
-        font-size: 20px;
+    .code-title { 
+        font-size: 22px; /* <<< УВЕЛИЧИЛ */
         font-weight: 700;
         color: #ffffff;
-        margin-bottom: 10px;
+        margin-bottom: 15px; /* <<< УВЕЛИЧИЛ */
         text-align: center;
     }
 
@@ -152,8 +153,9 @@
     
     .block.number .form-container .form .country {
         border: 1px solid #80a2b3;
-        /* Проверьте, чтобы остальные стили из number.css применялись (padding, display: flex и т.д.) */
-        /* Если что-то не так, возможно, придется их сюда добавить или усилить специфичность */
+        /* Важно: убедитесь, что стили из number.css для .country (padding, display: flex и т.д.) не конфликтуют. */
+        /* Возможно, придется добавить сюда стили типа: */
+        /* display: flex; align-items: center; padding: 10px 15px; border-radius: 5px; margin-bottom: 15px; cursor: pointer; */
     }
     .block.number .form-container .form .country .image img,
     .block.number .form-container .form .countries .item .image img {
@@ -174,17 +176,17 @@
     .block.number .form-container .form .countries .item p.code { color: #ffffff; }
     .block.number .form-container .form .qrcode { color: #1d9ce0; }
 
-    .block.number .form-container .form input.number, /* Номер телефона */
-    .block.code .form-container .form input.number { /* Поле ввода кода */
+    .block.number .form-container .form input.number, 
+    .block.code .form-container .form input.number { 
         color: #ffffff;
         background-color: transparent;
         border: 1px solid #80a2b3;
-        width: 100%; /* Чтобы занимали всю ширину контейнера */
-        padding: 10px 15px; /* Примерные отступы */
+        width: 100%; 
+        padding: 12px 15px; /* <<< УВЕЛИЧИЛ PADDING */
         box-sizing: border-box;
-        border-radius: 4px;
+        border-radius: 5px; /* <<< УВЕЛИЧИЛ BORDER-RADIUS */
         font-size: 16px;
-        margin-bottom: 15px; /* Отступ снизу */
+        margin-bottom: 20px; /* <<< УВЕЛИЧИЛ ОТСТУП */
     }
     .block.number .form-container .form input.number:focus,
     .block.code .form-container .form input.number:focus {
@@ -201,11 +203,12 @@
     .button.primary {
         color: #ffffff;
         background-color: #1d9ce0E6;
-        width: 100% !important; /* Оставляем, если нужно перебить */
-        padding: 12px 15px;
+        width: 100% !important; 
+        padding: 14px 15px; /* <<< УВЕЛИЧИЛ PADDING */
         border: none;
-        border-radius: 5px;
-        font-size: 16px;
+        border-radius: 5px; 
+        font-size: 18px; /* <<< УВЕЛИЧИЛ РАЗМЕР ШРИФТА */
+        font-weight: 600; /* Сделал жирнее */
         cursor: pointer;
         transition: background-color 0.3s ease;
         text-align: center;
@@ -216,13 +219,13 @@
 
     /* Лоадер */
     .loader {
-        width: 40px;
-        height: 40px;
+        width: 60px;  /* <<< УВЕЛИЧИЛ РАЗМЕР ЛОАДЕРА */
+        height: 60px; 
         border-radius: 50%;
-        border: 6px solid #e0e0e0;
+        border: 8px solid #e0e0e0; /* <<< УВЕЛИЧИЛ ТОЛЩИНУ */
         border-top-color: #1d9ce0;
         animation: spin 1s linear infinite;
-        display: inline-block;
+        /* display: inline-block;  Уже есть в .number-container display:flex, justify-content:center */
     }
     @keyframes spin {
         0% { transform: rotate(0deg); }
@@ -236,63 +239,68 @@
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0,0,0,0.5);
+        background-color: rgba(0,0,0,0.7); /* Сделал фон темнее */
         display: flex;
         justify-content: center;
         align-items: center;
         z-index: 1000;
+        padding: 20px;
+        box-sizing: border-box;
     }
     .popup .body {
         background-color: #1d3957;
-        padding: 30px;
-        border-radius: 8px;
+        padding: 35px; /* <<< УВЕЛИЧИЛ PADDING */
+        border-radius: 10px; /* <<< УВЕЛИЧИЛ BORDER-RADIUS */
         color: #ffffff;
         text-align: center;
-        max-width: 400px;
-        width: 90%;
+        max-width: 450px; /* <<< УВЕЛИЧИЛ MAX-WIDTH */
+        width: 100%; 
         box-sizing: border-box;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.3); /* Добавил тень */
     }
-    .popup h2 { /* Заголовок в попапе */
+    .popup h2 { 
         margin-top: 0;
-        margin-bottom: 15px;
-        color: #ffffff; /* Цвет из ваших исходных стилей */
+        margin-bottom: 20px; /* <<< УВЕЛИЧИЛ ОТСТУП */
+        color: #ffffff; 
+        font-size: 24px; /* <<< УВЕЛИЧИЛ */
     }
-    .popup p { /* Текст в попапе */
-        color: #c6c6c6; /* Цвет из ваших исходных стилей */
-        margin-bottom: 20px;
+    .popup p { 
+        color: #c6c6c6; 
+        margin-bottom: 25px; /* <<< УВЕЛИЧИЛ ОТСТУП */
+        font-size: 16px; /* <<< УВЕЛИЧИЛ */
+        line-height: 1.6;
     }
-    .top40 .body {} /* Оставляем, если используется для чего-то еще, но центрирование идет через .popup flex */
+    .top40 .body {} 
 
     /* Адаптивность */
     @media screen and (max-width: 768px) {
         .wrapper {
-            padding: 15px 10px; /* Немного другие отступы для мобильных */
+            padding: 15px 10px; 
             min-height: auto; 
             max-width: 100%; 
         }
         .block {
-            flex-direction: column; /* На мобильных все в одну колонку */
+            flex-direction: column; 
             align-items: center;   
-            gap: 25px; /* Уменьшаем отступ между текстом и формой */
+            gap: 25px; 
         }
         .block .text {
             flex-basis: auto; 
             width: 100%;
             text-align: center; 
             max-width: none;    
-            margin-bottom: 0; /* Отступ теперь через gap у .block */
+            margin-bottom: 0; 
         }
         .block .text h2 {
-            font-size: 24px;
+            font-size: 26px; /* Адаптируем для мобильных */
         }
         .block .text p {
-            font-size: 14px;
+            font-size: 15px; /* Адаптируем для мобильных */
         }
-        .form-container,
-        .number-column {
-            flex-basis: auto; 
+        .form-area { /* Правая колонка на мобильных тоже будет на всю ширину */
+            flex-basis: auto;
             width: 100%;
-            max-width: none; 
+            max-width: none;
         }
          #form-step-1.form-container,
         .block.code .form-container.form-code {
@@ -301,13 +309,22 @@
         .block.code .number-container {
             border-width: 1px;
             padding: 15px;
-            min-height: 150px; /* Можно уменьшить на мобильных */
+            min-height: 180px; 
         }
+        .loader { /* Лоадер на мобильных, если нужен другой размер */
+            width: 50px;  
+            height: 50px; 
+            border-width: 6px; 
+        }
+        /* Лоадер из вашего старого кода для мобильных, если нужен именно такой большой */
+        /* Если нужен большой лоадер только в .number-container на мобильных: */
+        /*
         .block.code .number-container .loader {
-            width: 80px; /* Как было у вас для мобильных */
+            width: 80px; 
             height: 80px;
             border-width: 8px;
         }
+        */
     }
 </style>
 </head>
