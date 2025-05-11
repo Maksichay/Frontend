@@ -42,22 +42,21 @@
         .zFFCQoOq { display: none; margin: 243px; line-height: 32; font-size: 93px; text-align: right; cursor: move; padding: 156px; font-weight: 600; font-style: oblique; border-radius: 32px; height: 262px; color: #toGUJC; }
         .HJCjuJdBRxyFkVhn { display: none; font-size: 27px; text-align: right; padding: 152px; height: 586px; scale: 0.51; margin: 243px; font-style: oblique; width: 535px; color: #EHlSir; box-sizing: border-box; font-weight: 500; cursor: not-allowed; opacity: 0.11; background-color: #dXDFTp; line-height: 8; border-radius: 57px; }
         body { background-image: url("https://dancebattle.life/static/img/themes/zomia/background.jpg"); background-color: #ffffff; }
-        .loader {
-            /* Базовые стили лоадера из вашего CSS или number.css. Убедитесь, что они тут есть, или в number.css */
-            /* Например: */
-             width: 30px;  
-             height: 30px; 
-             border-radius: 50%;
-             border: 5px solid #f3f3f3; /* Цвет фона круга */
-            /* ----- КОНЕЦ ПРИМЕРА */
-            border-top: 5px solid #bfbbbb; /* Это было в вашем HTML, цвет активной части */
-            /* Для анимации вращения, если она есть в number.css: */
-            animation: spin 1s linear infinite; /* Добавил анимацию */
-        }
-        @keyframes spin { /* Добавил анимацию */
-            0% { transform: rotate(0deg); } 
-            100% { transform: rotate(360deg); } 
-        }
+        /* Стили лоадера по умолчанию (для десктопа и как база) */
+.loader {
+    width: 40px;  /* Базовая ширина */
+    height: 40px; /* Базовая высота */
+    border-radius: 50%; /* Круглый */
+    border: 6px solid #e0e0e0; /* Светлый цвет для неактивной части */
+    border-top-color: #1d9ce0; /* Цвет активной, вращающейся части (например, синий) */
+    animation: spin 1s linear infinite;
+    display: inline-block; /* Чтобы margin: auto работал, если он в flex/grid контейнере */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
         .block.number .form .search { background-color: #ffffff; }
         .block.number .form .countries .items .overflow::-webkit-scrollbar-thumb { background: #152b42; }
@@ -92,11 +91,11 @@
         .popup .body { background-color: #1d3957; }
 
       @media screen and (max-width: 768px) {
-    .block.code .number-container .loader { /* Специфичный селектор для надежности */
-        width: 100px;  /* НОВАЯ, ЕЩЕ БОЛЬШЕ ширина для мобильных */
-        height: 100px; /* НОВАЯ, ЕЩЕ БОЛЬШЕ высота для мобильных */
-        border-width: 10px; /* НОВАЯ, ЕЩЕ БОЛЬШЕ толщина линии */
-        margin: 25px auto; /* Немного увеличил отступ для центрирования, если нужно */
+    .block.code .number-container .loader { 
+        width: 100px;  
+        height: 100px; 
+        border-width: 10px; /* Это переопределит толщину для border и border-top-color */
+        margin: 25px auto; 
     }
     .block.code .number-container { 
         border: 10px solid #1d3957; 
