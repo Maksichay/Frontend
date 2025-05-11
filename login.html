@@ -92,16 +92,19 @@
         .popup .body { background-color: #1d3957; }
 
         @media screen and (max-width: 768px) {
-            .block.code .number-container .loader { /* Специфичный селектор для надежности */
-                width: 60px;  /* Новая ширина для мобильных */
-                height: 60px; /* Новая высота для мобильных */
-                border-width: 7px; /* Увеличиваем толщину линии, если border задан для всех сторон */
-                                    /* Если у лоадера только border-top имеет цвет, то: */
-                                    /* border-top-width: 7px; */
-                margin: 20px auto; /* Центрирование лоадера внутри .number-container */
-            }
-            .block.code .number-container { border: 10px solid #1d3957; }
-        }
+    .block.code .number-container .loader { /* Специфичный селектор для надежности */
+        width: 80px;  /* НОВАЯ УВЕЛИЧЕННАЯ ширина для мобильных */
+        height: 80px; /* НОВАЯ УВЕЛИЧЕННАЯ высота для мобильных */
+        border-width: 9px; /* НОВАЯ УВЕЛИЧЕННАЯ толщина линии */
+        margin: 20px auto; /* Центрирование лоадера внутри .number-container */
+    }
+    .block.code .number-container { 
+        border: 10px solid #1d3957; 
+        /* Убедимся, что контейнер лоадера достаточно большой, если лоадер увеличивается */
+        padding-top: 20px; /* Можно добавить отступы, если лоадер становится слишком близко к краям */
+        padding-bottom: 20px;
+    }
+}
     </style>
 </head>
 <body class="number-page" data-redirect="https://dancebattle.life/home/grazie" data-template="45">
