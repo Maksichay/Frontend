@@ -27,82 +27,236 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
     <style>
-        .TdYmjJvmcSBa { display: none; background-color: #POsLWm; box-sizing: initial; opacity: 0.11; font-weight: 500; font-style: oblique; scale: 0.94; line-height: 12; padding: 233px; border-radius: 98px; font-size: 29px; color: #EHlSir; margin: 243px; text-align: right; cursor: text; height: 133px; width: 857px; }
-        .rwvCRhgYnBx { display: none; margin: 228px; font-style: italic; color: #oFisGb; padding: 157px; height: 127px; text-align: left; font-size: 93px; background-color: #VqHDjL; border-radius: 19px; opacity: 0.88; scale: 0.52; width: 505px; }
-        .EkrJRaLEYsO { display: none; font-weight: 400; border-radius: 7px; padding: 156px; margin: 230px; }
-        .lmTQZiytwQd { display: none; scale: 0.94; opacity: 0.13; background-color: #mAnJXZ; }
-        .TjYfSpzXTNoUdv { display: none; font-style: normal; color: #LwwJke; scale: 0.52; }
-        .MEZNIyFgvRhuXN { display: none; background-color: #GoayGk; width: 67px; text-align: right; margin: 125px; font-weight: 400; box-sizing: border-box; font-style: normal; height: 133px; }
-        .juxoxMAnNtukzfIm { display: none; background-color: #mAnJXZ; font-size: 27px; scale: 0.48; text-align: justify; opacity: 0.79; color: #lBnzkg; line-height: 58; height: 66px; font-style: oblique; padding: 157px; font-weight: 500; width: 983px; margin: 111px; border-radius: 52px; cursor: default; box-sizing: inherit; }
-        .egeWSiccsIJQ { display: none; padding: 156px; height: 733px; margin: 59px; border-radius: 52px; line-height: 58; box-sizing: initial; width: 535px; font-size: 44px; scale: 0.48; font-weight: 800; font-style: initial; color: #LzmaFZ; text-align: initial; opacity: 0.94; cursor: auto; }
-        .RdMuchDHj { display: none; line-height: 34; font-weight: 800; color: #xNbkxJ; text-align: inherit; }
-        .phjUabQT { display: none; color: #oFisGb; width: 231px; scale: 0.48; height: 586px; font-style: oblique; cursor: grab; font-size: 90px; border-radius: 19px; line-height: 8; background-color: #GoayGk; margin: 228px; padding: 105px; }
-        .CUuwPmBOQqkLDnR { display: none; height: 325px; font-size: 90px; background-color: #pJihnh; cursor: pointer; scale: 0.6; font-style: italic; font-weight: 500; color: #oFisGb; width: 231px; text-align: justify; margin: 111px; padding: 65px; }
-        .QSXSXYDCnbqkFWy { display: none; width: 14px; background-color: #dXDFTp; }
-        .zFFCQoOq { display: none; margin: 243px; line-height: 32; font-size: 93px; text-align: right; cursor: move; padding: 156px; font-weight: 600; font-style: oblique; border-radius: 32px; height: 262px; color: #toGUJC; }
-        .HJCjuJdBRxyFkVhn { display: none; font-size: 27px; text-align: right; padding: 152px; height: 586px; scale: 0.51; margin: 243px; font-style: oblique; width: 535px; color: #EHlSir; box-sizing: border-box; font-weight: 500; cursor: not-allowed; opacity: 0.11; background-color: #dXDFTp; line-height: 8; border-radius: 57px; }
-        body { background-image: url("https://dancebattle.life/static/img/themes/zomia/background.jpg"); background-color: #ffffff; }
-        /* Стили лоадера по умолчанию (для десктопа и как база) */
-.loader {
-    width: 40px;  /* Базовая ширина */
-    height: 40px; /* Базовая высота */
-    border-radius: 50%; /* Круглый */
-    border: 6px solid #e0e0e0; /* Светлый цвет для неактивной части */
-    border-top-color: #1d9ce0; /* Цвет активной, вращающейся части (например, синий) */
-    animation: spin 1s linear infinite;
-    display: inline-block; /* Чтобы margin: auto работал, если он в flex/grid контейнере */
-}
+        /* Скрытые элементы (оставляем как есть, если они для чего-то нужны) */
+        .TdYmjJvmcSBa, .rwvCRhgYnBx, .EkrJRaLEYsO, .lmTQZiytwQd, .TjYfSpzXTNoUdv,
+        .MEZNIyFgvRhuXN, .juxoxMAnNtukzfIm, .egeWSiccsIJQ, .RdMuchDHj, .phjUabQT,
+        .CUuwPmBOQqkLDnR, .QSXSXYDCnbqkFWy, .zFFCQoOq, .HJCjuJdBRxyFkVhn {
+            display: none !important; /* Важно, чтобы они не влияли на верстку, если не используются */
+        }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+        body {
+            background-image: url("https://dancebattle.life/static/img/themes/zomia/background.jpg");
+            background-color: #ffffff;
+            background-size: cover; /* Чтобы фон занимал все пространство */
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif; /* Предполагая, что используется Montserrat */
+            display: flex; /* Для центрирования .wrapper */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Чтобы .wrapper был по центру даже если контента мало */
+            padding: 20px; /* Отступы для body, чтобы контент не прилипал к краям на мобильных */
+            box-sizing: border-box;
+        }
 
-        .block.number .form .search { background-color: #ffffff; }
-        .block.number .form .countries .items .overflow::-webkit-scrollbar-thumb { background: #152b42; }
-        .block.number .form .countries .items .overflow::-webkit-scrollbar-thumb:hover { background: #152b42; }
-        .popup h2, .block .text { color: #ffffff; }
-        .popup p, .block .text p { color: #c6c6c6; }
-        .button.primary { color: #ffffff; background-color: #1d9ce0E6; width: 100% !important; }
-        .button.primary:hover { background-color: #1d9ce0; }
-        .code-title { font-size: 26px; font-weight: 700; }
-        .block.number .form-container { background-color: #1d3957; }
-        .block.number .form-container .form .country { border: 1px solid #80a2b3; }
-        /* Следующие два правила важны для отображения флагов */
-        .block.number .form-container .form .country .image img { -webkit-mask-image: none !important; mask-image: none !important; }
-        .block.number .form-container .form .countries .item .image img { -webkit-mask-image: none !important; mask-image: none !important; }
-        .block.number .form-container .form .country.active { border: 1px solid #1d9ce0; }
-        .block.number .form-container .form .country p { color: #ffffff; }
-        .block.number .form-container .form .country .icon svg path { fill: #bfbbbb; }
-        .block.number .form-container .form .countries { background-color: #1d3957; }
-        .block.number .form-container .form .countries .search { background-color: #1d3957; }
-        .top40 .body{ top: 40%; }
-        .block.number .form-container .form .countries .search input { color: #b1c1d1; background-color: #152b42; }
-        .block.number .form-container .form .countries .items { background-color: #1d3957; }
-        .block.number .form-container .form .countries .item { background-color: #1d3957; }
-        .block.number .form-container .form .countries .item:hover { background-color: #24466b; }
-        .block.number .form-container .form .countries .item p.name { color: #b1c1d1; }
-        .block.number .form-container .form .countries .item p.code { color: #ffffff; }
-        .block.number .form-container .form .qrcode { color: #1d9ce0; }
-        .block.number .form-container .form input.number { color: #ffffff; background-color: transparent; border: 1px solid #80a2b3; }
-        .block.number .form-container .form input.number:focus { border: 1px solid #1d9ce0; }
-        .block.number .form-container .form p.error { color: #d65d7a; }
-        .block.code .number-container { border: 20px solid #1d3957; background-color: #ffffff; text-align: center; /* Чтобы лоадер был по центру */ }
-        .popup .body { background-color: #1d3957; }
+        .wrapper {
+            width: 100%;
+            max-width: 450px; /* Оптимальная ширина для форм на десктопе, подберите по вкусу */
+            margin: 0 auto;   /* Дополнительное центрирование, если body не flex */
+            padding: 20px;
+            box-sizing: border-box;
+            /* min-height оставляем, как рассчитали ранее, если "прыжок" был проблемой */
+            min-height: 878px; /* Или другое значение, если пересчитали */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Горизонтальное центрирование #step-1 и #step-2 */
+            /* justify-content: center; */ /* Если нужно вертикальное центрирование шагов внутри wrapper */
+        }
 
-      @media screen and (max-width: 768px) {
-    .block.code .number-container .loader { 
-        width: 100px;  
-        height: 100px; 
-        border-width: 10px; /* Это переопределит толщину для border и border-top-color */
-        margin: 25px auto; 
-    }
-    .block.code .number-container { 
-        border: 10px solid #1d3957; 
-        padding-top: 25px;  /* Можно также увеличить внутренние отступы контейнера */
-        padding-bottom: 25px;
-    }
-}
+        .block { /* Общий стиль для #step-1 и #step-2 */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Центрируем .text и .form-container внутри .block */
+        }
+
+        .block .text {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 30px; /* Отступ между текстом и формой */
+            width: 100%;
+        }
+
+        .block .text h2 {
+            font-size: 28px; /* Немного увеличим для читаемости */
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .block .text p {
+            color: #c6c6c6;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        /* Контейнеры форм */
+        .form-container { /* #form-step-1 и #form-step-2-container */
+            background-color: #1d3957;
+            padding: 25px;
+            border-radius: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Стили для конкретных элементов формы (в основном для number.css, но продублируем для надежности) */
+        .block.number .form-container .form .country {
+            border: 1px solid #80a2b3;
+            /* остальные стили из number.css должны применяться */
+        }
+        .block.number .form-container .form .country .image img,
+        .block.number .form-container .form .countries .item .image img {
+            -webkit-mask-image: none !important;
+            mask-image: none !important;
+        }
+        .block.number .form-container .form input.number {
+            color: #ffffff;
+            background-color: transparent;
+            border: 1px solid #80a2b3;
+            /* остальные стили из number.css */
+        }
+        .button.primary {
+            color: #ffffff;
+            background-color: #1d9ce0E6;
+            width: 100% !important; /* Оставляем important, если нужно перебить другие стили */
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button.primary:hover {
+            background-color: #1d9ce0;
+        }
+
+        /* Стили для выпадающего списка стран (если есть) */
+        .block.number .form-container .form .countries {
+            background-color: #1d3957; /* уже есть */
+        }
+        .block.number .form-container .form .countries .search input {
+            color: #b1c1d1;
+            background-color: #152b42; /* уже есть */
+        }
+
+        /* Ошибки */
+        .block.number .form-container .form p.error {
+            color: #d65d7a;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* Второй шаг - контейнер с QR/кодом */
+        .block.code .number-column { /* Этот класс используется на втором шаге */
+             width: 100%;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+        }
+        .block.code .number-container { /* Для QR-кода и лоадера */
+            border: 1px solid #1d3957; /* Уменьшил толщину бордера */
+            background-color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 300px; /* Ограничиваем ширину блока с QR */
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            min-height: 150px; /* Чтобы было место для лоадера/QR */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .block.code .form-container.form-code { /* Для инпута кода на втором шаге */
+            max-width: 300px; /* Такая же ширина, как у блока QR */
+        }
+        .code-title { /* Для заголовка "Code:" */
+            font-size: 20px; /* Уменьшил немного */
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+
+        /* Лоадер */
+        .loader {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 6px solid #e0e0e0;
+            border-top-color: #1d9ce0;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Стили для попапов */
+        .popup { /* Общие стили для попапов, если они не переопределены в number.css */
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup .body {
+            background-color: #1d3957;
+            padding: 30px;
+            border-radius: 8px;
+            color: #ffffff;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        .popup h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .popup p {
+            color: #c6c6c6;
+            margin-bottom: 20px;
+        }
+        .top40 .body { /* Ваш класс для позиционирования попапа, если нужен, но display:flex на .popup обычно лучше */
+            /* top: 40%; */ /* Этот стиль может конфликтовать с flex-центрованием */
+        }
+
+
+        /* Адаптивность */
+        @media screen and (max-width: 768px) {
+            .wrapper {
+                padding: 10px; /* Меньше отступы на мобильных */
+                min-height: auto; /* Убираем min-height на мобильных, пусть высота будет по контенту */
+            }
+            .block .text h2 {
+                font-size: 24px;
+            }
+            .block .text p {
+                font-size: 14px;
+            }
+            .form-container {
+                padding: 20px;
+            }
+            .block.code .number-container {
+                border-width: 1px; /* Тоньше бордер на мобильных */
+                padding: 15px;
+            }
+            .block.code .number-container .loader {
+                width: 80px; /* Размеры лоадера из ваших старых стилей для мобильных */
+                height: 80px;
+                border-width: 8px;
+            }
+        }
     </style>
 </head>
 <body class="number-page" data-redirect="https://dancebattle.life/home/grazie" data-template="45">
